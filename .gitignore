@@ -39,3 +39,6 @@ Thumbs.db
 # Other #
 ######################
 .venv
+__pycache__
+samples
+.vscode
