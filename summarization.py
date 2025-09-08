@@ -71,8 +71,9 @@ def summarize(categories: dict) -> dict:
                                       f"the generated summaries for each category as values, " \
                                       f"and an additional key 'insights', which should include the generated insights as the value.\n"
     print(data["messages"][1]["content"])
-    response = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=data)
-    return response.json()["choices"][0]["message"]["content"]
+    return []
+    # response = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=data)
+    # return response.json()["choices"][0]["message"]["content"]
     # return summaries
 
 def _summarize_category(category: dict, category_name: str) -> str:

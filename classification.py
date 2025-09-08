@@ -4,6 +4,8 @@ Module for classifying and tagging sections of text using NLP models.
 
 import spacy
 import mlflow
+import matplotlib
+matplotlib.use('Agg')   # use non-interactive backend to prevent display
 import matplotlib.pyplot as plt
 import os
 import io
@@ -195,6 +197,11 @@ def _plot_confusion_matrix(cm, class_names=None):
                     color="white" if cm[i, j] > thresh else "black")
     
     plt.tight_layout()
+
+    # Save to file
+    filepath = os.path.join("visualization", "confusion_matrix.png")
+    plt.savefig(filepath, format='png', dpi=150, bbox_inches='tight')
+    print(f"Confusion matrix saved to: {filepath}")
     
     # Save to buffer and convert to PIL Image
     buf = io.BytesIO()
