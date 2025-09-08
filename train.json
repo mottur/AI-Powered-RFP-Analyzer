@@ -1,0 +1,302 @@
+[
+    {
+        "title": "Implementation Scope",
+        "body": "The scope for Phase I of the implementation is limited to the core accounting and procurement modules of the new software. This includes configuration to match our business processes, user training for the finance department, and a pilot go-live. The project assumes that all business process re-engineering decisions will be finalized before configuration begins. The scope explicitly excludes any integration with the legacy CRM system in this phase.",
+        "true_label": "Scope"
+    },
+    {
+        "title": "Scope and Key Assumptions",
+        "body": "This project involves migrating the entire email and collaboration suite from an on-premise exchange server to Microsoft 365. The scope includes tenant setup, mailbox migration, DNS record changes, and user training. A fundamental assumption is that all user workstations meet the minimum software requirements for Office 365 ProPlus. The project is bounded to corporate email and does not include the migration of file shares or departmental SharePoint sites.",
+        "true_label": "Scope"
+    },
+    {
+        "title": "Project Boundaries and Objectives",
+        "body": "This project aims to redesign the public-facing corporate website to improve brand consistency and accessibility compliance. The scope includes content inventory and audit, wireframing, visual design, content population, and launch. The project is bounded to the top 500 most visited pages and assumes that all final content will be provided by the marketing department in agreed-upon formats and deadlines.",
+        "true_label": "Scope"
+    },
+    {
+        "title": "Scope of Services",
+        "body": "The scope of this support contract includes 24/7 monitoring of server infrastructure, Level 1 and 2 helpdesk support for all internal employees, and proactive system health checks. This is bounded to corporate-owned devices and on-premise data centers; it explicitly excludes support for personal devices (BYOD) and cloud infrastructure managed by other vendors.",
+        "true_label": "Scope"
+    },
+    {
+        "title": "Background and Project Context",
+        "body": "The current website suffers from outdated technology that is no longer supported, leading to security vulnerabilities and a poor user experience. This project will rebuild the public-facing site on a modern content management system to empower content editors and improve accessibility compliance. The scope encompasses the complete content migration, user training, and a one-year warranty period. It is assumed that the site's information architecture and core content will remain largely unchanged unless improvements are identified during the discovery phase.",
+        "true_label": "Scope"
+    },
+    {
+        "title": "Project Objectives and Boundaries",
+        "body": "The goal of this project is to modernize the legacy customer relationship management (CRM) system to improve data accuracy and user efficiency. The scope includes the analysis, design, development, and implementation of a new cloud-based SaaS solution. This project is bounded to the integration with the existing Oracle financial system and the agency's Active Directory; it does not include any upgrades to those external systems. A key assumption is that the current data quality in the legacy system is sufficient for migration without extensive cleansing.",
+        "true_label": "Scope"
+    },
+    {
+        "title": "Goals and Project Context",
+        "body": "The goal is to automate the customer onboarding workflow to reduce manual processing time by 70%. The project scope includes the analysis of the current state process, identification of automation opportunities, development of RPA bots, and implementation with the operations team. This initiative is bounded to the onboarding process for standard commercial accounts and does not include complex institutional account onboarding procedures.",
+        "true_label": "Scope"
+    },
+    {
+        "title": "Goals and Out-of-Scope Items",
+        "body": "The primary goal is to enhance cybersecurity posture by implementing a multi-factor authentication (MFA) solution for all internal applications. The scope includes the procurement of a vendor product, configuration, integration with existing systems, and user rollout. Specifically out of scope are any hardware upgrades to end-user workstations and the development of custom MFA software. This project operates under the assumption that the chosen vendor solution will be compatible with the agency's existing identity provider.",
+        "true_label": "Scope"
+    },
+    {
+        "title": "Initiative Scope and Boundaries",
+        "body": "The scope of work for this engagement includes a full security audit of all public-facing web applications and the internal network. This involves vulnerability scanning, penetration testing, and social engineering exercises. The project is explicitly bounded to the corporate network within the North American data centers and will not extend to third-party vendor systems or recently acquired international subsidiaries, which are under a separate assessment program.",
+        "true_label": "Scope"
+    },
+    {
+        "title": "Objectives and Key Assumptions",
+        "body": "The primary objective is to increase customer engagement by 25% through a redesigned digital experience platform. The project scope includes user research, information architecture, UI/UX design, and front-end development for the main website and mobile app. A key assumption is that the current content management system (CMS) can support the new design with minimal backend customization. The scope excludes any changes to the underlying product database schema.",
+        "true_label": "Scope"
+    },
+    {
+        "title": "Project Context and Goals",
+        "body": "This project's goal is to establish a centralized data analytics hub to serve the entire organization. The scope includes the consolidation of data from sales, marketing, and customer support silos into a new data warehouse, the creation of ETL pipelines, and the development of a standard set of dashboards for executive leadership. The project assumes that source system APIs are stable and well-documented. It is bounded to historical data from the last five fiscal years.",
+        "true_label": "Scope"
+    },
+    {
+        "title": "Project Overview and Goals",
+        "body": "This initiative aims to design and deploy a comprehensive enterprise resource planning (ERP) system to unify financial, HR, and supply chain operations. The scope encompasses end-to-end process mapping, software configuration, data migration from legacy systems, and user acceptance testing. The project is bounded by the existing IT infrastructure and will not include hardware upgrades or the development of custom manufacturing modules.",
+        "true_label": "Scope"
+    },
+    {
+        "title": "Key Project Deliverables",
+        "body": "The offeror shall provide the following tangible outputs: a fully configured SaaS application instance, a complete Data Migration Toolset, a comprehensive User Training Manual (both digital and print versions), and a Final Project Report detailing system performance and implementation metrics.",
+        "true_label": "Deliverables"
+    },
+    {
+        "title": "Documentation Deliverables",
+        "body": "The offeror shall provide the following documentation: System Administrator Guide, API Reference Guide, User Acceptance Test (UAT) Plans and Scripts, Security Controls Assessment report, and a Disaster Recovery Runbook. All documentation must adhere to the agency's template and style guide provided in Section J of this RFP.",
+        "true_label": "Deliverables"
+    },
+    {
+        "title": "Analysis Deliverables",
+        "body": "The primary deliverable for the discovery phase is a Detailed Requirements Specification document, which must include functional requirements, non-functional requirements, and a traceability matrix linking requirements to proposed solutions.",
+        "true_label": "Deliverables"
+    },
+    {
+        "title": "Design Phase Deliverables",
+        "body": "The deliverables for the design phase shall include: User Personas, Customer Journey Maps, a Sitemap, an Interactive Prototype, and a UI Style Guide with a complete component library for developers.",
+        "true_label": "Deliverables"
+    },
+    {
+        "title": "Software Deliverables",
+        "body": "The contractor must deliver a fully functional web application with complete source code. This includes: all Docker container configuration files, a continuous integration/continuous deployment (CI/CD) pipeline configured in Jenkins, infrastructure-as-code scripts using Terraform, a full test suite with over 80% code coverage, and an automated deployment guide for the operations team.",
+        "true_label": "Deliverables"
+    },
+    {
+        "title": "Final Project Deliverables",
+        "body": "Acceptance of the project is contingent upon the delivery of the following items: the final application codebase, all environment installation scripts, a certificate of cybersecurity penetration testing from a recognized firm, and signed proof of data destruction from the legacy servers.",
+        "true_label": "Deliverables"
+    },
+    {
+        "title": "Documentation Deliverables",
+        "body": "The contractor is required to furnish detailed documentation, including a System Architecture Diagram, Network Security Plan, Database Schema Documentation, and a full set of Operational Runbooks for the IT support team.",
+        "true_label": "Deliverables"
+    },
+    {
+        "title": "List of Key Deliverables",
+        "body": "The contractor shall provide the following tangible outputs: 1) A fully deployed and configured multi-tenant SaaS platform on Azure. 2) Complete source code and architecture documentation deposited in a designated GitHub repository. 3) A user training manual and two live training sessions for end-users. 4) A final project report detailing system performance metrics and deployment architecture.",
+        "true_label": "Deliverables"
+    },
+    {
+        "title": "Training and Transition Deliverables",
+        "body": "As part of the knowledge transfer, the offeror must deliver a series of three (3) training workshops for end-users and administrators, along with recorded video tutorials and a searchable FAQ knowledge base portal.",
+        "true_label": "Deliverables"
+    },
+    {
+        "title": "Contractual Deliverables Schedule",
+        "body": "Deliverables are due according to the following milestones: a signed-off Project Charter by Week 2, High-Fidelity Wireframes by Week 6, a Functional Prototype for User Acceptance Testing by Week 12, and the Final Deployed System by Week 16.",
+        "true_label": "Deliverables"
+    },
+    {
+        "title": "Hardware and Software Deliverables",
+        "body": "The contractor is responsible for delivering, installing, and configuring five (5) physical application servers, the licensed enterprise software, and a one-year warranty for all provided hardware components.",
+        "true_label": "Deliverables"
+    },
+    {
+        "title": "Required Deliverables List",
+        "body": "By the conclusion of the contract, the vendor must deliver a production-ready mobile application published on the iOS App Store and Google Play Store, a fully documented API for third-party integration, and source code deposited into the client's designated GitHub repository.",
+        "true_label": "Deliverables"
+    },
+    {
+        "title": "Corporate Capability Statement",
+        "body": "Describe your company's organizational structure and core capabilities that make it suitable for this project. Detail your quality assurance processes and methodologies. Provide evidence of your financial stability, such as a Dunn & Bradstreet number or audited financial statements from the last fiscal year. Also, indicate if your company is designated as a small business under the applicable NAICS code.",
+        "true_label": "Company Info"
+    },
+    {
+        "title": "Corporate Capabilities Statement",
+        "body": "Our firm holds ISO 9001:2015 certification for quality management and ISO 27001 for information security management. We maintain a dedicated quality assurance team and a CMMI Level 3 rated development process, ensuring consistent and reliable delivery of high-quality software solutions.",
+        "true_label": "Company Info"
+    },
+    {
+        "title": "Relevant Past Performance",
+        "body": "Our team recently completed a project of similar scale and complexity for the Department of Public Works, which involved modernizing their legacy permitting system. The project was delivered on time and 15% under budget, resulting in a 40% reduction in application processing time. References and case studies are available upon request.",
+        "true_label": "Company Info"
+    },
+    {
+        "title": "Offeror Qualifications and Experience",
+        "body": "The offeror shall provide a company overview, including years in business, number of employees, and core mission statement. The proposal must include a list of at least three similar projects completed within the last five years, including project value, scope, and client references. Describe your firm's experience working with federal agencies and any relevant certifications (e.g., CMMI Level 3, ISO 9001).",
+        "true_label": "Company Info"
+    },
+    {
+        "title": "Corporate Structure and Stability",
+        "body": "Global Systems Integrators is a publicly traded company (NYSE: GSI) with a stable financial history and over 5,000 employees worldwide. Our strong balance sheet and AA credit rating demonstrate our financial viability and capacity to undertake a multi-year project of this magnitude.",
+        "true_label": "Company Info"
+    },
+    {
+        "title": "Management Team Qualifications",
+        "body": "Our proposed project manager, Jane Doe, PMP, has over 15 years of experience managing IT integration projects for federal clients. She holds a Master's degree in Information Systems and has successfully led five projects with a total value exceeding $20M, all of which met or exceeded performance metrics.",
+        "true_label": "Company Info"
+    },
+    {
+        "title": "Key Personnel Resumes",
+        "body": "The offeror must identify the proposed Project Manager, Lead Architect, and Lead Data Scientist assigned to this effort. For each key personnel, provide a resume that outlines their specific experience with cloud migration projects, relevant certifications (e.g., PMP, AWS Solutions Architect), and their role and duration on projects of similar size and complexity. Resumes shall not exceed two pages each.",
+        "true_label": "Company Info"
+    },
+    {
+        "title": "Subcontracting Plan and Team Structure",
+        "body": "If subcontractors will be used, the offeror must provide a detailed description of each subcontractor's role, their corporate experience, and the qualifications of their proposed staff. The prime contractor must demonstrate clear management oversight of all subcontractor efforts. Provide an organizational chart for the entire proposed project team, illustrating reporting lines and communication pathways between the prime and subcontractors.",
+        "true_label": "Company Info"
+    },
+    {
+        "title": "Client Testimonials and References",
+        "body": "We have consistently received exceptional past performance ratings from our clients. A representative from our previous client, Citywide Utilities, stated: 'The vendor's team was integral to our project's success, demonstrating exceptional technical skill and a true partnership approach.' Full contact information for three references is provided in Section 7.",
+        "true_label": "Company Info"
+    },
+    {
+        "title": "Key Personnel Resumes",
+        "body": "The lead architect proposed for this effort, Dr. Alan Smith, possesses a Ph.D. in Computer Science and holds active certifications as an AWS Solutions Architect Professional and Google Cloud Professional Data Engineer. He has authored three patents in the field of distributed data systems.",
+        "true_label": "Company Info"
+    },
+    {
+        "title": "Corporate Overview and History",
+        "body": "Founded in 2005, TechInnovate Solutions Inc. has been a trusted provider of enterprise software development and digital transformation services for over 18 years. Our mission is to empower businesses through cutting-edge technology and deep industry expertise. We are a privately-held company headquartered in Austin, Texas, with additional offices in London and Singapore.",
+        "true_label": "Company Info"
+    },
+    {
+        "title": "Company Mission and Values",
+        "body": "At DataSecure LLC, our mission is to build resilient and secure digital infrastructure that protects our clients' most critical assets. Our core values of integrity, innovation, and client partnership guide every project we undertake and every interaction we have.",
+        "true_label": "Company Info"
+    },
+    {
+        "title": "Milestone Payment Schedule",
+        "body": "Payment is contingent upon the successful completion and acceptance of the following milestones: 20% upon contract signing and project kick-off, 30% upon completion and acceptance of the development phase, 30% upon successful completion of system integration testing, and the final 20% upon project closure and delivery of all final documentation. Each milestone has a hard deadline as outlined in Attachment C - Schedule of Events.",
+        "true_label": "Timeline"
+    },
+    {
+        "title": "Project Schedule and Key Milestones",
+        "body": "The total project duration shall be 12 months from the date of contract signing. Key milestones include: Completion of Requirements Gathering by Month 1, System Design Sign-off by Month 3, Prototype Demonstration by Month 6, User Acceptance Testing Completion by Month 10, and Final System Go-Live by Month 12.",
+        "true_label": "Timeline"
+    },
+    {
+        "title": "Phase 1 Implementation Timeline",
+        "body": "Phase 1 of the project must commence no later than 15 business days after contract signing and shall be completed within a 90-day period. The deadline for the Phase 1 preliminary design review is 45 days after kick-off. The final deliverable for this phase, a working prototype, is due no later than 5:00 PM EST on the 90th day.",
+        "true_label": "Timeline"
+    },
+    {
+        "title": "Proposed Project Phases",
+        "body": "Phase 1 (Discovery & Planning): Weeks 1-4; Phase 2 (Design & Prototyping): Weeks 5-12; Phase 3 (Development): Weeks 13-28; Phase 4 (Testing & Quality Assurance): Weeks 29-36; Phase 5 (Deployment & Transition): Weeks 37-40; Phase 6 (Post-Launch Support): Weeks 41-52.",
+        "true_label": "Timeline"
+    },
+    {
+        "title": "Contract Period of Performance",
+        "body": "The period of performance for this fixed-price contract shall be from October 1, 2024, to September 30, 2025. All work must be completed, and final deliverables accepted, by the end of this period.",
+        "true_label": "Timeline"
+    },
+    {
+        "title": "Project Milestone Dates",
+        "body": "Kick-off Meeting: January 15, 2025; Finalized Project Charter: January 29, 2025; Hardware Procurement Completed: March 15, 2025; Data Migration Completed: June 30, 2025; User Training Completed: August 15, 2025; Project Closeout: September 30, 2025.",
+        "true_label": "Timeline"
+    },
+    {
+        "title": "Testing Phase Duration",
+        "body": "The integrated testing phase is allocated a duration of 8 weeks. System Integration Testing (SIT) will occur from April 1 to April 30. User Acceptance Testing (UAT) will be conducted by the client from May 1 to May 26, with Memorial Day (May 25) excluded. The week of May 27 is reserved for remediation of any UAT findings.",
+        "true_label": "Timeline"
+    },
+    {
+        "title": "Project Schedule and Key Milestones",
+        "body": "The total period of performance for this contract shall be 12 months from the date of award. Key milestones include: Completion of Requirements Gathering by Month 1, Final Design Approval by Month 3, System Implementation by Month 8, User Acceptance Testing (UAT) by Month 10, and Final Project Sign-off by Month 12. The contractor must provide a detailed Gantt chart outlining all activities and dependencies.",
+        "true_label": "Timeline"
+    },
+    {
+        "title": "Critical Deadline for Submission",
+        "body": "A critical milestone is the delivery of the beta software build for internal testing. This deliverable must be received by the client no later than 5:00 PM EST on May 15, 2025. Failure to meet this deadline may result in the assessment of liquidated damages.",
+        "true_label": "Timeline"
+    },
+    {
+        "title": "Development Sprint Timeline",
+        "body": "Development will be organized into two-week sprints. Sprint 1: Jan 10 - Jan 21; Sprint 2: Jan 24 - Feb 4; Sprint 3: Feb 7 - Feb 18; [ ... ] The final sprint, Sprint 18, is scheduled for August 15 - August 26, dedicated to final bug fixes and preparation for deployment.",
+        "true_label": "Timeline"
+    },
+    {
+        "title": "Critical Path Deadlines",
+        "body": "The project has the following non-negotiable deadlines: Environment provisioning must be complete by 2024-10-31. Data migration must be completed by 2025-01-15. Full operational capability (FOC) must be achieved by 2025-06-30. The contractor's proposed schedule must demonstrate how these key dates will be met.",
+        "true_label": "Timeline"
+    },
+    {
+        "title": "Agile Sprint Schedule",
+        "body": "The project will be executed using two-week sprints. The contractor shall provide a sprint schedule for the entire project duration at kick-off, outlining planned features for each sprint. A formal demo and review will be held at the end of each sprint, with a retrospective and planning session for the subsequent sprint to begin within two business days.",
+        "true_label": "Timeline"
+    },
+    {
+        "title": "Data Platform Specifications",
+        "body": "The data pipeline must be built using Apache Airflow for orchestration. Data processing shall be performed using Apache Spark (Databricks platform). The data warehouse must be implemented on Snowflake. The offeror must specify their approach to data ingestion from various SaaS platforms using tools like Fivetran or Stitch. All data must be encrypted in transit (TLS 1.2+) and at rest using AES-256 encryption.",
+        "true_label": "Technologies"
+    },
+    {
+        "title": "Environment and Tech Stack",
+        "body": "The solution must be developed using a modern, open-source tech stack. The backend shall be built in Python 3.9+ utilizing the Django web framework. The frontend must be implemented in React.js (v18+) with TypeScript. The database layer shall use PostgreSQL (v14+). All code must be containerized using Docker and orchestrated via Kubernetes. Version control is mandatory using Git in a GitHub repository.",
+        "true_label": "Technologies"
+    },
+    {
+        "title": "Development and Collaboration Tools",
+        "body": "The development lifecycle must utilize Jira for project tracking and task management. Continuous integration and continuous deployment (CI/CD) must be implemented using GitLab CI/CD pipelines. Documentation shall be maintained in Confluence. All communication related to the project must be conducted through the agency's Microsoft Teams channels. The offeror must demonstrate experience with all specified tools.",
+        "true_label": "Technologies"
+    },
+    {
+        "title": "Integration Technologies",
+        "body": "Integration with the legacy ERP system will be accomplished using MuleSoft Anypoint Platform as the enterprise service bus (ESB). APIs must be designed in accordance with RESTful principles and must utilize OAuth 2.0 for authorization.",
+        "true_label": "Technologies"
+    },
+    {
+        "title": "Security and Monitoring Tools",
+        "body": "The proposed solution must integrate with the agency's existing Splunk Enterprise instance for log aggregation and monitoring. Static application security testing (SAST) must be performed using Checkmarx, and dynamic testing (DAST) must use Qualys. Container vulnerability scanning is required using Twistlock. Identity and access management (IAM) must be integrated with the agency's PingFederate instance for SAML 2.0 authentication.",
+        "true_label": "Technologies"
+    },
+    {
+        "title": "Development Tools and Standards",
+        "body": "The development environment must utilize Visual Studio Code or JetBrains Rider as the primary IDE. All API interactions must conform to the OpenAPI (Swagger) 3.0 specification. Project management and issue tracking will be handled through a dedicated Jira Software instance provided by the client.",
+        "true_label": "Technologies"
+    },
+    {
+        "title": "Approved Software Platforms",
+        "body": "All development and production work must be conducted on the Amazon Web Services (AWS) platform. Specifically, the use of EC2 for compute, S3 for storage, and RDS for PostgreSQL database instances is mandated. The use of competing cloud providers like Microsoft Azure or Google Cloud Platform is not permitted for this project.",
+        "true_label": "Technologies"
+    },
+    {
+        "title": "Security and Compliance Technologies",
+        "body": "All application authentication must integrate with the client's existing PingFederate instance for SAML 2.0-based single sign-on (SSO). Static code analysis must be performed using SonarQube, and dynamic scanning must be conducted with the OWASP ZAP tool prior to each release.",
+        "true_label": "Technologies"
+    },
+    {
+        "title": "Database and Middleware Specifications",
+        "body": "The primary data store shall be Oracle Database 19c. The application layer must use the Java Spring Boot framework (version 2.7+). Message queuing shall be implemented with Apache Kafka to ensure durable, asynchronous communication between microservices.",
+        "true_label": "Technologies"
+    },
+    {
+        "title": "Required Technology Stack",
+        "body": "The solution must be developed using the .NET 6 framework for backend services. The frontend must be built using the React 18 library with TypeScript. The database must be Microsoft SQL Server 2019 or later. All code must be managed in a Git repository and deployed via Azure DevOps pipelines.",
+        "true_label": "Technologies"
+    },
+    {
+        "title": "Content Management System",
+        "body": "The public website must be built upon the WordPress VIP platform. All custom themes and plugins must be developed according to WordPress VIP coding standards and must be submitted for security review via the designated GitHub repository.",
+        "true_label": "Technologies"
+    },
+    {
+        "title": "Frontend Development Requirements",
+        "body": "The user interface shall be a single-page application (SPA) built with the Angular 15 framework. The application must use the NgRx library for state management and be styled according to the Google Material Design specification using Angular Material components.",
+        "true_label": "Technologies"
+    }
+]

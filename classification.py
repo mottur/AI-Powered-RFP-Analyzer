@@ -3,63 +3,141 @@ Module for classifying and tagging sections of text using NLP models.
 """
 
 import spacy
-from transformers import pipeline
+import mlflow
+import matplotlib.pyplot as plt
+import os
+import io
+import numpy as np
+from PIL import Image
 from collections import defaultdict
+from shared import LABELS
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
+from setfit import SetFitModel, Trainer, TrainingArguments
+from datasets import Dataset
+from sklearn.utils import shuffle
 
+# SetFit model and trainer initialization
+if os.path.exists("./classifier"):
+    classifier = SetFitModel.from_pretrained("./classifier")
+else:
+    classifier = None
+trainer = None
 
-LABELS = {
-    "Scope": "This section describes the scope of the project, including its goals, boundaries, assumptions, and context.",
-    "Deliverables": "This section lists the deliverables or tangible outputs the offeror/contractor is required to provide.",
-    "Company Info": "This section provides background information about the offeror/contractor, including qualifications, past experience, and mission.",
-    "Timeline": "This section outlines the length of the contract, deadlines, project start and end dates, and other key milestone schedules."
-}
-
+# spaCy NER model initialization
+nlp = spacy.load("en_core_web_trf")
+ruler = nlp.add_pipe("entity_ruler", before="ner")
 patterns = [{"label": "IGNORE", "pattern": label} for label in LABELS.keys()]
 extra_ignore_terms = ["E-Mail", "Email"]
 patterns.extend([{"label": "IGNORE", "pattern": term} for term in extra_ignore_terms])
-
-classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnli")
-nlp = spacy.load("en_core_web_trf")
-ruler = nlp.add_pipe("entity_ruler", before="ner")
 ruler.add_patterns(patterns)
 
-def _classify_section(text: str) -> str:
-    """
-    Classifies a section of text into one of the predefined labels using zero-shot classification."""
-    hypotheses = list(LABELS.values())
-    result = classifier(text, hypotheses, multi_label=True)
 
-    # Map back to original label name
-    predicted_description = result["labels"][0]
-    for key, desc in LABELS.items():
-        if desc == predicted_description:
-            return key
-    return "Unknown"
+"""TRAINING AND EVALUATION FUNCTIONS"""
 
-def _classify_primary_sections(sections):
+def train_classifier(train_texts: list, train_labels: list, eval_texts: list = None, eval_labels: list = None) -> dict:
     """
-    Classifies each section into primary categories using zero-shot classification.
+    Trains the classifier using few-shot learning.
     """
-    for sec in sections:
-        context = "This is an excerpt from a government Request for Proposal (RFP) document:\n"
-        full_text = context + sec["title"] + "\n" + sec["body"]
-        sec["label"] = _classify_section(full_text)
+    train_texts, train_labels = shuffle(train_texts, train_labels, random_state=42)
+    train_labels = _add_label_descriptions(train_labels)
+    train_dataset = Dataset.from_dict({"text": train_texts, "label": train_labels})
+    if eval_texts and eval_labels:
+        eval_texts, eval_labels = shuffle(eval_texts, eval_labels, random_state=42)
+        eval_labels = _add_label_descriptions(eval_labels)
+        eval_dataset = Dataset.from_dict({"text": eval_texts, "label": eval_labels})
+    else:
+        eval_dataset = None
+    
+    mlflow.set_experiment("rfp_analyzer")
+    run_id = None
 
-def _tag_keywords(sections):
+    with mlflow.start_run():
+        mlflow.log_params({
+            "labels": list(LABELS.keys()),
+            "classifier": "sentence-transformers/all-MiniLM-L6-v2",
+            "num_train_samples": len(train_dataset),
+            "num_eval_samples": len(eval_dataset),
+            "num_epochs": 1,
+            "batch_size": 16,
+            "learning_rate": 2e-5
+        })
+
+        classifier = SetFitModel.from_pretrained(
+            "sentence-transformers/all-MiniLM-L6-v2",
+            train_batch_size=16,
+            num_iterations=20,  # Number of text pairs for contrastive learning
+            num_epochs=1,      # Number of epochs for classification head
+            learning_rate=2e-5,
+            column_mapping={"text": "text", "label": "label"}
+        )
+        trainer = Trainer(
+            model=classifier,
+            train_dataset=train_dataset,
+            eval_dataset=eval_dataset,
+            metric=_evaluate
+        )
+        trainer.train()
+
+        metrics = trainer.evaluate()
+        mlflow.log_metrics({
+            "accuracy": metrics["accuracy"],
+            "precision": metrics["precision"],
+            "recall": metrics["recall"],
+            "f1_score": metrics["f1_score"]
+        })
+
+        cm = np.array(metrics["confusion_matrix"])
+        cm_image = _plot_confusion_matrix(cm, class_names=list(LABELS.keys()))
+        mlflow.log_image(cm_image, "confusion_matrix.png")
+
+        trainer.model.save_pretrained("./classifier")
+        mlflow.log_artifacts("./classifier", "model")
+
+        run_id = mlflow.active_run().info.run_id
+        mlflow.end_run()
+        return metrics, run_id
+    
+def classify_manually(texts):
     """
-    Tags keywords in each section using spaCy's NER.
+    Manual classification for training data.
     """
-    for sec in sections:
-        full_text = sec["title"] + "\n" + sec["body"]
-        doc = nlp(full_text)
-        filtered_ents = [ent for ent in doc.ents if ent.label_ != "IGNORE"]
-        keywords = {}
-        for ent in filtered_ents:
-            if ent.label_ not in keywords:
-                keywords[ent.label_] = [ent.text]
-            else:
-                keywords[ent.label_].append(ent.text)
-        sec["keywords"] = keywords
+    categories = {label: {"sections": []} for label in LABELS}
+    for sec in texts:
+        print("\n---\n")
+        print(f"Title: {sec['title']}\n")
+        print(f"Body: {sec['body']}\n")
+        print("Available Labels:")
+        for i, label in enumerate(LABELS.keys()):
+            print(f"{i}: {label}")
+        while True:
+            try:
+                choice = input("Enter the number corresponding to the correct label (or -1 to skip): ")
+                if choice == "exit":
+                    print("Exiting manual classification.")
+                    return categories
+                else:
+                    choice = int(choice)
+                if choice == -1:
+                    sec["true_label"] = None
+                    break
+                elif 0 <= choice < len(LABELS):
+                    sec["true_label"] = list(LABELS.keys())[choice]
+                    break
+                else:
+                    print("Invalid choice. Please try again.")
+            except ValueError:
+                print("Invalid input. Please enter a number.")
+        if sec["true_label"]:
+            print(f"Assigned label: {sec['true_label']}")
+            categories[sec["true_label"]]["sections"].append(sec)
+
+    return categories
+    
+def _add_label_descriptions(labels: list) -> list:
+    return [f"{label} - {LABELS[label]}" for label in labels]
+
+def _clean_label(pred_label: str) -> str:
+    return pred_label.split(" - ")[0]
 
 def _consolidate_categories(sections) -> dict:
     """
@@ -78,10 +156,102 @@ def _consolidate_categories(sections) -> dict:
         categories[label]["keywords"] = {k: list(v) for k, v in categories[label]["keywords"].items()}
     return categories
 
+def _evaluate(y_pred, y_true) -> dict:
+    """
+    Evaluates classification performance.
+    """
+    accuracy = accuracy_score(y_true, y_pred)
+    precision = precision_score(y_true, y_pred, average='weighted', zero_division=0)
+    recall = recall_score(y_true, y_pred, average='weighted', zero_division=0)
+    f1 = f1_score(y_true, y_pred, average='weighted', zero_division=0)
+    cm = confusion_matrix(y_true, y_pred)
+    
+    return {"accuracy": accuracy, "precision": precision, "recall": recall, 
+            "f1_score": f1, "confusion_matrix": cm.tolist()}
+
+def _plot_confusion_matrix(cm, class_names=None):
+    """Plot confusion matrix and return as PIL Image"""
+    fig, ax = plt.subplots(figsize=(8, 6))
+    im = ax.imshow(cm, interpolation='nearest', cmap=plt.cm.Blues)
+    ax.figure.colorbar(im, ax=ax)
+    
+    if class_names is None:
+        class_names = [f"Class {i}" for i in range(len(cm))]
+    
+    ax.set(xticks=np.arange(cm.shape[1]),
+           yticks=np.arange(cm.shape[0]),
+           xticklabels=class_names, 
+           yticklabels=class_names,
+           title="Confusion Matrix",
+           ylabel="True label",
+           xlabel="Predicted label")
+
+    # Add text annotations
+    thresh = cm.max() / 2.
+    for i in range(cm.shape[0]):
+        for j in range(cm.shape[1]):
+            ax.text(j, i, format(cm[i, j], 'd'),
+                    ha="center", va="center",
+                    color="white" if cm[i, j] > thresh else "black")
+    
+    plt.tight_layout()
+    
+    # Save to buffer and convert to PIL Image
+    buf = io.BytesIO()
+    plt.savefig(buf, format='png', dpi=150, bbox_inches='tight')
+    buf.seek(0)
+    pil_image = Image.open(buf)
+    plt.close(fig)
+    
+    return pil_image
+
+
+"""CLASSIFICATION AND TAGGING PIPELINE FUNCTIONS"""
+
 def classify_and_tag(sections) -> dict:
     """
     Full pipeline to classify sections and tag keywords.
     """
-    _classify_primary_sections(sections)
-    _tag_keywords(sections)
-    return _consolidate_categories(sections)
+    mlflow.set_experiment("rfp_analyzer")
+    run_id = None
+
+    with mlflow.start_run():
+        mlflow.log_params({
+            "labels": list(LABELS.keys()),
+            "classifier": "sentence-transformers/all-MiniLM-L6-v2",
+            "nlp_model": "en_core_web_trf",
+        })
+
+        _classify_primary_sections(sections)
+        _tag_keywords(sections)
+        categories = _consolidate_categories(sections)
+       
+        run_id = mlflow.active_run().info.run_id
+        mlflow.end_run()
+
+    return categories, run_id
+
+def _classify_primary_sections(sections):
+    """
+    Classifies each section into primary categories using zero-shot classification.
+    """
+    chunks = [sec["title"] + "\n" + sec["body"] for sec in sections]
+    preds = classifier(chunks)
+    for sec, pred in zip(sections, preds):
+        sec["label"] = _clean_label(pred)
+
+def _tag_keywords(sections):
+    """
+    Tags keywords in each section using spaCy's NER.
+    """
+    for sec in sections:
+        full_text = sec["title"] + "\n" + sec["body"]
+        doc = nlp(full_text)
+        filtered_ents = [ent for ent in doc.ents if ent.label_ != "IGNORE"]
+        keywords = {}
+        for ent in filtered_ents:
+            if ent.label_ not in keywords:
+                keywords[ent.label_] = [ent.text]
+            else:
+                keywords[ent.label_].append(ent.text)
+        sec["keywords"] = keywords

@@ -1,0 +1,77 @@
+[
+    {
+        "title": "Scope of Work and Key Assumptions",
+        "body": "This initiative aims to develop a centralized data analytics platform to unify reporting across the enterprise. The scope of work includes requirements gathering, data pipeline development, warehouse design, and dashboard creation. The project assumes that source system owners will provide timely access to data and subject matter experts. The boundaries of this project are strictly limited to the five source systems listed in Appendix A; integrating additional data sources is considered out of scope and must be handled through a separate change request.",
+        "true_label": "Scope"
+    },
+    {
+        "title": "Project Overview and Constraints",
+        "body": "This project will consolidate three separate grant management systems into a single, streamlined platform to reduce administrative overhead. The context for this effort is a legislative mandate to improve transparency and reporting. The scope is constrained by the requirement to maintain all existing functionality and reporting capabilities during the transition. A fundamental assumption is that key business processes will remain stable throughout the duration of the project, with no major legislative changes impacting system requirements.",
+        "true_label": "Scope"
+    },
+    {
+        "title": "Scope of Work Overview",
+        "body": "The scope encompasses the complete lifecycle of the mobile application development, from initial concept and market research to deployment on the Apple App Store and Google Play Store. This includes UI/UX design, development for both iOS and Android platforms, and backend API integration. The project is bounded to the feature set described in Appendix A and assumes that third-party API providers (e.g., for payment processing) will maintain service level agreements.",
+        "true_label": "Scope"
+    },
+    {
+        "title": "Phase 1 Deliverables",
+        "body": "For the Discovery and Design phase, the required deliverables are: a comprehensive Current State Assessment report, a Future State Architecture diagram, a Data Migration Strategy document, a detailed Project Roadmap, and a signed-off Functional Requirements Specification. All documents must be submitted in both PDF and editable Microsoft Word formats.",
+        "true_label": "Deliverables"
+    },
+    {
+        "title": "Final Project Deliverables",
+        "body": "Upon project completion, the contractor must provide the following: 1) All project code and artifacts transferred to the government's GitHub Enterprise repository. 2) A lessons-learned report conducted with the project team. 3) A production support handoff plan. 4) A 30-day warranty period for all delivered software following acceptance. 5) As-built architecture diagrams reflecting the final deployed state.",
+        "true_label": "Deliverables"
+    },
+    {
+        "title": "Monthly Deliverables",
+        "body": "The vendor shall provide a written Monthly Status Report by the 5th business day of each month, detailing progress against the project plan, risks, issues, and key performance indicators (KPIs).",
+        "true_label": "Deliverables"
+    },
+    {
+        "title": "Past Performance Questionnaires",
+        "body": "Offerors must submit three past performance questionnaires from clients for whom they have performed similar software modernization efforts within the last three years. Each questionnaire must include the client's name, contract value, period of performance, a description of the work, and ratings of the offeror's performance in quality, schedule, and cost management. The government may use this information to determine the offeror's ability to successfully perform the required effort.",
+        "true_label": "Company Info"
+    },
+    {
+        "title": "Corporate Experience Profile",
+        "body": "We have served over 200 clients in the financial services and healthcare sectors, providing us with deep regulatory knowledge of HIPAA and FINRA requirements. This extensive experience ensures our solutions are built with compliance and security as foundational principles from the outset.",
+        "true_label": "Company Info"
+    },
+    {
+        "title": "Differentiators and Strengths",
+        "body": "What sets our company apart is our exclusive focus on the public sector and our dedicated in-house team of security-cleared developers. This allows us to rapidly onboard and begin work on sensitive projects without the delays associated with subcontracting or obtaining new clearances.",
+        "true_label": "Company Info"
+    },
+    {
+        "title": "Weekly Deliverables Schedule",
+        "body": "The vendor shall provide a weekly status report every Friday by 12:00 PM EST. Bi-weekly sprint demos will be held every other Wednesday at 10:00 AM EST, commencing on the second week of the contract.",
+        "true_label": "Timeline"
+    },
+    {
+        "title": "Implementation Rollout Plan",
+        "body": "The rollout will be conducted in a phased approach by geographic region: Pilot Group (Northwest Region): July 10, 2025; Phase 1 (Southwest Region): August 7, 2025; Phase 2 (Northeast Region): September 4, 2025; Full Deployment (All Remaining Regions): October 2, 2025.",
+        "true_label": "Timeline"
+    },
+    {
+        "title": "Warranty and Support Period",
+        "body": "Following the system acceptance date, the vendor will provide a 90-day warranty period for bug fixes and critical support at no additional cost. Thereafter, an optional annual maintenance and support agreement will be available, commencing on the first anniversary of the go-live date.",
+        "true_label": "Timeline"
+    },
+    {
+        "title": "Cloud Hosting and Services",
+        "body": "The application must be deployed on Amazon Web Services (AWS). The architecture shall utilize AWS Elastic Kubernetes Service (EKS) for orchestration, Amazon RDS for PostgreSQL for the database, and Amazon S3 for static asset storage. The solution must employ AWS Lambda for serverless functions and use Amazon CloudFront as a content delivery network (CDN). All infrastructure must be defined as code using Terraform.",
+        "true_label": "Technologies"
+    },
+    {
+        "title": "Data Analytics and Reporting Tools",
+        "body": "The business intelligence module must utilize Tableau Server 2022.2 for generating dashboards and reports. Data must be ingested into the analytics platform using Apache NiFi pipelines and processed using PySpark scripts running on a Databricks platform.",
+        "true_label": "Technologies"
+    },
+    {
+        "title": "Containerization and Orchestration",
+        "body": "All application components must be containerized using Docker and deployed onto a Kubernetes cluster (version 1.24+). Helm charts must be provided for all deployments to manage configuration and releases consistently across development, staging, and production environments.",
+        "true_label": "Technologies"
+    }
+]

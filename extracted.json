@@ -1,0 +1,176 @@
+{
+    "Scope": {
+        "sections": [
+            {
+                "id": "A.",
+                "title": "Scope",
+                "body": "\u2022 As set out in this SOW, the PSP is expected to meet each requirement in the delivery of efficient operational support on AI and Big Data Platforms and initiatives.",
+                "page": 6,
+                "parent_id": null,
+                "label": "Scope"
+            }
+        ],
+        "keywords": {
+            "LAW": [
+                "SOW"
+            ],
+            "ORG": [
+                "PSP"
+            ]
+        }
+    },
+    "Deliverables": {
+        "sections": [
+            {
+                "id": "D.",
+                "title": "Service Delivery Approach",
+                "body": "\u2022 The delivery of the service is expected to be divided into three (3) phases. Provided below are the defined set of activities, deliverables, for each phase.",
+                "page": 7,
+                "parent_id": null,
+                "label": "Deliverables"
+            }
+        ],
+        "keywords": {
+            "CARDINAL": [
+                "3",
+                "three"
+            ]
+        }
+    },
+    "Company Info": {
+        "sections": [
+            {
+                "id": "A.",
+                "title": "Solution Overview",
+                "body": "The professional services provider must work with ADB AI Lab and Big Data team to build a production ready AI and big data solutions, required activities below provide further details.",
+                "page": 6,
+                "parent_id": null,
+                "label": "Company Info"
+            },
+            {
+                "id": "B.",
+                "title": "Contractor Qualifications",
+                "body": "\u2022 The contractor is expected to: \u2022 Have no less than five (5) years of experience in offering professional services \u2022 Make reasonable efforts in applying its industry expertise and assist ADB in setting up standards for AI model development and deployment. \u2022 Appoint a Team Lead to serve as an escalation point for technical and security-related queries.",
+                "page": 6,
+                "parent_id": null,
+                "label": "Company Info"
+            },
+            {
+                "id": "C.",
+                "title": "Environment Details",
+                "body": "\u2022 The contractor will provide manage service on the below items required for development",
+                "page": 7,
+                "parent_id": null,
+                "label": "Company Info"
+            },
+            {
+                "id": "",
+                "title": "\u2022  ADB DXP",
+                "body": "\u2022 10 -15 Data products \u2022 5-8 AI Projects \u2022 Required Activities \u2022 The following activities must be part of the contractor\u2019s deliverables: \u2022 Creation and maintenance of ADB's LLM Enterprise architecture \u2022 Software development following best practices (unit testing, creation of common libraries, CI/CD, IaC, modern UI/UX) \u2022 LLM Data Science Experimentation (Prototyping ideas of LLM applications \u2022 Production Grade Application deployment (Infrastructure Monitoring, Backup and Recovery, Cost Optimization, Performance Monitoring) \u2022 Security and Compliance (documentation & architecture compliant with ADB's security policies) \u2022 Data Platform Lifecycle (Creation of reliable and efficient data pipelines for the LLM's consumption, end to end data lineage) \u2022 Develop and Adherence to industry standard responsible ai framework",
+                "page": 7,
+                "parent_id": null,
+                "label": "Company Info"
+            },
+            {
+                "id": "1",
+                "title": "Foundation building   practice guides and engineering      4-6 weeks        10%",
+                "body": "(architecture, tools standards, and responsible AI and infrastructure) Framework, security alignment -Establish business outcomes & success criteria, accepted by ADB -Production ready AI and Big Data Lab (segregation of development and production environment), accepted by ADB 5% after the design and -Design and build each AI build is Design and Build 1 accepted by or more Data Estimated 2 ADB. Product + Design months per AI 5% upon and Build 1 AI product completion of -Application development, Product application Application of responsible AI development, Framework plus 1 Data Product accepted by ADB. 5% after the design and -Design and build each AI build is Design and Build 1 accepted by or more Data Estimated 2 ADB. Product + Design months per AI 5% upon and Build 1 AI product completion of -Application development, Product application Application of responsible AI development, Framework plus 1 Data Product accepted by ADB. 5% after the",
+                "page": 8,
+                "parent_id": null,
+                "label": "Company Info"
+            },
+            {
+                "id": "2",
+                "title": "design and",
+                "body": "-Design and build each AI build is Design and Build 1 accepted by or more Data Estimated 2 ADB. Product + Design months per AI 5% upon and Build 1 AI product completion of -Application development, Product application Application of responsible AI development, Framework plus 1 Data Product accepted by ADB. 5% after the design and -Design and build each AI build is Design and Build 1 accepted by or more Data Estimated 2 ADB. Product + Design months per AI 5% upon and Build 1 AI product completion of -Application development, Product application Application of responsible AI development, Framework plus 1 Data Product accepted by ADB. Design and Build 1 Estimated 2 5% after the or more Data -Design and build each AI months per AI design and Product + Design product build is and Build 1 AI accepted by Product ADB. 5% upon completion of -Application development, application Application of responsible AI development, Framework plus 1 Data Product accepted by ADB. Successfully passes external quality",
+                "page": 9,
+                "parent_id": null,
+                "label": "Company Info"
+            },
+            {
+                "id": "3",
+                "title": "Quality Review       review on AI models and addresses                 10%",
+                "body": "any action points Final Project Sign- Submission of satisfactory Final4 10% off Project Report, accepted by ADB",
+                "page": 10,
+                "parent_id": null,
+                "label": "Company Info"
+            }
+        ],
+        "keywords": {
+            "ORG": [
+                "LLM",
+                "ADB",
+                "ADB AI Lab"
+            ],
+            "CARDINAL": [
+                "5",
+                "1",
+                "10 -15"
+            ],
+            "DATE": [
+                "4-6 weeks",
+                "each AI months"
+            ],
+            "PERCENT": [
+                "2 5%",
+                "5%",
+                "10%"
+            ]
+        }
+    },
+    "Timeline": {
+        "sections": [
+            {
+                "id": "B.",
+                "title": "Duration",
+                "body": "\u2022 The engagement duration for the professional services will be for a period of fourteen (14) months. Renewal will depend on the satisfactory performance of the PSP based on the results of performance evaluation. \u2022 This SOW may be revised during the life of the contract based on ADB\u2019s changing business requirements with the necessary adjustments on the pricing based on the required revisions through mutual agreement between ADB and the PSP.",
+                "page": 6,
+                "parent_id": null,
+                "label": "Timeline"
+            },
+            {
+                "id": "A.",
+                "title": "Project Timeline",
+                "body": "The engagement will be for a period of fourteen (14) months. Renewal will depend on the satisfactory performance evaluation.",
+                "page": 8,
+                "parent_id": null,
+                "label": "Timeline"
+            },
+            {
+                "id": "B.",
+                "title": "Project Cost & Payment Milestone",
+                "body": "This is a fixed price engagement. Service Provide shall provide all the services and deliverables to ADB under this SOW for the fixed price ADB shall pay upon ADB\u2019s acceptance of the deliverables, according to the following milestones payment schedules: Deliverables / Acceptance Phase Milestone Duration Percentage Criteria Submission of countersigned",
+                "page": 8,
+                "parent_id": null,
+                "label": "Timeline"
+            },
+            {
+                "id": "0",
+                "title": "Contract signing      contract and other required                      10%",
+                "body": "contractual documents Kick-off meeting Kick-off meeting completed 1-2 weeks 0 Submission of Submission of a satisfactory 10% (estimate) Detailed-level AI solution design document, accepted Lab Framework by ADB and Architecture (AI and Big Data) Implementation of -Submission of satisfactory the Lab Framework documented tools, framework, best",
+                "page": 8,
+                "parent_id": null,
+                "label": "Timeline"
+            }
+        ],
+        "keywords": {
+            "DATE": [
+                "1-2 weeks",
+                "fourteen (14) months"
+            ],
+            "ORG": [
+                "Service Provide",
+                "ADB",
+                "ADB and Architecture",
+                "PSP"
+            ],
+            "PERCENT": [
+                "10%"
+            ]
+        }
+    },
+    "Technologies": {
+        "sections": [],
+        "keywords": {}
+    }
+}
