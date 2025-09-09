@@ -5,7 +5,7 @@ api_key = "sk-or-v1-6969bfde7f8ce22aaa4089628572978cee61f97c7ea2f84752a52307b031
 
 headers = {
     "Authorization": f"Bearer {api_key}",
-    "HTTP-Referer": "your-site-or-email",  # Can be your email or app URL
+    "HTTP-Referer": "AI-Powered-RFP-Analyzer",  # Can be your email or app URL
     "Content-Type": "application/json",
 }
 
@@ -56,41 +56,20 @@ def summarize(categories: dict) -> dict:
     - Suggests actionable insights or next steps.
     - Validates extraction logic through prompt engineering.
     """
-    # summaries = {key: None for key in LABELS.keys()}
-    # for cat in summaries.keys():
-    #     category = categories[cat]
-    #     summaries[cat] = _summarize_category(category, cat)
-    labels = ", ".join(f"{key}: {value}" for key, value in LABELS.items())
+    labels = "\n".join(f"{key}: {value}" for key, value in LABELS.items())
+    text = {key: None for key in LABELS.keys()}
+    for key in text.keys():
+        text[key] = [sec["title"] + "\n" + sec["body"] for sec in categories[key]["sections"]]
     data["messages"][1]["content"] = f"The following json provides chunks of text are from an RFP document." \
-                                      f"The keys are the categories, which are defined: {labels}\n" \
-                                      f"Text:\n{str(categories)}" \
+                                      f"The keys are the categories, which are defined:\n{labels}\n" \
+                                      f"Consider the following json:\n{str(text)}\n" \
                                       f"Provide a concise summary of the chunks in each category based on the descriptions provided above, " \
-                                      f"keeping in mind that the chunks may correspond to more than one category." \
+                                      f"keeping in mind that the chunks may correspond to more than one category. " \
                                       f"After that, suggest actionable insights or next steps. " \
                                       f"Return a json string with the defined categories as keys, " \
                                       f"the generated summaries for each category as values, " \
-                                      f"and an additional key 'insights', which should include the generated insights as the value.\n"
-    print(data["messages"][1]["content"])
-    return []
-    # response = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=data)
-    # return response.json()["choices"][0]["message"]["content"]
-    # return summaries
-
-def _summarize_category(category: dict, category_name: str) -> str:
-    """
-    Summarizes a single category of text from the RFP using an LLM model.
-    """
-    cat_text = ""
-    for sec in category["sections"]:
-        cat_text += sec["title"] + " " + sec["body"] + "\n\n"
-    data["messages"][1]["content"] = f"The following chunks of text are from an RFP document " \
-                                      f"and have all been categorized under '{category_name}', " \
-                                      f"which is defined as '{LABELS[category_name]}'.\n" \
-                                      f"Text:\n{cat_text[:4000]}" \
-                                      f"Provide a concise summary of the chunks in the '{category_name}' category " \
-                                      f"and suggest actionable insights or next steps. " \
-                                      f"Return the summary and insights in the format:\n" \
-                                      f"Summary: <your summary here>\n" \
-                                      f"Actionable Insights/Next Steps: <your insights here>"
+                                      f"and an additional key 'Insights', which should include the generated insights as the value."
+    # print(data["messages"][1]["content"])
+    # return [data["messages"][1]["content"]]
     response = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=data)
     return response.json()["choices"][0]["message"]["content"]
