@@ -28,38 +28,60 @@ CLASSIFIER TRAINING ENDPOINT:
 This endpoint trains the classifier on provided data.
 """
 @app.post("/train-classifier/")
-# async def train_model(files: list[UploadFile] = File(...)) -> JSONResponse:
-async def train_model() -> JSONResponse:
-    # if os.path.exists("extracted.json"):
-    #     use_files = input("Use extracted.json file for training? ")
-    # else:
-    #     use_files = 'no'
-    # if use_files.lower() == 'exit' or use_files.lower() == 'stop' or use_files.lower() == '':
-    #     return JSONResponse(status_code=500, content={"error": "Aborted process"})
-    # if use_files.lower() == 'no' or use_files.lower() == 'n':
-    #     texts = []
-    #     for file in files:
-    #         try:
-    #             file_contents = await file.read()
-    #             sections = chunk_text(file_contents)
-    #             texts.extend(sections)
-    #             print(f"Extracted {len(sections)} sections from {file.filename}.")
+async def train_model(files: list[UploadFile] = File(...)) -> JSONResponse:
+# async def train_model() -> JSONResponse:
+    if os.path.exists("extracted.json"):
+        use_files = input("Use extracted.json file for training? ")
+    else:
+        use_files = 'no'
+    if use_files.lower() == 'exit' or use_files.lower() == 'stop' or use_files.lower() == '':
+        return JSONResponse(status_code=500, content={"error": "Aborted process"})
+    if use_files.lower() == 'no' or use_files.lower() == 'n':
+        texts = []
+        for file in files:
+            try:
+                file_contents = await file.read()
+                sections = chunk_text(file_contents)
+                texts.extend(sections)
+                print(f"Extracted {len(sections)} sections from {file.filename}.")
 
-    #         except Exception as e:
-    #             return JSONResponse(status_code=500, content={"error": str(e)})
-    #     try:
-    #         with open("extracted.json", 'w') as json_file:
-    #             json.dump(texts, json_file, indent=4)
-    #         print(f"Saved extracted sections to extracted.json.")
-    #     except Exception as e:
-    #         return JSONResponse(status_code=500, content={"error": str(e)})
-    # else:
-    #     try:
-    #         with open("extracted.json", 'r') as json_file:
-    #             texts = json.load(json_file)
-    #         print(f"Loaded extracted.json for training.")
-    #     except Exception as e:
-    #         return JSONResponse(status_code=500, content={"error": str(e)})
+            except Exception as e:
+                return JSONResponse(status_code=500, content={"error": str(e)})
+        try:
+            with open("extracted.json", 'w') as json_file:
+                json.dump(texts, json_file, indent=4)
+            print(f"Saved extracted sections to extracted.json.")
+        except Exception as e:
+            return JSONResponse(status_code=500, content={"error": str(e)})
+    else:
+        try:
+            with open("extracted.json", 'r') as json_file:
+                texts = json.load(json_file)
+            print(f"Loaded extracted.json for training.")
+        except Exception as e:
+            return JSONResponse(status_code=500, content={"error": str(e)})
+        
+    if os.path.exists("manual.json"):
+        use_files = input("Use manual.json file for training? ")
+    else:
+        use_files = 'no'
+    if use_files.lower() == 'exit' or use_files.lower() == 'stop' or use_files.lower() == '':
+        return JSONResponse(status_code=500, content={"error": "Aborted process"})
+    if use_files.lower() == 'no' or use_files.lower() == 'n':
+        try:
+            categories = classify_manually(texts)
+            with open("manual.json", 'w') as json_file:
+                json.dump(categories, json_file, indent=4)
+            print(f"Classified all sections manually.")
+        except Exception as e:
+            return JSONResponse(status_code=500, content={"error": str(e)})
+    else:
+        try:
+            with open("manual.json", 'r') as json_file:
+                categories = json.load(json_file)
+            print(f"Loaded manual.json for training.")
+        except Exception as e:
+            return JSONResponse(status_code=500, content={"error": str(e)})
     
     if os.path.exists("labeled.json"):
         use_files = input("Use labeled.json file for training? ")
@@ -69,15 +91,13 @@ async def train_model() -> JSONResponse:
         return JSONResponse(status_code=500, content={"error": "Aborted process"})
     if use_files.lower() == 'no' or use_files.lower() == 'n':
         try:
-            # categories = classify_manually(texts)
-            categories = {label: {"sections": []} for label in LABELS}
+            # categories = {label: {"sections": []} for label in LABELS}
             with open("synthetic.json", 'r') as json_file:
                 synthetic = json.load(json_file)
             for cat in categories:
                 categories[cat]["sections"].extend(synthetic[cat]["sections"])
             with open("labeled.json", 'w') as json_file:
                 json.dump(categories, json_file, indent=4)
-            # print(f"Classified all sections manually.")
             print("Loaded synthetic data.")
         except Exception as e:
             return JSONResponse(status_code=500, content={"error": str(e)})

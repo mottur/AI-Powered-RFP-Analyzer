@@ -185,53 +185,53 @@
                 "true_label": "Company Info"
             },
             {
-                "title": "Corporate Overview and History",
-                "body": "Founded in 2005, TechInnovate Solutions Inc. has been a trusted provider of enterprise software development and digital transformation services for over 18 years. Our mission is to empower businesses through cutting-edge technology and deep industry expertise. We are a privately-held company headquartered in Austin, Texas, with additional offices in London and Singapore.",
+                "title": "Corporate History and Founding Principles",
+                "body": "The offeror shall provide a detailed corporate history including founding date, original mission statement, and key company development milestones. The proposal must describe the offeror's core values and cultural principles that guide business operations. The offeror shall include information about corporate ownership structure and any parent company or subsidiary relationships.",
                 "true_label": "Company Info"
             },
             {
-                "title": "Relevant Past Performance",
-                "body": "Our team recently completed a project of similar scale and complexity for the Department of Public Works, which involved modernizing their legacy permitting system. The project was delivered on time and 15% under budget, resulting in a 40% reduction in application processing time. References and case studies are available upon request.",
+                "title": "Executive Leadership Profiles",
+                "body": "The offeror must submit professional profiles of the executive leadership team, including the CEO, CTO, and other key executives. Each profile shall include educational background, years of industry experience, previous leadership roles, and specific expertise relevant to this procurement. The offeror shall describe the leadership team's vision and their commitment to government contracting excellence.",
                 "true_label": "Company Info"
             },
             {
-                "title": "Management Team Qualifications",
-                "body": "Our proposed project manager, Jane Doe, PMP, has over 15 years of experience managing IT integration projects for federal clients. She holds a Master's degree in Information Systems and has successfully led five projects with a total value exceeding $20M, all of which met or exceeded performance metrics.",
+                "title": "Industry Certifications and Accreditations",
+                "body": "The offeror shall provide a comprehensive list of all relevant industry certifications and accreditations held by the company, including dates obtained and expiration dates. The proposal must include certifications such as ISO standards, CMMI maturity levels, and any government-sponsored certification programs. The offeror shall provide certificate numbers and issuing organizations for verification purposes.",
                 "true_label": "Company Info"
             },
             {
-                "title": "Corporate Capabilities Statement",
-                "body": "Our firm holds ISO 9001:2015 certification for quality management and ISO 27001 for information security management. We maintain a dedicated quality assurance team and a CMMI Level 3 rated development process, ensuring consistent and reliable delivery of high-quality software solutions.",
+                "title": "Client Testimonials and Success Stories",
+                "body": "The offeror must provide at least five client testimonials from previous government or commercial clients that demonstrate the company's performance excellence. The proposal shall include specific examples of successful project delivery, problem-solving capabilities, and client satisfaction. Each testimonial must include the client organization, project scope, and measurable outcomes achieved.",
                 "true_label": "Company Info"
             },
             {
-                "title": "Company Mission and Values",
-                "body": "At DataSecure LLC, our mission is to build resilient and secure digital infrastructure that protects our clients' most critical assets. Our core values of integrity, innovation, and client partnership guide every project we undertake and every interaction we have.",
+                "title": "Employee Qualifications and Expertise",
+                "body": "The offeror shall detail the overall qualifications of their workforce including the percentage of staff with advanced degrees, professional certifications, and security clearances. The proposal must provide statistics on average years of experience in relevant technical domains and federal contracting. The offeror shall describe their approach to maintaining a highly skilled and technically competent workforce.",
                 "true_label": "Company Info"
             },
             {
-                "title": "Key Personnel Resumes",
-                "body": "The lead architect proposed for this effort, Dr. Alan Smith, possesses a Ph.D. in Computer Science and holds active certifications as an AWS Solutions Architect Professional and Google Cloud Professional Data Engineer. He has authored three patents in the field of distributed data systems.",
+                "title": "Corporate Risk Management Approach",
+                "body": "The offeror must describe their corporate risk management philosophy and risk mitigation strategies. The proposal shall detail the offeror's experience managing risks on similar projects and their approach to identifying, assessing, and mitigating potential issues. The offeror shall include information about corporate insurance coverage and risk transfer mechanisms.",
                 "true_label": "Company Info"
             },
             {
-                "title": "Corporate Experience Profile",
-                "body": "We have served over 200 clients in the financial services and healthcare sectors, providing us with deep regulatory knowledge of HIPAA and FINRA requirements. This extensive experience ensures our solutions are built with compliance and security as foundational principles from the outset.",
+                "title": "Business Continuity and Disaster Recovery",
+                "body": "The offeror shall provide an overview of their corporate business continuity and disaster recovery capabilities. The proposal must describe infrastructure redundancy, data backup strategies, and recovery time objectives. The offeror shall include information about any recent business continuity tests or certifications the company has undergone.",
                 "true_label": "Company Info"
             },
             {
-                "title": "Corporate Structure and Stability",
-                "body": "Global Systems Integrators is a publicly traded company (NYSE: GSI) with a stable financial history and over 5,000 employees worldwide. Our strong balance sheet and AA credit rating demonstrate our financial viability and capacity to undertake a multi-year project of this magnitude.",
+                "title": "Corporate Compliance and Regulatory Experience",
+                "body": "The offeror must detail their experience with federal compliance requirements including FAR, DFARS, and other applicable regulations. The proposal shall describe the offeror's internal compliance programs, audit processes, and experience with government audits. The offeror shall provide examples of successfully navigating complex regulatory environments.",
                 "true_label": "Company Info"
             },
             {
-                "title": "Differentiators and Strengths",
-                "body": "What sets our company apart is our exclusive focus on the public sector and our dedicated in-house team of security-cleared developers. This allows us to rapidly onboard and begin work on sensitive projects without the delays associated with subcontracting or obtaining new clearances.",
+                "title": "Organizational Capacity and Resource Availability",
+                "body": "The offeror shall describe their corporate capacity to take on new work, including current workload, available resources, and expansion capabilities. The proposal must provide information about the recruitment pipeline, training programs, and ability to scale resources to meet project demands. The offeror shall include details about bench strength and resource management strategies.",
                 "true_label": "Company Info"
             },
             {
-                "title": "Client Testimonials and References",
-                "body": "We have consistently received exceptional past performance ratings from our clients. A representative from our previous client, Citywide Utilities, stated: 'The vendor's team was integral to our project's success, demonstrating exceptional technical skill and a true partnership approach.' Full contact information for three references is provided in Section 7.",
+                "title": "Corporate Awards and Recognition",
+                "body": "The offeror must list any industry awards, performance recognition, or quality awards received in the past five years. The proposal shall include awards for project excellence, workplace quality, innovation, or other relevant achievements. The offeror shall provide context for each award including the awarding organization and criteria for selection.",
                 "true_label": "Company Info"
             }
         ]

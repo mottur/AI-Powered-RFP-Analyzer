@@ -2,6 +2,126 @@
     "Scope": {
         "sections": [
             {
+                "id": "A.",
+                "title": "Scope",
+                "body": "\u2022 As set out in this SOW, the PSP is expected to meet each requirement in the delivery of efficient operational support on AI and Big Data Platforms and initiatives.",
+                "page": 6,
+                "parent_id": null,
+                "true_label": "Scope"
+            },
+            {
+                "id": "A.",
+                "title": "Solution Overview",
+                "body": "The professional services provider must work with ADB AI Lab and Big Data team to build a production ready AI and big data solutions, required activities below provide further details.",
+                "page": 6,
+                "parent_id": null,
+                "true_label": "Scope"
+            },
+            {
+                "id": "D.",
+                "title": "Service Delivery Approach",
+                "body": "\u2022 The delivery of the service is expected to be divided into three (3) phases. Provided below are the defined set of activities, deliverables, for each phase.",
+                "page": 7,
+                "parent_id": null,
+                "true_label": "Scope"
+            },
+            {
+                "id": "1)",
+                "title": "Legislative and business policy changes trigger frequent releases across several EHBs",
+                "body": "modules (Refer EHBs modules list for more information) causing challenges in developing automated tests on time. Capable to keep up with quickly changing automation testing  technologies and changes in the system under test.",
+                "page": 7,
+                "parent_id": null,
+                "true_label": "Scope"
+            },
+            {
+                "id": "2)",
+                "title": "Shared common solutions across all functionalities - opening up possibilities of automated",
+                "body": "tests across different versions",
+                "page": 8,
+                "parent_id": null,
+                "true_label": "Scope"
+            },
+            {
+                "id": "3)",
+                "title": "Code based user interface (UI) validations and business rules - making it challenging for",
+                "body": "rapid release response times",
+                "page": 8,
+                "parent_id": null,
+                "true_label": "Scope"
+            },
+            {
+                "id": "4)",
+                "title": "Parallel development release streams - leading to complex impact analysis and all-inclusive",
+                "body": "regression testing strategy",
+                "page": 8,
+                "parent_id": null,
+                "true_label": "Scope"
+            },
+            {
+                "id": "5)",
+                "title": "Support for multiple browsers, ensuring the interfaces perform consistently across various",
+                "body": "browsers and meet all 508 accessibility requirements and cross browser controls",
+                "page": 8,
+                "parent_id": null,
+                "true_label": "Scope"
+            },
+            {
+                "id": "e.",
+                "title": "Technical Approach for Hypothetical #5, Robotic Process Automation (RPA) and Data",
+                "body": "Generation Testing - 10 points HRSA Test Harness is an Enterprise Test Automation Platform that standardizes automated testing processes and promotes collaboration across multiple vendors to support the HRSAs IT mission. Test Automation framework is currently hosted in HRSA network and leveraged for EHB Test Automation activities. Electronic handbooks contains more than 60 modules supporting the different bureau policy changes. Legislative and business policy changes trigger frequent releases, causing challenges in verification and validation activities. Current Challenges In an agile business environment, system changes are required to release every week to support the legislative mandate. During the release process, testing team has to invest several hours in creating test data for functional, regression, and integration testing. In addition, EHBs trainers follow manual process to create training data every two weeks for conducting the user trainings and demos. Those challenges are resulting inefficiency and overheard, operation cost is going high. Here is the summary of the challenges:",
+                "page": 10,
+                "parent_id": null,
+                "true_label": "Scope"
+            },
+            {
+                "id": "1)",
+                "title": "Module has tight data and navigation integration with other EHB modules, 2) The module is used",
+                "body": "across HRSA by all bureaus with few specific deviations and automation for certain specific programs, 3) The process supports complex data driven business rules,",
+                "page": 10,
+                "parent_id": null,
+                "true_label": "Scope"
+            },
+            {
+                "id": "1.",
+                "title": "Introduction",
+                "body": "The US Fish & Wildlife Service (FWS, the Service) is in need of a Drupal development group to rebuild the Invasive Carp Regional Coordinating Committee site as a small-scale content management system in the latest version of Drupal (currently Drupal 9). Working alongside the Service, the contractor shall provide expertise to work through a design review of the current site and then develop a new version to facilitate a full migration off the old environment.",
+                "page": 3,
+                "parent_id": null,
+                "true_label": "Scope"
+            },
+            {
+                "id": "2.",
+                "title": "Background",
+                "body": "A content management system, or CMS, is an application used to manage and publish web content. It allows multiple users to contribute, create, edit, and publish content without needing to have a web development skillset. It can also provide version management and authoring workflow to keep webpages consistent. Historically, management of the Invasive Carp website has suffered from complex content entry procedures and bottlenecks due to lack of resources/expertise in managing html. The rebuild of this site in a modernized content management system aims to achieve a straightforward content entry workflow that can be easily adopted and improve upon prior challenges of managing the site.",
+                "page": 3,
+                "parent_id": null,
+                "true_label": "Scope"
+            },
+            {
+                "id": "3.",
+                "title": "Statement of Work",
+                "body": "The contractor will be tasked with rebuilding the Invasive Carp Regional Coordinating Committee (ICRCC) website as a content management system in the latest version of Drupal (currently Drupal 9). It is anticipated that the effort will start off with a design review of the legacy site, to determine if and where it may make sense to pursue any notable changes during the rebuild. The current organization and structure of the site is well liked by its heaviest users, but the group remains open to suggestions on how to improve the user experience and how to best build upon the foundation that exists. Once there is an agreed upon strategy for the site rebuild and any design adjustments coming into play, the contractor would move forward into development and further migration efforts. The site currently houses and will continue to house the following types of content/pages (not exclusively limited to): 1. Background Info/About Us 2. Plans and Report library (documents) 3. Newsroom/News archive 4. Outreach and Resource materials 5. Species Profiles (4 carp species) 6. FAQ It is anticipated that FWS and the partnership organization resources will manage an overwhelming majority of the written content development and migration for the site, while the contractor will be expected to facilitate migration of document and media assets where logical.",
+                "page": 3,
+                "parent_id": null,
+                "true_label": "Scope"
+            },
+            {
+                "id": "5.",
+                "title": "Assumptions",
+                "body": "The Service assumes the following in regard to contractor approach: \u2022 While it is intended that the contractor approaches the site rebuild effort with an eye towards design improvements, it is not expected to be a full-fledged redesign effort - the most important requirements are focused on ease of managing the content on the site (in other words, the Service does not intend to spend an abundance of time on a completely new design) \u2022 There are two main parts to the CMS: (1) A content management interface allowing content creators to work with content directly by inputting content via templates and (2) a front-end display that takes the content entered into templates and renders it as a cohesive working website. Content entry forms should be configured with ease of use/simplicity as a priority",
+                "page": 4,
+                "parent_id": null,
+                "true_label": "Scope"
+            },
+            {
+                "id": "8.",
+                "title": "Place of Performance",
+                "body": "All work shall be performed remotely via Government Approved Remote Access solutions unless otherwise agreed upon.",
+                "page": 5,
+                "parent_id": null,
+                "true_label": "Scope"
+            },
+            {
                 "title": "Project Objectives and Boundaries",
                 "body": "The goal of this project is to modernize the legacy customer relationship management (CRM) system to improve data accuracy and user efficiency. The scope includes the analysis, design, development, and implementation of a new cloud-based SaaS solution. This project is bounded to the integration with the existing Oracle financial system and the agency's Active Directory; it does not include any upgrades to those external systems. A key assumption is that the current data quality in the legacy system is sufficient for migration without extensive cleansing.",
                 "true_label": "Scope"
@@ -80,6 +200,22 @@
     },
     "Deliverables": {
         "sections": [
+            {
+                "id": "B.",
+                "title": "Technical Quote (Non-Price factors)",
+                "body": "To facilitate the technical quote evaluation, the offeror shall submit as part of the RFQ, a separate enclosure entitled, \u201cTechnical Quote.\u201d The data and information shall be keyed to each paragraph of the technical quote requirements as outlined below. Factor 1: Technical",
+                "page": 4,
+                "parent_id": null,
+                "true_label": "Deliverables"
+            },
+            {
+                "id": "4.",
+                "title": "Deliverables",
+                "body": "All written deliverables shall be created in a professional manner and shall include meeting summaries, background information, and any appropriate research material where requested. All non-branded deliverables shall be submitted in an editable (i.e., unprotected) format such as Microsoft Word, Excel, or PowerPoint when applicable. All Deliverables will be submitted on or before the due date specified or submitted in accordance with a later scheduled date determined by FWS. The following deliverables will be prepared by or updated by the Contractor: \u25cf Project plan and schedule \u25cf Documentation of any design adjustments that will take place to \u2018as-is\u2019 site \u2013 in form of wire frame/mockup, or written explanations for simple adjustments \u25cf End user guidance for site owners as requested \u25cf Drupal Site Pages (Finished Product)",
+                "page": 4,
+                "parent_id": null,
+                "true_label": "Deliverables"
+            },
             {
                 "title": "List of Key Deliverables",
                 "body": "The contractor shall provide the following tangible outputs: 1) A fully deployed and configured multi-tenant SaaS platform on Azure. 2) Complete source code and architecture documentation deposited in a designated GitHub repository. 3) A user training manual and two live training sessions for end-users. 4) A final project report detailing system performance metrics and deployment architecture.",
@@ -160,6 +296,206 @@
     "Company Info": {
         "sections": [
             {
+                "id": "B.",
+                "title": "Contractor Qualifications",
+                "body": "\u2022 The contractor is expected to: \u2022 Have no less than five (5) years of experience in offering professional services \u2022 Make reasonable efforts in applying its industry expertise and assist ADB in setting up standards for AI model development and deployment. \u2022 Appoint a Team Lead to serve as an escalation point for technical and security-related queries.",
+                "page": 6,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "",
+                "title": "INSTRUCTIONS, CONDITIONS AND NOTICES TO OFFERORS",
+                "body": "THE GOVERNMENT RESERVES THE RIGHT TO REJECT ANY QUOTE THAT DOES NOT COMPLY",
+                "page": 3,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "1.",
+                "title": "To facilitate the evaluations, four (4) separate volumes titled technical quote, price quote, past performance,",
+                "body": "and VPAT shall be submitted separately and clearly labeled. Each of these parts shall be separate and complete in itself so that the evaluation of one may be accomplished independently of the evaluation of the other. Volume I\u2013Technical Quote must not contain references to price; however, resource information such as data concerning labor hours and categories, materials, subcontracts, etc., must be contained in the Technical Quote so that your understanding of the statement of objectives may be evaluated. It must disclose your approach in sufficient detail to provide a clear and concise presentation that includes the requirements of the proposal instructions. Volume I must include a statement indicating whether any exceptions are taken to the terms and conditions of the request for quotation (RFQ) as part of the transmittal letter. Any exceptions must include identification of the specific paragraphs and rationale for each exception. Exceptions shall also be noted in the quote at the location of the exception. Volume Title I Technical Quote II Price Quote III Past Performance IV VPAT",
+                "page": 3,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "2.",
+                "title": "Offerors must comply with the detailed instructions for the format and content of the quote; quotes that do not",
+                "body": "comply with the detailed instructions for the format and content of the quote will be considered non- responsive and will render the offeror ineligible for award. \uf0b7 Quote Format: Offerors shall submit quotes in accordance with the following guidelines. All filenames shall include the offeror\u2019s company name and title/subject of content. \uf0b7 All documents requested herein shall be compatible with Microsoft Office formats or Adobe PDF. \uf0b7 Offerors shall identify all Non-FSS items or services in their quotations. 3. Page format The Technical Quote shall be single spaced and shall be printable on 8.5 x 11 inch paper containing text no smaller than 12 point for text and 9 point for graphics (including call out boxes and tables). Each page shall be inch foldouts only to display graphics, flow charts, organizational charts, or drawings. The technical proposal shall not exceed 40 single-spaced pages, excluding cover pages, table of contents, and other required appendices. The foldouts when used to meet a technical evaluation criteria or a SOW element in the technical quote, it must be included in the page count (each 11 x 17 can be counted as 1-page). Offerors are advised to strictly observe limitations on the length and format specified since review of the technical proposal will be limited to 40 pages. In addition, up to 10 pages for each Hypotheticals will be accepted. The clarity, relevance, and conciseness of the quote is important, not the length.",
+                "page": 3,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "4.",
+                "title": "Submission, Modification, Revision, and Withdrawal of Quotes",
+                "body": "",
+                "page": 3,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "a.",
+                "title": "Quotes and revisions of quotes shall be uploaded electronically via the GSA e-Buy RFQ system under",
+                "body": "the appropriate solicitation number. Offerors shall notify the Contracting Officer of any revisions to quotations before the closing date in GSA eBuy. b. Offerors shall submit quotes in response to this solicitation in English and in U.S. dollars. c. Quotes may be withdrawn at any time before award. Withdrawals are effective upon receipt of written notice by the Contracting Officer.",
+                "page": 4,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "d.",
+                "title": "The offeror shall not include general corporate marketing materials and shall focus their response on",
+                "body": "how they can meet these specific requirements.",
+                "page": 4,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "1.",
+                "title": "Understanding of the Need (10 points total)",
+                "body": "The Offeror shall reflect their knowledge and understanding of the Statement of Work (SOW) requirements contained in the RFQ. The Offeror shall explain, in their own words, a detailed understanding of the purpose of this RFQ and how well they can achieve the scope/objectives of the hypothetical scenario projects and tasks as defined in the SOW. The Offeror shall demonstrate their understanding of HRSA internal and external operating environment/partners (e.g., HRSA Bureaus and Offices, Hospitals, Universities, Health Centers, etc.)",
+                "page": 4,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "2.",
+                "title": "Technical Approach (10 points)",
+                "body": "The Offeror shall provide a detailed realistic description of the proposed technical approach/methodology to be used and how it will address the project requirements, scope, challenges, purpose, and vision for the Electronic Handbooks (EHBs) program. The Offeror shall demonstrate that its processes are compliant with Capability Maturity Model Integration (CMMI) Level 3 or ISO 9000 on Quality Management and provide written proof of CMMI Level 3 Certification or ISO 9000 family/series Certification at the time of quote submission. The Offeror shall demonstrate that all work activities associated with the proposed approach can be accomplished in a comprehensive manner. The Offeror shall demonstrate innovation in the proposed technical approach. Innovation is defined as continual evolution (i.e., modification, enhancement, and/or replacement) of the enterprise EHBs processing system to infuse new technologies and approaches as they become available throughout the life of the contract. The proposed approach should be results-oriented and improve e testing efficiency and the predictability of resourcing and scheduling needs. Furthermore, the approach should include a balanced input and output that is user friendly, simplistic and trackable. The Offeror shall demonstrate their ability to identify and deal with program risk, both in proactive and reactive (emergency) situations. Anticipated risks should be made clear and mitigation strategies presented proactively.",
+                "page": 4,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "3.",
+                "title": "Personnel (10 points)",
+                "body": "The Offeror must include the name(s) of Key Personnel (Attachment Q1 - EHBs V&V Labor Categories) with demonstrated current experience (defined as, within the last 3 years) managing similar BPA type vehicles. These individuals must possess and demonstrate experience involving Verification & Validation of Enterprise IT Systems. These individuals will be responsible for all activity under this BPA and the resulting completion of each BPA Call. These individuals should have experience in similar engagements and should be current employees of the Offeror. The skill level and qualifications of the BPA management Key Personnel shall be maintained throughout the completion of the BPA.",
+                "page": 4,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "4.",
+                "title": "Management and Staffing Plan (10 points)",
+                "body": "The Offeror shall describe the overall plan for adequately staffing, organizing and managing the tasks required by this contract. The plan shall indicate how organizational roles and responsibilities will be addressed, decisions made, work monitored, and quality and timeliness of products/services will be ensured. The Offeror shall explain how this management and staffing plan will enable the Offeror to start projects quickly, move efficiently by conducting multiple tasks concurrently, complete complex tasks within narrow timeframes, and assure the quality of products/services provided. If the Offeror proposes to use any Consultants or Subcontractor employees to carry out elements within the SOW under this BPA, the management staffing plan shall specify how the Offeror, Consultants and/or Subcontractors will work together, how the tasks will be coordinated, and how quality assurance will be accomplished. The Offeror shall describe their method of how employees are recruited and maintained for long-term assignments, whether they will be full-time permanent employees, part-time employees, temporary employees, term-of-contract personnel, independent Consultants, and/or Subcontractors are used. Also, describe proposed staffing methodologies when specialized or new skills are required. The Offeror shall describe its available internal and external resources to acquire and maintain an effective and efficient work force that will support HRSA\u2019s mission and produce timely and quality IT solutions. The Offeror shall identify all of the facilities and equipment that are available for the completion of all contract requirements. The Offeror\u2019s should describe corporate office locations in the event staff are required to work offsite at Offeror\u2019s site due to lack of space at HRSA facilities.",
+                "page": 5,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "5.",
+                "title": "Organizational Experience (10 points)",
+                "body": "The Offeror shall describe and demonstrate the organization\u2019s experience in successfully managing federal government contracts involving verification and validation of large Enterprise IT applications, best practices and similar projects. The Offeror shall provide a list and description of at least three (3) Enterprise IT verification and validation projects within the past three (3) years, or that they are currently performing, that demonstrates the Offeror\u2019s experience with similar scope, size, and/or complexity as this requirement. The Offeror shall demonstrate how their corporate experience specifically correlates to this project using a side-by-side \u201ccrosswalk\u201d comparison. Experience information must include a contract number, contract type, dollar value, date of award, performance period, and a brief narrative describing the nature and complexity of the work. Include name, current phone numbers, mailing address, and email address of the person who will verify this experience, the number of projects, complexity, workload, and dollar amount/contract value.",
+                "page": 5,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "6.",
+                "title": "Technical Approach to Resolving the Hypothetical Scenario Projects (50 points)",
+                "body": "Please note that the hypothetical projects are for evaluation purposes only and may not be awarded by the Government when the BPA contract is awarded. The Offeror shall describe practical approaches that could be used to address the following hypothetical scenarios (limit answers to 10 pages per scenario.) For the purposes of proposal evaluation, the Offeror is not expected to develop a fully conceived proposal. Rather, the intent is to show how the Offeror would approach the hypothetical requirement and the related present or past (within the last 3 years) experience they have delivering similar projects. The Offeror should note when their approach results in artifacts or deliverables. The response should include the following sections: 1) Requirements; 2) Assumptions; 3) Proposed technical design, 4) Proposed number and type of staff; 5) Approximate cost to complete each scenario and 6) Proposed timeframe to implement the scenarios. Offeror must support their approach using specific examples where they implemented the specific solution. Please highlight if you have provided services of similar scope and complexity for the Department of Health and Human Services. Offeror shall include a write up on current personnel that have experience delivering similar projects and why their experience is relevant to this hypothetical project delivery. These individuals should be employees or current Consultants of the Prime Offeror. The Offeror shall respond to each of the five hypothetical project area scenarios listed in this BPA solicitation. Each of these projects will be evaluated on a 10-point scale.",
+                "page": 5,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "1.",
+                "title": "The offeror shall identify the GSA schedule and contract utilized, the schedule price, any unit prices used",
+                "body": "any discounts proposed and any other relevant pricing information. The offeror's price quote shall consist of the following:",
+                "page": 11,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "2.",
+                "title": "Standard Form 1449, Request for Quotations: The offeror must complete the following Blocks:",
+                "body": "BLOCK 12 Complete if offering discount terms BLOCK 17a State the Name, Address, and Telephone No. of your organization. BLOCK 17b Complete if remittance address is different from that addressed in Block 17a BLOCK 30a If Block 28 is checked, provide the signature of the person with authority to bind your company BLOCK 30b If Block 28 is checked, provide the name and title of the signer BLOCK 30c If Block 28 is checked, provide the date signed",
+                "page": 11,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "3.",
+                "title": "Labor Categories: State the labor categories proposed, indicating discounted rates, if applicable, that are",
+                "body": "to be used over the life of the BPA. Include both on-site and off-site rates.",
+                "page": 11,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "4.",
+                "title": "Supporting Documentation: The offeror shall provide a copy of their GSA Rate Agreement and indicate",
+                "body": "discounts being offered. For the Parent BPA \u2022 Identity the labor category(ies) to be utilized for this effort (per task area), a description of the skills and experience per category, and the hourly rate(s) proposed, and any discounts. \u2022 Subcontractor rate information shall also be included, if allowable under the Offeror\u2019s GSA labor categories/rates. \u2022 Offerors should provide labor categories and labor rates for Task Areas. For BPA Hypotheticals (#1, #2, #3, #4 and #5)  \u2022 Furnish a cost breakdown in support of the statement of work and deliverables for each call order. Cost breakdown for each Call Order should also be broken out by each SOW task. \u2022 State the labor categories, estimated number of hours, hourly rates per task - (use the SOW provided for each call order). \u2022 Providing any discounts offered to your best value customer. \u2022 Consultant Fees: State number of days and daily rate for each expertise required (ONLY if allowable under your GSA schedule) \u2022 Travel: Provide breakdown of transportation charges, lodging, and per diem (if applicable to Call Order SOW). \u2022 Other Direct Costs: Provide cost for materials, supplies, telephone, etc. NOTE: HRSA DOES NOT INTEND TO PROVIDE FUNDS FOR THE PURCHASE OR LEASE OF",
+                "page": 11,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "",
+                "title": "ANY EQUIPMENT.",
+                "body": "Factor 3: Past Performance Questionnaire (see Attachment D) Offeror\u2019s shall submit a total of three (3) past performance references for the technical proposal where the Offeror was the prime contractor or subcontractor for relevant work completed within the past 3-5 years as required by this solicitation. \u201cRelevant\u201d is defined as similar in size, scope and complexity to this procurement. If the Offeror has not held any relevant Federal contracts, then the Offeror may submit references from state/local, private sector clients, or Federal clients using the Past Performance Questionnaire (Attachment H). Offeror\u2019s shall forward a copy the Past Performance Questionnaire to their clients to complete. The completed questionnaire shall be submitted by the client in PDF format by April 8, 2022 at 11:00 a.m. EST via email to JKozar@hrsa.gov. If not received by the deadline, the questionnaire may or may not be considered as a reference. In the case of an Offeror without a record of past performance or for whom information on past performance is not available, the Offeror may not be evaluated favorably or unfavorably. Therefore, the Offeror shall be determined to have a neutral past performance. The Government reserves the right to obtain information for use in the evaluation of past performance from any and all sources including sources outside the government. Acceptable methods for providing a total of three (3) past performance references are: a. Past Performance Questionnaire (Attachment H). b. Contractor Performance Assessment System (CPARS) reports/ratings. c. Combination of questionnaires and CPARS reports/ratings. Factor 4: Section 508. The Offeror shall submit a Voluntary Product Accessibility Template (VPAT) in accordance with HHSAR provision below. 352.239-73 Electronic Information and Technology Accessibility Notice (DEC 2015) (a) Section 508 of the Rehabilitation Act of 1973 (29 U.S.C. 794d), as amended by the Workforce Investment Act of 1998 and the Architectural and Transportation Barriers Compliance Board Electronic and Information (EIT) Accessibility Standards (36 CFR part 1194), require that when Federal agencies develop, procure, maintain, or use electronic and information technology, Federal employees with disabilities have access to and use of information and data that is comparable to the access and use by Federal employees who are not  individuals with disabilities, unless an undue burden would be imposed on the agency. Section 508 also requires that individuals with disabilities, who are members of the public seeking information or services from a Federal agency, have access to and use of information and data that is comparable to that provided to the public who are not individuals with disabilities, unless an undue burden would be imposed on the agency. (b) Accordingly, any offeror responding to this solicitation must comply with established HHS EIT accessibility standards. Information about Section 508 is available at http://www.hhs.gov/web/508. The complete text of the Section 508 Final Provisions can be accessed at http://www.access-board.gov/guidelines- and-standards/communications-and-it/about-the-section-508-standards. (c) The Section 508 accessibility standards applicable to this solicitation are stated in the clause at 352.239- 74, Electronic and Information Technology Accessibility. In order to facilitate the Government\u2019s determination whether proposed EIT supplies meet applicable Section 508 accessibility standards, offerors must submit an HHS Section 508 Product Assessment Template, in accordance with its completion instructions. The purpose of the template is to assist HHS acquisition and accessibility standards. The template allows offerors or developers to self-evaluate their supplies and document\u2014in detail\u2014whether they conform to a specific Section 508 accessibility standard, and any Evaluation Template are available under Section 508 policy on the HHS website http://www.hhs.gov/web/508. In order to facilitate the Government\u2019s determination whether proposed EIT services meet applicable Section 508 accessibility standards, offerors must provide enough information to assist the Government in determining that the EIT services conform to Section 508 accessibility standards, including any underway remediation efforts addressing conformance issues. (d) Respondents to this solicitation must identify any exception to Section 508 requirements. If a offeror claims its supplies or services meet applicable Section 508 accessibility standards, and it is later determined by the Government, i.e., after award of a contract or order, that supplies or services delivered do not conform to the described accessibility standards, remediation of the supplies or services to the level of conformance specified in the contract will be the responsibility of the Contractor at its expense. Note: The HHS Section 508 Product Assessment Template (PAT) that is referenced above in 352.239-73 Electronic Information and Technology Accessibility Notice, Paragraph (c), has been replaced with the Voluntary Product Accessibility Template Version (VPAT) 2.1 or later, and is considered to meet HHS PAT requirement. The new form can be downloaded from https://www.itic.org/policy/accessibility/vpat.",
+                "page": 12,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "",
+                "title": "EVALUATION FACTORS FOR AWARD",
+                "body": "The Government will select the responsible GSA schedule offeror whose quote, in conforming to this RFQ, provides the best value to the Government. Best Value Determination: Determining the best value of the quote includes the following four factors: \uf071 Factor 1: Technical  \uf071 Factor 2: Price (each offeror\u2019s proposed price will be analyzed to determine fairness, reasonableness, compliance and completeness) \uf071 Factor 3: Past Performance will be evaluated on the offeror\u2019s proposed on-site and off-site labor rates for each labor category required across the life of the BPA, any applicable discounts, and proposed prices for the Hypotheticals. Factor 3 will be evaluated on an \u201cacceptable\u201d or \u201cunacceptable\u201d basis. Factor 4 will be evaluated independently from the other factors as stated below. Technical and Past Performance, individually and when combined are more important than Price; Technical is paramount and is more important than Past Performance. In the event that the technical and past performance evaluation reveals that two (2) or more offers are approximately equal, then the price will become increasingly more important. Factor 1 - Technical will be rated based on the following: WEIGHT",
+                "page": 13,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "6.",
+                "title": "Technical Approach to Resolving the Hypothetical Scenario Projects",
+                "body": "",
+                "page": 14,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "1.",
+                "title": "Proposed on-site and off-site labor rates for each labor category required across the life of the BPA, and",
+                "body": "any applicable discounts, and",
+                "page": 14,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "2.",
+                "title": "Proposed prices for the Hypotheticals.",
+                "body": "The Government reserves the right to reject any quote that includes any assumption(s) that adversely impact(s) the Government\u2019s requirements or fails to comply with any of the requirements outlined herein. Factor 3 - Past Performance The Offeror\u2019s past performance will be evaluated in accordance with the following Past Performance Relevancy Rating Standards and Performance Confidence Assessments Standards. The Government will conduct a past performance evaluation of the Offeror\u2019s past performance as well as that of its subcontractors (if applicable). Past performance consists of past performance relevancy and performance confidence; thus, the Offeror will be assigned two (2) ratings for past performance: First, the Government will evaluate the Offeror\u2019s past performance references to determine how relevant a recent effort is to the current requirement for source selection. Common aspects of relevance include similarity of service/support, complexity, magnitude of effort, dollar value, and contract type. Second, the Government will evaluate the Offeror\u2019 s past performance to determine the quality of work performed and assess the level of expectation that the Offeror can successfully perform the required effort. Past PastPerformancePerformanceRelevancyRelevancy RatingRatingStandardsStandards Rating Definition Very Relevant Present/past performance effort involved essentially the same scope and magnitude of effort and complexities this solicitation requires. Relevant Present/past performance effort involved similar scope and magnitude of effort and complexities this solicitation requires. Somewhat Relevant Present/past performance effort involved some of the scope and magnitude of effort and complexities this solicitation requires. Not Relevant Present/past performance effort involved little or none of the scope and magnitude of effort and complexities this solicitation requires. Performance Confidence Assessment Standards Rating Description Exceptional Confidence Based on the Offeror\u2019s recent/relevant performance record, the Government has very high expectations that the offeror will successfully perform the required effort. Very Good Confidence Based on the Offeror\u2019s recent/relevant performance record, the Government has very good expectations that the offeror will successfully perform the required effort. Satisfactory Confidence Based on the offeror\u2019s recent/relevant performance record, the Government has reasonable expectations that the offeror will successfully perform the required effort.  Marginal Confidence Based on the offeror\u2019s recent/relevant performance record, the Government has minimal expectations that the Offeror will successfully perform the required effort. Unsatisfactory Confidence Based on the offeror\u2019s recent/relevant performance record, the Government has no expectation that the Offeror will successfully perform the required effort. Unknown Confidence No recent/relevant performance record is available or the offeror\u2019s performance (Neutral) record is so sparse that no meaningful confidence assessment rating can be reasonably assigned. The evaluation of the VPAT is independent from the other factors and will be based on the demonstrated capabilities of the prospective Offeror to meet the requirements of all the applicable Section 508 standards as listed in HHSAR clause 352.239-74 Electronic and Information Technology Accessibility. Alternatively, Offerors may propose goods or services that provide equivalent facilitation. Such offers will be considered to have met the standards of the Access Board\u2019s standards for the feature or component providing equivalent facilitation. If none of the Offerors propose goods or services that fully meet all of the applicable Access Board\u2019s standards, those Offerors whose products or services meet some of the applicable standards will be considered eligible for award. ICT vs. EIT Procurement documentation from HHS or other agencies may contain references to \u201cEIT\u201d (Electronic and Information Technology) and \u201cICT\u201d (Information and Communications Technology). HHS considers these terms to be interchangeable, and \u201cEIT\u201d should always be interpreted to be \u201cICT\u201d in any HHS procurement. The Section 508 VPAT will be evaluated as described in this chart. ICT Products fully meet intent of all applicable Section 508 Standards. Risk Green of failure to meet all Section 508 Requirements is very low. ICT Products can be made capable of meeting the intent of all applicable products. Risk of failure to meet all Section 508 Requirement is low. Standards or the VPAT is materially incomplete. Risk of failure to meet all Red",
+                "page": 14,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "6.",
+                "title": "Knowledge and Skills",
+                "body": "The Contractor shall identify the resources necessary to successfully perform the work contained herein. Contractor shall possess and maintain the requisite knowledge and expertise to successfully accomplish the objectives of this Statement of Work. The Contractor will be responsible for ensuring that, at a minimum, the proposed resource(s) possesses the following: \u25cf Proven development performance with the use of Drupal Content Management System and \u25cf Minimum of 5 years of programing/database admin experience. \u25cf General knowledge of DOI HR policies / processes. \u25cf The ability to write, and verbally present complex subjects in a clear and concise manner.",
+                "page": 4,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "9.",
+                "title": "Contacts",
+                "body": "Contracting Officer (CO): Lorenzo Aragon; E-Mail: Lorenzo_aragon@fws.gov; Ph# 505-248-6627",
+                "page": 5,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "10.",
+                "title": "Information Security Non-Disclosure",
+                "body": "The resultant Contract will be in accordance with the information security and non-disclosure terms and conditions as prescribed by FWS IT security policy.",
+                "page": 5,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
                 "title": "Offeror Qualifications and Experience",
                 "body": "The offeror shall provide a company overview, including years in business, number of employees, and core mission statement. The proposal must include a list of at least three similar projects completed within the last five years, including project value, scope, and client references. Describe your firm's experience working with federal agencies and any relevant certifications (e.g., CMMI Level 3, ISO 9001).",
                 "true_label": "Company Info"
@@ -185,59 +521,123 @@
                 "true_label": "Company Info"
             },
             {
-                "title": "Corporate Overview and History",
-                "body": "Founded in 2005, TechInnovate Solutions Inc. has been a trusted provider of enterprise software development and digital transformation services for over 18 years. Our mission is to empower businesses through cutting-edge technology and deep industry expertise. We are a privately-held company headquartered in Austin, Texas, with additional offices in London and Singapore.",
+                "title": "Corporate History and Founding Principles",
+                "body": "The offeror shall provide a detailed corporate history including founding date, original mission statement, and key company development milestones. The proposal must describe the offeror's core values and cultural principles that guide business operations. The offeror shall include information about corporate ownership structure and any parent company or subsidiary relationships.",
                 "true_label": "Company Info"
             },
             {
-                "title": "Relevant Past Performance",
-                "body": "Our team recently completed a project of similar scale and complexity for the Department of Public Works, which involved modernizing their legacy permitting system. The project was delivered on time and 15% under budget, resulting in a 40% reduction in application processing time. References and case studies are available upon request.",
+                "title": "Executive Leadership Profiles",
+                "body": "The offeror must submit professional profiles of the executive leadership team, including the CEO, CTO, and other key executives. Each profile shall include educational background, years of industry experience, previous leadership roles, and specific expertise relevant to this procurement. The offeror shall describe the leadership team's vision and their commitment to government contracting excellence.",
                 "true_label": "Company Info"
             },
             {
-                "title": "Management Team Qualifications",
-                "body": "Our proposed project manager, Jane Doe, PMP, has over 15 years of experience managing IT integration projects for federal clients. She holds a Master's degree in Information Systems and has successfully led five projects with a total value exceeding $20M, all of which met or exceeded performance metrics.",
+                "title": "Industry Certifications and Accreditations",
+                "body": "The offeror shall provide a comprehensive list of all relevant industry certifications and accreditations held by the company, including dates obtained and expiration dates. The proposal must include certifications such as ISO standards, CMMI maturity levels, and any government-sponsored certification programs. The offeror shall provide certificate numbers and issuing organizations for verification purposes.",
                 "true_label": "Company Info"
             },
             {
-                "title": "Corporate Capabilities Statement",
-                "body": "Our firm holds ISO 9001:2015 certification for quality management and ISO 27001 for information security management. We maintain a dedicated quality assurance team and a CMMI Level 3 rated development process, ensuring consistent and reliable delivery of high-quality software solutions.",
+                "title": "Client Testimonials and Success Stories",
+                "body": "The offeror must provide at least five client testimonials from previous government or commercial clients that demonstrate the company's performance excellence. The proposal shall include specific examples of successful project delivery, problem-solving capabilities, and client satisfaction. Each testimonial must include the client organization, project scope, and measurable outcomes achieved.",
                 "true_label": "Company Info"
             },
             {
-                "title": "Company Mission and Values",
-                "body": "At DataSecure LLC, our mission is to build resilient and secure digital infrastructure that protects our clients' most critical assets. Our core values of integrity, innovation, and client partnership guide every project we undertake and every interaction we have.",
+                "title": "Employee Qualifications and Expertise",
+                "body": "The offeror shall detail the overall qualifications of their workforce including the percentage of staff with advanced degrees, professional certifications, and security clearances. The proposal must provide statistics on average years of experience in relevant technical domains and federal contracting. The offeror shall describe their approach to maintaining a highly skilled and technically competent workforce.",
                 "true_label": "Company Info"
             },
             {
-                "title": "Key Personnel Resumes",
-                "body": "The lead architect proposed for this effort, Dr. Alan Smith, possesses a Ph.D. in Computer Science and holds active certifications as an AWS Solutions Architect Professional and Google Cloud Professional Data Engineer. He has authored three patents in the field of distributed data systems.",
+                "title": "Corporate Risk Management Approach",
+                "body": "The offeror must describe their corporate risk management philosophy and risk mitigation strategies. The proposal shall detail the offeror's experience managing risks on similar projects and their approach to identifying, assessing, and mitigating potential issues. The offeror shall include information about corporate insurance coverage and risk transfer mechanisms.",
                 "true_label": "Company Info"
             },
             {
-                "title": "Corporate Experience Profile",
-                "body": "We have served over 200 clients in the financial services and healthcare sectors, providing us with deep regulatory knowledge of HIPAA and FINRA requirements. This extensive experience ensures our solutions are built with compliance and security as foundational principles from the outset.",
+                "title": "Business Continuity and Disaster Recovery",
+                "body": "The offeror shall provide an overview of their corporate business continuity and disaster recovery capabilities. The proposal must describe infrastructure redundancy, data backup strategies, and recovery time objectives. The offeror shall include information about any recent business continuity tests or certifications the company has undergone.",
                 "true_label": "Company Info"
             },
             {
-                "title": "Corporate Structure and Stability",
-                "body": "Global Systems Integrators is a publicly traded company (NYSE: GSI) with a stable financial history and over 5,000 employees worldwide. Our strong balance sheet and AA credit rating demonstrate our financial viability and capacity to undertake a multi-year project of this magnitude.",
+                "title": "Corporate Compliance and Regulatory Experience",
+                "body": "The offeror must detail their experience with federal compliance requirements including FAR, DFARS, and other applicable regulations. The proposal shall describe the offeror's internal compliance programs, audit processes, and experience with government audits. The offeror shall provide examples of successfully navigating complex regulatory environments.",
                 "true_label": "Company Info"
             },
             {
-                "title": "Differentiators and Strengths",
-                "body": "What sets our company apart is our exclusive focus on the public sector and our dedicated in-house team of security-cleared developers. This allows us to rapidly onboard and begin work on sensitive projects without the delays associated with subcontracting or obtaining new clearances.",
+                "title": "Organizational Capacity and Resource Availability",
+                "body": "The offeror shall describe their corporate capacity to take on new work, including current workload, available resources, and expansion capabilities. The proposal must provide information about the recruitment pipeline, training programs, and ability to scale resources to meet project demands. The offeror shall include details about bench strength and resource management strategies.",
                 "true_label": "Company Info"
             },
             {
-                "title": "Client Testimonials and References",
-                "body": "We have consistently received exceptional past performance ratings from our clients. A representative from our previous client, Citywide Utilities, stated: 'The vendor's team was integral to our project's success, demonstrating exceptional technical skill and a true partnership approach.' Full contact information for three references is provided in Section 7.",
+                "title": "Corporate Awards and Recognition",
+                "body": "The offeror must list any industry awards, performance recognition, or quality awards received in the past five years. The proposal shall include awards for project excellence, workplace quality, innovation, or other relevant achievements. The offeror shall provide context for each award including the awarding organization and criteria for selection.",
                 "true_label": "Company Info"
             }
         ]
     },
     "Timeline": {
         "sections": [
+            {
+                "id": "B.",
+                "title": "Duration",
+                "body": "\u2022 The engagement duration for the professional services will be for a period of fourteen (14) months. Renewal will depend on the satisfactory performance of the PSP based on the results of performance evaluation. \u2022 This SOW may be revised during the life of the contract based on ADB\u2019s changing business requirements with the necessary adjustments on the pricing based on the required revisions through mutual agreement between ADB and the PSP.",
+                "page": 6,
+                "parent_id": null,
+                "true_label": "Timeline"
+            },
+            {
+                "id": "A.",
+                "title": "Project Timeline",
+                "body": "The engagement will be for a period of fourteen (14) months. Renewal will depend on the satisfactory performance evaluation.",
+                "page": 8,
+                "parent_id": null,
+                "true_label": "Timeline"
+            },
+            {
+                "id": "B.",
+                "title": "Project Cost & Payment Milestone",
+                "body": "This is a fixed price engagement. Service Provide shall provide all the services and deliverables to ADB under this SOW for the fixed price ADB shall pay upon ADB\u2019s acceptance of the deliverables, according to the following milestones payment schedules: Deliverables / Acceptance Phase Milestone Duration Percentage Criteria Submission of countersigned",
+                "page": 8,
+                "parent_id": null,
+                "true_label": "Timeline"
+            },
+            {
+                "id": "0",
+                "title": "Contract signing      contract and other required                      10%",
+                "body": "contractual documents Kick-off meeting Kick-off meeting completed 1-2 weeks 0 Submission of Submission of a satisfactory 10% (estimate) Detailed-level AI solution design document, accepted Lab Framework by ADB and Architecture (AI and Big Data) Implementation of -Submission of satisfactory the Lab Framework documented tools, framework, best",
+                "page": 8,
+                "parent_id": null,
+                "true_label": "Timeline"
+            },
+            {
+                "id": "1",
+                "title": "Foundation building   practice guides and engineering      4-6 weeks        10%",
+                "body": "(architecture, tools standards, and responsible AI and infrastructure) Framework, security alignment -Establish business outcomes & success criteria, accepted by ADB -Production ready AI and Big Data Lab (segregation of development and production environment), accepted by ADB 5% after the design and -Design and build each AI build is Design and Build 1 accepted by or more Data Estimated 2 ADB. Product + Design months per AI 5% upon and Build 1 AI product completion of -Application development, Product application Application of responsible AI development, Framework plus 1 Data Product accepted by ADB. 5% after the design and -Design and build each AI build is Design and Build 1 accepted by or more Data Estimated 2 ADB. Product + Design months per AI 5% upon and Build 1 AI product completion of -Application development, Product application Application of responsible AI development, Framework plus 1 Data Product accepted by ADB. 5% after the",
+                "page": 8,
+                "parent_id": null,
+                "true_label": "Timeline"
+            },
+            {
+                "id": "2",
+                "title": "design and",
+                "body": "-Design and build each AI build is Design and Build 1 accepted by or more Data Estimated 2 ADB. Product + Design months per AI 5% upon and Build 1 AI product completion of -Application development, Product application Application of responsible AI development, Framework plus 1 Data Product accepted by ADB. 5% after the design and -Design and build each AI build is Design and Build 1 accepted by or more Data Estimated 2 ADB. Product + Design months per AI 5% upon and Build 1 AI product completion of -Application development, Product application Application of responsible AI development, Framework plus 1 Data Product accepted by ADB. Design and Build 1 Estimated 2 5% after the or more Data -Design and build each AI months per AI design and Product + Design product build is and Build 1 AI accepted by Product ADB. 5% upon completion of -Application development, application Application of responsible AI development, Framework plus 1 Data Product accepted by ADB. Successfully passes external quality",
+                "page": 9,
+                "parent_id": null,
+                "true_label": "Timeline"
+            },
+            {
+                "id": "3",
+                "title": "Quality Review       review on AI models and addresses                 10%",
+                "body": "any action points Final Project Sign- Submission of satisfactory Final4 10% off Project Report, accepted by ADB",
+                "page": 10,
+                "parent_id": null,
+                "true_label": "Timeline"
+            },
+            {
+                "id": "7.",
+                "title": "Period of Performance",
+                "body": "The period of performance of this contract will be for 12 months beginning on the date of award. *Subject to further interpretation of the estimated requirements",
+                "page": 5,
+                "parent_id": null,
+                "true_label": "Timeline"
+            },
             {
                 "title": "Project Schedule and Key Milestones",
                 "body": "The total period of performance for this contract shall be 12 months from the date of award. Key milestones include: Completion of Requirements Gathering by Month 1, Final Design Approval by Month 3, System Implementation by Month 8, User Acceptance Testing (UAT) by Month 10, and Final Project Sign-off by Month 12. The contractor must provide a detailed Gantt chart outlining all activities and dependencies.",
@@ -317,6 +717,102 @@
     },
     "Technologies": {
         "sections": [
+            {
+                "id": "C.",
+                "title": "Environment Details",
+                "body": "\u2022 The contractor will provide manage service on the below items required for development",
+                "page": 7,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "",
+                "title": "\u2022  ADB DXP",
+                "body": "\u2022 10 -15 Data products \u2022 5-8 AI Projects \u2022 Required Activities \u2022 The following activities must be part of the contractor\u2019s deliverables: \u2022 Creation and maintenance of ADB's LLM Enterprise architecture \u2022 Software development following best practices (unit testing, creation of common libraries, CI/CD, IaC, modern UI/UX) \u2022 LLM Data Science Experimentation (Prototyping ideas of LLM applications \u2022 Production Grade Application deployment (Infrastructure Monitoring, Backup and Recovery, Cost Optimization, Performance Monitoring) \u2022 Security and Compliance (documentation & architecture compliant with ADB's security policies) \u2022 Data Platform Lifecycle (Creation of reliable and efficient data pipelines for the LLM's consumption, end to end data lineage) \u2022 Develop and Adherence to industry standard responsible ai framework",
+                "page": 7,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "a.",
+                "title": "Technical Approach for Hypothetical #1, Cloud Readiness and Enhancements - 10 points",
+                "body": "HRSA Test Harness is an Enterprise Test Automation Platform that standardizes automated testing processes and promotes collaboration across multiple vendors to support the HRSAs IT mission. The framework supports industry standard testing methodologies such as Data Driven Testing (DDT) and Behavior Driven Development (BDD). It provides an interface to users to define workflows to automate functional testing for an application. These workflows can then be executed against various environments as the software propagates from lower environments to higher ensuring the integrity and quality of the software product. The solution provides the capability for users to create test suites within the application UI with little or no coding. The configured test suites can then be executed either on demand or on a schedule in any given environment. All tests provide detailed reports that allows the user to identify potential defects with the product(s) being tested. The Test Automation Framework natively integrates with enterprise products like Jira for incident management, Jenkins for CI/CD, JMeter for performance testing, and RedGate for test data generation. Refer all the relevant documents such as architecture, tools and technologies and technical design documents while responding to this hypothetical project. Current Challenges Current Test automation Test automation framework is designed to support and implement the automation tests for EHBs. Solution shall consider refactoring / Re-engineering the existing Test automation framework for cloud adoption and readiness. Proposed solution shall also consider  disaster recovery, loosely coupled architecture for APIs, Test Framework execution by bureaus in a containers, incremental modernization, maintaining backward compatibility until the system is fully modernized and migrated, system performance, scalability and cost savings in cloud space using the combination of Infrastructure as Service (IaaS), Platform as Service (PaaS) and Software as Service (SaaS). HRSA is also looking for a riskless migration path to modernize the system in specified duration without impacting business and performance of the current system. Please describe your strategy and approach for Cloud readiness and modernization. Specifically, the Offeror shall address the following requirements: \uf0b7 Review and provide the strategy for cloud adoption and readiness. \uf0b7 Propose the Cloud readiness architecture for all the core components of test harness. The modernization strategy should align with continuous delivery principles. \uf0b7 Enhance Test Harness platform to natively support cloud API testing and provision for third party tools integration \uf0b7 Create service containers for portability, management and test execution. \uf0b7 Ensure Data integrity and protection during transit and at rest. \uf0b7 Cloud adoption strategy should include o Configure auto scaling for performance and maximum throughput o Monitor, measure and Enhance security posture for cloud adoption \uf0b7 Interfaces and systems need to be covered while planning the cloud migration o Detect coordination problems in cloud environment \u2013 this is to ensure the applications are well configured with cloud environment",
+                "page": 6,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "b.",
+                "title": "Technical Approach for Hypothetical #2, EHBs Test Automation Framework and platform",
+                "body": "Enhancements - 10 points HRSA Test Automation framework is currently hosted in HRSA network and leveraged for EHBs Test Automation activities in a multi-vendor environment. This Self-service framework is used for implementing new test suites with minimal/no code modifications by the testing engineering team. Framework was built in selenium actions to support wide range HTML controls within EHBs. Import/Export utility to migrate the test automation scripts between various test environments. Test Harness API interface is used for bulk executing smoke test scripts during EHBs module releases and system maintenance. Framework supports parallel execution by setting up workflows and form properties from within the application UI. Integration with third party libraries, COTS products and multi-factor authentication to support any type of endpoint in a secured way. Current Challenges In a constantly evolving technology and usability environment, enhancements are ongoing and require frequent user engagement, usability testing, and a feedback loop. This poses several challenges in capturing different user perspectives, different changes to maintain and modernize the system to meet changing requirements with advanced technology. Here is the summary of the key challenges:",
+                "page": 7,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "6)",
+                "title": "Security compliance - ensuring that all enhancements meet the HRSA\u2019s security",
+                "body": "requirements. The Offeror should describe their strategy and approach to apply unique methodologies, automation frameworks, tools, and techniques to perform usability, accessibility and security compliance testing for ongoing enhancements and upgrades. Specifically, the Offeror shall address the following requirements: \uf0b7 Propose a cost-effective and innovative approach to perform usability testing. \uf0b7 Provide a build-test optimized model to promote agility and automation of Test scripts and test harness platform \uf0b7 Solution must be compatible and address challenges specific to portability, reliability and scalability. \uf0b7 Propose an approach, tools and techniques to perform usability, accessibility, security compliance and cross browser compatibility, performance, and integration and role bases testing. \uf0b7 Provide an automated regression test strategy and outline a test architecture to simplify the regression testing challenges. The proposed strategy should be feasible, realistic, and actionable. \uf0b7 Propose effective solution to maintain the versioning and tracing the changes in functionality to lowest level. \uf0b7 Open to integrate with third-party components or utilities and connect with open source technologies. \uf0b7 Promote effective strategies for Usability, Data generation and Training requirements. \uf0b7 Enhance the DEVSecOps Pipeline Integration process for continuous test suite integration. \uf0b7 Integration to Team Foundation Server to convert user stories to automated test cases.",
+                "page": 8,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "c.",
+                "title": "Technical Approach for Hypothetical #3, Predictive defect analytics and visual testing using",
+                "body": "Artificial Intelligence and Machine Learning (AI/ML) - 10 points HRSA Test Automation framework is currently hosted in HRSA network and leveraged for EHB Test Automation activities. It is a Self-service framework to implement new test suites with minimal/no code modification. The framework supports industry standard testing methodologies such as Data Driven Testing (DDT) and Behavior Driven Development (BDD). It provides an interface to users to define workflows to automate functional testing for an application. Built in selenium actions to support wide range HTML controls within EHBs. The Test Automation Framework natively integrates with enterprise products like Jira for incident management, Jenkins for CICD, JMeter for performance testing, and RedGate for test data generation.  Current Challenges How to increase predictive defect analysis to identify dependencies and patterns to ultimately produce recommendations or provide a business with insights, thus contributing to data-driven decision- making. User Interface visual testing is a coverage gap in the current regression test suites. Exposure for visualization related defects getting promoted to production and resulting the inconsistency across the modules, which is impacting end-user experience and overall customer satisfaction. Predicting release risk based on release constraints such as Number of Features, Release Duration, Resource Proficiency and module complexity. Currently HRSA uses JIRA and TFS tools to record and track the defects and incidents Please describe your strategy and approach for proactively predicting the defects that could occur and identifying the inconsistencies across the modules. Offeror also shall describe the method for conducting automated visualization testing to identify the UI inconsistencies. Specifically, the Offeror shall address the following requirements: \uf0b7 Provide AI data assurance strategy to validate the business functionality, address key functional testing activities and focus on nonfunctional aspects. \uf0b7 Stream the processing principles to help prepare data in motion. \uf0b7 Provide AI/ML driven testing solution for: o Predictive defect analysis and recommendations during the testing phase o System, data and meta data validation in Test harness o Co-relating the logs and identify the root cause to improve the incident tracking and troubleshooting process \uf0b7 Introduce an AI/ML driven process to automatically select appropriate test workflow(s) for regression test based on the code checked in by developers. Refer EHBs test harness documentation for more details \uf0b7 Enhance Test Harness framework to integrate AI/ML technology to enable visual testing in the automation workflow o Visual testing to include following test scenarios: \uf0a7 Identify distortions in the UI due to code changes, form factor or browser compatibility \uf0a7 Role based UI views across modules.",
+                "page": 8,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "d.",
+                "title": "Technical Approach for Hypothetical #4, 508 compliance Verification - 10 points",
+                "body": "HRSA Test Automation framework is currently hosted in HRSA network and leveraged for EHB Test Automation activities. Electronic handbooks contains more than 60 modules supporting the different bureau policy changes. Legislative and business policy changes trigger frequent releases, causing challenges in verification and validation activities. Current Challenges In an agile business environment, enhancements are ongoing and require frequent user engagement, usability testing, and a feedback loop. Performing manual 508 verification for all new developments and frequent system changes is a recurring and required activity to comply with EPLC process. It is important that the web pages be developed using accessibility best practices, which is often performed hastily, and sometimes is overlooked altogether. The Offeror should describe their strategy and approach to apply unique methodologies, tools, and  techniques to perform 508 compliance verification for ongoing enhancements and upgrades. Offeror shall also propose a solution to automatically execute these test scripts from DEVSecOps pipeline. Specifically, the Offeror shall address the following requirements: conformance testing tool to automatically test and scan electronic content of EHB\u2019s. \uf0b7 Proposed tool must foster adoption in multi-vendor agile environment \uf0b7 Proposed tool should customize scanning and test ruleset parameters. \uf0b7 Control and synchronize error and remediation messages presented to users for customized rules. \uf0b7 Flag false positives and ensure the errors are not repeated in subsequent test results. \uf0b7 Categorize issues by type, frequency, and severity. \uf0b7 Integrate test tools and conformance monitoring into test automation environments (Dev/Ops). \uf0b7 Produce accessible system and report outputs for EPLC reviews",
+                "page": 9,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "2)",
+                "title": "The data creation for testing is laborious and complex requiring good understanding of the prior",
+                "body": "processes. The Offeror should describe their strategy and approach to apply unique methodologies, automation frameworks, tools, and techniques to automatically generate the data for testing and training. In addition, offeror shall also propose a method to integrate the process using robust data validation engine using RPA. Specifically, the Offeror shall address the following requirements:  \uf0b7 Propose an automation regression test strategy for the specific EHB modules with data complexity including data centric use cases. \uf0b7 The automation test strategy should align with continuous delivery principles by integrating the services with EHBs test harness platform \uf0b7 The strategy should ensure data-centric use cases and ensure that the business rules are validated. \uf0b7 The solution should ensure the data integrity and quality checks are performed using an automated approach \uf0b7 Propose an automation regression test approach and roll out for the data generation process that is feasible and realistic.",
+                "page": 10,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "a.",
+                "title": "Technical Approach for Hypothetical #1, Cloud Readiness and",
+                "body": "Enhancements - 10 points",
+                "page": 14,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "b.",
+                "title": "Technical Approach for Hypothetical #2, EHBs Test Automation",
+                "body": "Framework and platform Enhancements \u2013 (10 points) visual testing using Artificial Intelligence and Machine Learning (AI/ML)\u2013 (10 points)",
+                "page": 14,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "d.",
+                "title": "Technical Approach for Hypothetical #4, 508 compliance Verification \u2013",
+                "body": "(10 points)",
+                "page": 14,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "e.",
+                "title": "Technical Approach for Hypothetical #5, Robotic Process Automation",
+                "body": "(RPA) and Data Generation Testing - 10 points Factor 2 \u2013 Price will be evaluated based on the offerors\u2019:",
+                "page": 14,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
             {
                 "title": "Environment and Tech Stack",
                 "body": "The solution must be developed using a modern, open-source tech stack. The backend shall be built in Python 3.9+ utilizing the Django web framework. The frontend must be implemented in React.js (v18+) with TypeScript. The database layer shall use PostgreSQL (v14+). All code must be containerized using Docker and orchestrated via Kubernetes. Version control is mandatory using Git in a GitHub repository.",

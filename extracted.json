@@ -2,170 +2,156 @@
     "Scope": {
         "sections": [
             {
-                "id": "A.",
-                "title": "Scope",
-                "body": "\u2022 As set out in this SOW, the PSP is expected to meet each requirement in the delivery of efficient operational support on AI and Big Data Platforms and initiatives.",
-                "page": 6,
+                "id": "1.",
+                "title": "Introduction",
+                "body": "The US Fish & Wildlife Service (FWS, the Service) is in need of a Drupal development group to rebuild the Invasive Carp Regional Coordinating Committee site as a small-scale content management system in the latest version of Drupal (currently Drupal 9). Working alongside the Service, the contractor shall provide expertise to work through a design review of the current site and then develop a new version to facilitate a full migration off the old environment.",
+                "page": 3,
+                "parent_id": null,
+                "label": "Scope"
+            },
+            {
+                "id": "2.",
+                "title": "Background",
+                "body": "A content management system, or CMS, is an application used to manage and publish web content. It allows multiple users to contribute, create, edit, and publish content without needing to have a web development skillset. It can also provide version management and authoring workflow to keep webpages consistent. Historically, management of the Invasive Carp website has suffered from complex content entry procedures and bottlenecks due to lack of resources/expertise in managing html. The rebuild of this site in a modernized content management system aims to achieve a straightforward content entry workflow that can be easily adopted and improve upon prior challenges of managing the site.",
+                "page": 3,
+                "parent_id": null,
+                "label": "Scope"
+            },
+            {
+                "id": "5.",
+                "title": "Assumptions",
+                "body": "The Service assumes the following in regard to contractor approach: \u2022 While it is intended that the contractor approaches the site rebuild effort with an eye towards design improvements, it is not expected to be a full-fledged redesign effort - the most important requirements are focused on ease of managing the content on the site (in other words, the Service does not intend to spend an abundance of time on a completely new design) \u2022 There are two main parts to the CMS: (1) A content management interface allowing content creators to work with content directly by inputting content via templates and (2) a front-end display that takes the content entered into templates and renders it as a cohesive working website. Content entry forms should be configured with ease of use/simplicity as a priority",
+                "page": 4,
+                "parent_id": null,
+                "label": "Scope"
+            },
+            {
+                "id": "8.",
+                "title": "Place of Performance",
+                "body": "All work shall be performed remotely via Government Approved Remote Access solutions unless otherwise agreed upon.",
+                "page": 5,
+                "parent_id": null,
+                "label": "Scope"
+            },
+            {
+                "id": "10.",
+                "title": "Information Security Non-Disclosure",
+                "body": "The resultant Contract will be in accordance with the information security and non-disclosure terms and conditions as prescribed by FWS IT security policy.",
+                "page": 5,
                 "parent_id": null,
                 "label": "Scope"
             }
         ],
         "keywords": {
-            "LAW": [
-                "SOW"
-            ],
             "ORG": [
-                "PSP"
+                "FWS",
+                "Invasive Carp",
+                "The US Fish & Wildlife Service",
+                "Government",
+                "Service",
+                "Invasive Carp Regional Coordinating Committee"
+            ],
+            "PRODUCT": [
+                "Drupal"
+            ],
+            "CARDINAL": [
+                "two",
+                "2",
+                "1"
             ]
         }
     },
     "Deliverables": {
         "sections": [
             {
-                "id": "D.",
-                "title": "Service Delivery Approach",
-                "body": "\u2022 The delivery of the service is expected to be divided into three (3) phases. Provided below are the defined set of activities, deliverables, for each phase.",
-                "page": 7,
+                "id": "4.",
+                "title": "Deliverables",
+                "body": "All written deliverables shall be created in a professional manner and shall include meeting summaries, background information, and any appropriate research material where requested. All non-branded deliverables shall be submitted in an editable (i.e., unprotected) format such as Microsoft Word, Excel, or PowerPoint when applicable. All Deliverables will be submitted on or before the due date specified or submitted in accordance with a later scheduled date determined by FWS. The following deliverables will be prepared by or updated by the Contractor: \u25cf Project plan and schedule \u25cf Documentation of any design adjustments that will take place to \u2018as-is\u2019 site \u2013 in form of wire frame/mockup, or written explanations for simple adjustments \u25cf End user guidance for site owners as requested \u25cf Drupal Site Pages (Finished Product)",
+                "page": 4,
                 "parent_id": null,
                 "label": "Deliverables"
             }
         ],
         "keywords": {
-            "CARDINAL": [
-                "3",
-                "three"
+            "ORG": [
+                "Microsoft",
+                "FWS"
+            ],
+            "PRODUCT": [
+                "PowerPoint",
+                "Word",
+                "Excel"
             ]
         }
     },
     "Company Info": {
         "sections": [
             {
-                "id": "A.",
-                "title": "Solution Overview",
-                "body": "The professional services provider must work with ADB AI Lab and Big Data team to build a production ready AI and big data solutions, required activities below provide further details.",
-                "page": 6,
+                "id": "3.",
+                "title": "Statement of Work",
+                "body": "The contractor will be tasked with rebuilding the Invasive Carp Regional Coordinating Committee (ICRCC) website as a content management system in the latest version of Drupal (currently Drupal 9). It is anticipated that the effort will start off with a design review of the legacy site, to determine if and where it may make sense to pursue any notable changes during the rebuild. The current organization and structure of the site is well liked by its heaviest users, but the group remains open to suggestions on how to improve the user experience and how to best build upon the foundation that exists. Once there is an agreed upon strategy for the site rebuild and any design adjustments coming into play, the contractor would move forward into development and further migration efforts. The site currently houses and will continue to house the following types of content/pages (not exclusively limited to): 1. Background Info/About Us 2. Plans and Report library (documents) 3. Newsroom/News archive 4. Outreach and Resource materials 5. Species Profiles (4 carp species) 6. FAQ It is anticipated that FWS and the partnership organization resources will manage an overwhelming majority of the written content development and migration for the site, while the contractor will be expected to facilitate migration of document and media assets where logical.",
+                "page": 3,
                 "parent_id": null,
                 "label": "Company Info"
             },
             {
-                "id": "B.",
-                "title": "Contractor Qualifications",
-                "body": "\u2022 The contractor is expected to: \u2022 Have no less than five (5) years of experience in offering professional services \u2022 Make reasonable efforts in applying its industry expertise and assist ADB in setting up standards for AI model development and deployment. \u2022 Appoint a Team Lead to serve as an escalation point for technical and security-related queries.",
-                "page": 6,
+                "id": "6.",
+                "title": "Knowledge and Skills",
+                "body": "The Contractor shall identify the resources necessary to successfully perform the work contained herein. Contractor shall possess and maintain the requisite knowledge and expertise to successfully accomplish the objectives of this Statement of Work. The Contractor will be responsible for ensuring that, at a minimum, the proposed resource(s) possesses the following: \u25cf Proven development performance with the use of Drupal Content Management System and \u25cf Minimum of 5 years of programing/database admin experience. \u25cf General knowledge of DOI HR policies / processes. \u25cf The ability to write, and verbally present complex subjects in a clear and concise manner.",
+                "page": 4,
                 "parent_id": null,
                 "label": "Company Info"
             },
             {
-                "id": "C.",
-                "title": "Environment Details",
-                "body": "\u2022 The contractor will provide manage service on the below items required for development",
-                "page": 7,
-                "parent_id": null,
-                "label": "Company Info"
-            },
-            {
-                "id": "",
-                "title": "\u2022  ADB DXP",
-                "body": "\u2022 10 -15 Data products \u2022 5-8 AI Projects \u2022 Required Activities \u2022 The following activities must be part of the contractor\u2019s deliverables: \u2022 Creation and maintenance of ADB's LLM Enterprise architecture \u2022 Software development following best practices (unit testing, creation of common libraries, CI/CD, IaC, modern UI/UX) \u2022 LLM Data Science Experimentation (Prototyping ideas of LLM applications \u2022 Production Grade Application deployment (Infrastructure Monitoring, Backup and Recovery, Cost Optimization, Performance Monitoring) \u2022 Security and Compliance (documentation & architecture compliant with ADB's security policies) \u2022 Data Platform Lifecycle (Creation of reliable and efficient data pipelines for the LLM's consumption, end to end data lineage) \u2022 Develop and Adherence to industry standard responsible ai framework",
-                "page": 7,
-                "parent_id": null,
-                "label": "Company Info"
-            },
-            {
-                "id": "1",
-                "title": "Foundation building   practice guides and engineering      4-6 weeks        10%",
-                "body": "(architecture, tools standards, and responsible AI and infrastructure) Framework, security alignment -Establish business outcomes & success criteria, accepted by ADB -Production ready AI and Big Data Lab (segregation of development and production environment), accepted by ADB 5% after the design and -Design and build each AI build is Design and Build 1 accepted by or more Data Estimated 2 ADB. Product + Design months per AI 5% upon and Build 1 AI product completion of -Application development, Product application Application of responsible AI development, Framework plus 1 Data Product accepted by ADB. 5% after the design and -Design and build each AI build is Design and Build 1 accepted by or more Data Estimated 2 ADB. Product + Design months per AI 5% upon and Build 1 AI product completion of -Application development, Product application Application of responsible AI development, Framework plus 1 Data Product accepted by ADB. 5% after the",
-                "page": 8,
-                "parent_id": null,
-                "label": "Company Info"
-            },
-            {
-                "id": "2",
-                "title": "design and",
-                "body": "-Design and build each AI build is Design and Build 1 accepted by or more Data Estimated 2 ADB. Product + Design months per AI 5% upon and Build 1 AI product completion of -Application development, Product application Application of responsible AI development, Framework plus 1 Data Product accepted by ADB. 5% after the design and -Design and build each AI build is Design and Build 1 accepted by or more Data Estimated 2 ADB. Product + Design months per AI 5% upon and Build 1 AI product completion of -Application development, Product application Application of responsible AI development, Framework plus 1 Data Product accepted by ADB. Design and Build 1 Estimated 2 5% after the or more Data -Design and build each AI months per AI design and Product + Design product build is and Build 1 AI accepted by Product ADB. 5% upon completion of -Application development, application Application of responsible AI development, Framework plus 1 Data Product accepted by ADB. Successfully passes external quality",
-                "page": 9,
-                "parent_id": null,
-                "label": "Company Info"
-            },
-            {
-                "id": "3",
-                "title": "Quality Review       review on AI models and addresses                 10%",
-                "body": "any action points Final Project Sign- Submission of satisfactory Final4 10% off Project Report, accepted by ADB",
-                "page": 10,
+                "id": "9.",
+                "title": "Contacts",
+                "body": "Contracting Officer (CO): Lorenzo Aragon; E-Mail: Lorenzo_aragon@fws.gov; Ph# 505-248-6627",
+                "page": 5,
                 "parent_id": null,
                 "label": "Company Info"
             }
         ],
         "keywords": {
             "ORG": [
-                "LLM",
-                "ADB",
-                "ADB AI Lab"
+                "FWS",
+                "DOI",
+                "Invasive Carp Regional Coordinating Committee",
+                "ICRCC"
+            ],
+            "PRODUCT": [
+                "Drupal",
+                "Drupal Content Management System"
             ],
             "CARDINAL": [
-                "5",
-                "1",
-                "10 -15"
+                "4",
+                "6",
+                "505"
+            ],
+            "LAW": [
+                "this Statement of Work"
             ],
             "DATE": [
-                "4-6 weeks",
-                "each AI months"
+                "5 years"
             ],
-            "PERCENT": [
-                "2 5%",
-                "5%",
-                "10%"
+            "PERSON": [
+                "Lorenzo Aragon"
             ]
         }
     },
     "Timeline": {
         "sections": [
             {
-                "id": "B.",
-                "title": "Duration",
-                "body": "\u2022 The engagement duration for the professional services will be for a period of fourteen (14) months. Renewal will depend on the satisfactory performance of the PSP based on the results of performance evaluation. \u2022 This SOW may be revised during the life of the contract based on ADB\u2019s changing business requirements with the necessary adjustments on the pricing based on the required revisions through mutual agreement between ADB and the PSP.",
-                "page": 6,
-                "parent_id": null,
-                "label": "Timeline"
-            },
-            {
-                "id": "A.",
-                "title": "Project Timeline",
-                "body": "The engagement will be for a period of fourteen (14) months. Renewal will depend on the satisfactory performance evaluation.",
-                "page": 8,
-                "parent_id": null,
-                "label": "Timeline"
-            },
-            {
-                "id": "B.",
-                "title": "Project Cost & Payment Milestone",
-                "body": "This is a fixed price engagement. Service Provide shall provide all the services and deliverables to ADB under this SOW for the fixed price ADB shall pay upon ADB\u2019s acceptance of the deliverables, according to the following milestones payment schedules: Deliverables / Acceptance Phase Milestone Duration Percentage Criteria Submission of countersigned",
-                "page": 8,
-                "parent_id": null,
-                "label": "Timeline"
-            },
-            {
-                "id": "0",
-                "title": "Contract signing      contract and other required                      10%",
-                "body": "contractual documents Kick-off meeting Kick-off meeting completed 1-2 weeks 0 Submission of Submission of a satisfactory 10% (estimate) Detailed-level AI solution design document, accepted Lab Framework by ADB and Architecture (AI and Big Data) Implementation of -Submission of satisfactory the Lab Framework documented tools, framework, best",
-                "page": 8,
+                "id": "7.",
+                "title": "Period of Performance",
+                "body": "The period of performance of this contract will be for 12 months beginning on the date of award. *Subject to further interpretation of the estimated requirements",
+                "page": 5,
                 "parent_id": null,
                 "label": "Timeline"
             }
         ],
         "keywords": {
             "DATE": [
-                "1-2 weeks",
-                "fourteen (14) months"
-            ],
-            "ORG": [
-                "Service Provide",
-                "ADB",
-                "ADB and Architecture",
-                "PSP"
-            ],
-            "PERCENT": [
-                "10%"
+                "12 months"
             ]
         }
     },
