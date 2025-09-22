@@ -4,6 +4,7 @@ FastAPI application code for the AI-Powered RFP Analyzer.
 
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 from uuid import uuid4
 from extraction import chunk_text
 from classification import classify_and_tag, classify_manually, train_classifier
@@ -17,6 +18,18 @@ import random
 session_store = {}
 
 app = FastAPI()
+
+# Configure CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:3000",  # Vite dev server
+        "http://localhost:5173",  # Vite default port
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.get("/")
