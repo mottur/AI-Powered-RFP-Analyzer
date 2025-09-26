@@ -26,18 +26,22 @@ const Labeler = () => {
     }
   }, [navigate]);
 
-  const handleLabelChange = (chunkId, newLabel) => {
+  const handleLabelChange = (index, newLabel) => {
     setLabels((prev) => ({
       ...prev,
-      [chunkId]: newLabel,
+      [index]: newLabel,
     }));
   };
 
   const handleSubmit = async () => {
-    const labeledChunks = chunks.map((chunk) => ({
+    const labeledChunks = chunks.map((chunk, index) => ({
       ...chunk,
-      true_label: labels[chunk.id] !== '__SKIP__' ? labels[chunk.id] : null,
+      true_label: labels[index] !== '__SKIP__' ? labels[index] : null,
     }));
+
+    localStorage.removeItem('metrics');
+    localStorage.setItem('needsChartRefresh', 'false');
+    localStorage.setItem('isTraining', 'true');
 
     try {
         // 1. Save labeled chunks
@@ -49,7 +53,7 @@ const Labeler = () => {
         // 3. Store metrics in localStorage so Trainer page can load them
         localStorage.setItem('metrics', JSON.stringify(metrics));
         localStorage.setItem('needsChartRefresh', 'true');
-        localStorage.setItem("isTraining", "false")
+        localStorage.setItem('isTraining', 'false');
 
         // 4. Redirect to Trainer page
         navigate('/train');
@@ -57,54 +61,83 @@ const Labeler = () => {
         if (error.code === 'ECONNABORTED') {
             // Timeout occurred — but training might still be ongoing
             console.warn('Training timeout — continuing assuming backend is still working.');
-            navigate('/train');
         } else {
             console.error('Error during label submission and training:', error);
             alert('Something went wrong while submitting labels or training.');
+            localStorage.setItem('isTraining', 'false');
+            navigate('/train');
         }
     }
+
+    // Poll localStorage for metrics
+    try {
+      const metrics = await pollForMetrics();
+      localStorage.setItem('isTraining', 'false');
+      localStorage.setItem('needsChartRefresh', 'true');
+      navigate('/train');
+    } catch (error) {
+      console.warn('Metrics not found after polling:', error);
+      alert('Training is likely still running. Please check the Trainer page soon.');
+      localStorage.setItem('isTraining', 'true');
+    }
+  };
+
+  const pollForMetrics = async (retries = 24, delayMs = 5000) => {
+    for (let i = 0; i < retries; i++) {
+      const raw = localStorage.getItem('metrics');
+      if (raw) {
+        try {
+          const metrics = JSON.parse(raw);
+          return metrics;
+        } catch (e) {
+          console.warn("Invalid metrics format — retrying...");
+        }
+      }
+      await new Promise((res) => setTimeout(res, delayMs));
+    }
+    throw new Error('Metrics not found after polling localStorage.');
   };
 
   return (
     <Container fluid className="p-4">
       <Row>
         <Col>
-            <div className="d-flex flex-row justify-content-between align-items-center gap-4 w-100">
-                <h2 className="fs-4">Manually label chunks from custom dataset</h2>
-                <Button
-                    variant="light"
-                    className="mb-3 ms-auto text-dark go-btn"
-                    onClick={handleSubmit}
-                    disabled={chunks.length === 0}
-                >
-                    <i className="bi bi-send pe-2 fs-5"></i>
-                    <span>Submit Labels and Train</span>
-                </Button>
-            </div>
+          <div className="d-flex flex-row justify-content-between align-items-center gap-4 w-100">
+            <h2 className="fs-4">Manually label chunks from custom dataset</h2>
+            <Button
+              variant="light"
+              className="mb-3 ms-auto text-dark go-btn"
+              onClick={handleSubmit}
+              disabled={chunks.length === 0}
+            >
+              <i className="bi bi-send pe-2 fs-5"></i>
+              <span>Submit Labels and Train</span>
+            </Button>
+          </div>
         </Col>
       </Row>
 
       {chunks.map((chunk, index) => (
         <Card key={index} className="mb-4">
-            <Card.Body>
+          <Card.Body>
             <h5>{chunk.title}</h5>
             <p>{chunk.body}</p>
 
             <Form.Select
-                value={labels[chunk.id] || ""}
-                onChange={(e) => handleLabelChange(chunk.id, e.target.value)}
+              value={labels[index] || ""}
+              onChange={(e) => handleLabelChange(index, e.target.value)}
             >
-                <option value="">Select label</option>
-                {Object.keys(LABELS).map((labelKey) => (
+              <option value="">Select label</option>
+              {Object.keys(LABELS).map((labelKey) => (
                 <option key={labelKey} value={labelKey}>
-                    {labelKey}
+                  {labelKey}
                 </option>
-                ))}
-                <option value="__SKIP__">N/A</option>
+              ))}
+              <option value="__SKIP__">N/A</option>
             </Form.Select>
-            </Card.Body>
+          </Card.Body>
         </Card>
-        ))}
+      ))}
     </Container>
   );
 };

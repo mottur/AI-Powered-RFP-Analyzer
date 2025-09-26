@@ -189,31 +189,6 @@ def _is_list_starter(item_id):
     
     return item_id in list_starters
 
-
-# def _looks_like_toc_line(line: str) -> bool:
-#     """
-#     Returns True if the line looks like a Table of Contents entry.
-#     """
-#     line = line.strip()
-    
-#     # Lines ending with page numbers
-#     if re.search(r'\d{1,3}\s*$', line):
-#         return True
-        
-#     # Lines with leader dots
-#     if re.search(r'\.{3,}\s*\d*$', line):
-#         return True
-        
-#     # Common TOC patterns
-#     toc_patterns = [
-#         "contents", "table of", "chapter", "section", "page", "part",
-#         "figure", "table", "illustration", "attachment", "annex"
-#     ]
-#     if any(pattern in line.lower() for pattern in toc_patterns):
-#         return True
-        
-#     return False
-
 def _looks_like_toc_line(line: str) -> bool:
     """
     Returns True if the line looks like a Table of Contents entry.
@@ -367,8 +342,8 @@ def chunk_text(pdf_bytes: bytes) -> list:
                 all_lines.append({
                     'text': line,
                     'page': page_num,
-                    'fontnames': set(),  # We'll get this separately if needed
-                    'x_positions': []    # We'll get this separately if needed
+                    'fontnames': set(),
+                    'x_positions': []
                 })
 
     # DEBUG: Print ALL lines to see what's actually there
@@ -464,8 +439,8 @@ def chunk_text(pdf_bytes: bytes) -> list:
                     "id": heading_id,
                     "title": heading_title,
                     "body": "",
-                    # "page": page_num,
-                    # "parent_id": None,
+                    "page": page_num,
+                    "parent_id": None,
                 }
             
             pending_heading_id = None
