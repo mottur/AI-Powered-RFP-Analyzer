@@ -1,4 +1,4 @@
-import { Button } from 'react-bootstrap';
+import { Button, Spinner } from 'react-bootstrap';
 import { useState } from 'react';
 import { apiService } from '../services/api';
 
@@ -36,7 +36,7 @@ const AnalyzeButton = ({ file = null, onComplete }) => {
 
   return (
     <Button variant="light" onClick={handleClick} disabled={loading || !file} className="text-dark go-btn">
-        {loading ? <span className="analyzing-text">Analyzing document...</span> : <i className="bi bi-arrow-right pe-2 fs-5"></i>}
+        {loading ? <span className="analyzing-text">Analyzing document  <Spinner animation="border" size="sm" /></span> : <i className="bi bi-arrow-right pe-2 fs-5"></i>}
     </Button>
   );
 };
