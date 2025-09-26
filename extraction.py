@@ -464,8 +464,8 @@ def chunk_text(pdf_bytes: bytes) -> list:
                     "id": heading_id,
                     "title": heading_title,
                     "body": "",
-                    "page": page_num,
-                    "parent_id": None,
+                    # "page": page_num,
+                    # "parent_id": None,
                 }
             
             pending_heading_id = None

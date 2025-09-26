@@ -90,7 +90,10 @@ def train_classifier(train_texts: list, train_labels: list, eval_texts: list = N
 
         cm = np.array(metrics["confusion_matrix"])
         cm_image = _plot_confusion_matrix(cm, class_names=list(LABELS.keys()))
+        metrics_wo_cm = {k:v for k, v in metrics.items() if k != "confusion_matrix"}
+        mp_image = _plot_metrics(metrics_wo_cm)
         mlflow.log_image(cm_image, "confusion_matrix.png")
+        mlflow.log_image(mp_image, "metrics.png")
 
         trainer.model.save_pretrained("./classifier")
         mlflow.log_artifacts("./classifier", "model")
@@ -196,16 +199,51 @@ def _plot_confusion_matrix(cm, class_names=None):
                     ha="center", va="center",
                     color="white" if cm[i, j] > thresh else "black")
     
-    plt.tight_layout()
+    fig.tight_layout()
 
     # Save to file
-    filepath = os.path.join("visualization", "confusion_matrix.png")
-    plt.savefig(filepath, format='png', dpi=150, bbox_inches='tight')
+    filepath = os.path.join("frontend", "public", "visualization", "confusion_matrix.png")
+    fig.savefig(filepath, format='png', dpi=150, bbox_inches='tight')
     print(f"Confusion matrix saved to: {filepath}")
     
     # Save to buffer and convert to PIL Image
     buf = io.BytesIO()
-    plt.savefig(buf, format='png', dpi=150, bbox_inches='tight')
+    fig.savefig(buf, format='png', dpi=150, bbox_inches='tight')
+    buf.seek(0)
+    pil_image = Image.open(buf)
+    plt.close(fig)
+    
+    return pil_image
+
+def _plot_metrics(metrics: dict):
+    """Plot accuracy, precision, recall, and F1-score"""
+    labels = list(metrics.keys())
+    values = list(metrics.values())
+
+    # Create figure and axes
+    fig, ax = plt.subplots(figsize=(8, 5))
+    ax.bar(labels, values, color='skyblue')
+
+    # Add value labels on top of bars
+    for i, v in enumerate(values):
+        ax.text(i, v + 0.01, f"{v:.2f}", ha='center', fontweight='bold')
+
+    # Set labels and title
+    ax.set_title("Model Evaluation Metrics")
+    ax.set_ylabel("Score")
+    ax.set_ylim(0, 1.05)
+    ax.grid(axis='y', linestyle='--', alpha=0.7)
+
+    fig.tight_layout()
+
+    # Save to file
+    filepath = os.path.join("frontend", "public", "visualization", "metrics.png")
+    fig.savefig(filepath, format='png', dpi=300, bbox_inches='tight')
+    print(f"Metrics plot saved to: {filepath}")
+    
+    # Save to buffer and convert to PIL Image
+    buf = io.BytesIO()
+    fig.savefig(buf, format='png', dpi=300, bbox_inches='tight')
     buf.seek(0)
     pil_image = Image.open(buf)
     plt.close(fig)
