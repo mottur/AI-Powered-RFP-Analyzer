@@ -1,7 +1,6 @@
 import requests
 from shared import LABELS
-
-api_key = "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"
+from apikey import api_key
 
 headers = {
     "Authorization": f"Bearer {api_key}",
