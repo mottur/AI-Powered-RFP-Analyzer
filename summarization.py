@@ -62,7 +62,7 @@ def summarize(categories: dict) -> dict:
     data["messages"][1]["content"] = f"The following json provides chunks of text are from an RFP document." \
                                       f"The keys are the categories, which are defined:\n{labels}\n" \
                                       f"Consider the following json:\n{str(text)}\n" \
-                                      f"Provide a concise summary of the chunks in each category based on the descriptions provided above, " \
+                                      f"Provide a detailed summary of the chunks in each category based on the descriptions provided above, " \
                                       f"keeping in mind that the chunks may correspond to more than one category. " \
                                       f"After that, suggest actionable insights or next steps. " \
                                       f"Return ONLY a json string with the defined categories as keys, " \

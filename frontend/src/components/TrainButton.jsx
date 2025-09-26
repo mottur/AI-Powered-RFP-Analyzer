@@ -1,4 +1,4 @@
-import { Button } from 'react-bootstrap';
+import { Button, Spinner } from 'react-bootstrap';
 import { useState } from 'react';
 import { apiService } from '../services/api';
 
@@ -38,7 +38,7 @@ const TrainButton = ({ files = null, option = "useExisting", onComplete }) => {
 
   return (
     <Button variant="light" onClick={handleClick} disabled={loading || (option !== "useExisting" && !files)} className="text-dark go-btn">
-        {loading ? <span className="training-text">Training classifier...</span> : <i className="bi bi-arrow-right pe-2 fs-5"></i>}
+        {loading ? <span className="training-text">Training classifier  <Spinner animation="border" size="sm" /></span> : <i className="bi bi-arrow-right pe-2 fs-5"></i>}
     </Button>
   );
 };
