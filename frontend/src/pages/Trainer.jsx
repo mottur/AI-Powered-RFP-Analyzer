@@ -8,7 +8,7 @@ const Trainer = () => {
     const [selectedFiles, setSelectedFiles] = useState(null);
     const [option, setOption] = useState(null);
     const [metrics, setMetrics] = useState(null);
-    const [refreshKey, setRefreshKey] = useState(0);
+    const [refreshKey, setRefreshKey] = useState(Date.now());
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -18,7 +18,7 @@ const Trainer = () => {
             setMetrics(JSON.parse(storedMetrics));
         }
         if (needsChartRefresh) {
-            setRefreshKey(prev => prev + 1);
+            setRefreshKey(Date.now());
             localStorage.removeItem('needsChartRefresh');
         }
     }, []);
@@ -42,7 +42,7 @@ const Trainer = () => {
         } else if (result.metrics) {
             setMetrics(result.metrics);
             localStorage.setItem("metrics", JSON.stringify(result.metrics));
-            setRefreshKey(prev => prev + 1);
+            setRefreshKey(Date.now());
         }
     };
 
@@ -81,6 +81,7 @@ const Trainer = () => {
 
                 <Col md={6}>
                     <img
+                    key={`metrics-${refreshKey}`}
                     src={`/visualization/metrics.png?key=${refreshKey}`}
                     alt="Training Metrics"
                     style={{ width: '100%', height: 'auto' }}
@@ -89,6 +90,7 @@ const Trainer = () => {
 
                 <Col md={6}>
                     <img
+                    key={`matrix-${refreshKey}`}
                     src={`/visualization/confusion_matrix.png?key=${refreshKey}`}
                     alt="Confusion Matrix"
                     style={{ width: '100%', height: 'auto' }}

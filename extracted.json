@@ -1,159 +1,72 @@
-{
-    "Scope": {
-        "sections": [
-            {
-                "id": "1.",
-                "title": "Introduction",
-                "body": "The US Fish & Wildlife Service (FWS, the Service) is in need of a Drupal development group to rebuild the Invasive Carp Regional Coordinating Committee site as a small-scale content management system in the latest version of Drupal (currently Drupal 9). Working alongside the Service, the contractor shall provide expertise to work through a design review of the current site and then develop a new version to facilitate a full migration off the old environment.",
-                "page": 3,
-                "parent_id": null,
-                "label": "Scope"
-            },
-            {
-                "id": "2.",
-                "title": "Background",
-                "body": "A content management system, or CMS, is an application used to manage and publish web content. It allows multiple users to contribute, create, edit, and publish content without needing to have a web development skillset. It can also provide version management and authoring workflow to keep webpages consistent. Historically, management of the Invasive Carp website has suffered from complex content entry procedures and bottlenecks due to lack of resources/expertise in managing html. The rebuild of this site in a modernized content management system aims to achieve a straightforward content entry workflow that can be easily adopted and improve upon prior challenges of managing the site.",
-                "page": 3,
-                "parent_id": null,
-                "label": "Scope"
-            },
-            {
-                "id": "3.",
-                "title": "Statement of Work",
-                "body": "The contractor will be tasked with rebuilding the Invasive Carp Regional Coordinating Committee (ICRCC) website as a content management system in the latest version of Drupal (currently Drupal 9). It is anticipated that the effort will start off with a design review of the legacy site, to determine if and where it may make sense to pursue any notable changes during the rebuild. The current organization and structure of the site is well liked by its heaviest users, but the group remains open to suggestions on how to improve the user experience and how to best build upon the foundation that exists. Once there is an agreed upon strategy for the site rebuild and any design adjustments coming into play, the contractor would move forward into development and further migration efforts. The site currently houses and will continue to house the following types of content/pages (not exclusively limited to): 1. Background Info/About Us 2. Plans and Report library (documents) 3. Newsroom/News archive 4. Outreach and Resource materials 5. Species Profiles (4 carp species) 6. FAQ It is anticipated that FWS and the partnership organization resources will manage an overwhelming majority of the written content development and migration for the site, while the contractor will be expected to facilitate migration of document and media assets where logical.",
-                "page": 3,
-                "parent_id": null,
-                "label": "Scope"
-            },
-            {
-                "id": "5.",
-                "title": "Assumptions",
-                "body": "The Service assumes the following in regard to contractor approach: \u2022 While it is intended that the contractor approaches the site rebuild effort with an eye towards design improvements, it is not expected to be a full-fledged redesign effort - the most important requirements are focused on ease of managing the content on the site (in other words, the Service does not intend to spend an abundance of time on a completely new design) \u2022 There are two main parts to the CMS: (1) A content management interface allowing content creators to work with content directly by inputting content via templates and (2) a front-end display that takes the content entered into templates and renders it as a cohesive working website. Content entry forms should be configured with ease of use/simplicity as a priority",
-                "page": 4,
-                "parent_id": null,
-                "label": "Scope"
-            },
-            {
-                "id": "8.",
-                "title": "Place of Performance",
-                "body": "All work shall be performed remotely via Government Approved Remote Access solutions unless otherwise agreed upon.",
-                "page": 5,
-                "parent_id": null,
-                "label": "Scope"
-            }
-        ],
-        "keywords": {
-            "ORG": [
-                "Government",
-                "Service",
-                "Invasive Carp Regional Coordinating Committee",
-                "ICRCC",
-                "Invasive Carp",
-                "The US Fish & Wildlife Service",
-                "FWS"
-            ],
-            "PRODUCT": [
-                "Drupal"
-            ],
-            "CARDINAL": [
-                "6",
-                "two",
-                "2",
-                "4",
-                "1"
-            ]
-        }
+[
+    {
+        "id": "1.",
+        "title": "Introduction",
+        "body": "The US Fish & Wildlife Service (FWS, the Service) is in need of a Drupal development group to rebuild the Invasive Carp Regional Coordinating Committee site as a small-scale content management system in the latest version of Drupal (currently Drupal 9). Working alongside the Service, the contractor shall provide expertise to work through a design review of the current site and then develop a new version to facilitate a full migration off the old environment.",
+        "page": 3,
+        "parent_id": null
     },
-    "Deliverables": {
-        "sections": [
-            {
-                "id": "4.",
-                "title": "Deliverables",
-                "body": "All written deliverables shall be created in a professional manner and shall include meeting summaries, background information, and any appropriate research material where requested. All non-branded deliverables shall be submitted in an editable (i.e., unprotected) format such as Microsoft Word, Excel, or PowerPoint when applicable. All Deliverables will be submitted on or before the due date specified or submitted in accordance with a later scheduled date determined by FWS. The following deliverables will be prepared by or updated by the Contractor: \u25cf Project plan and schedule \u25cf Documentation of any design adjustments that will take place to \u2018as-is\u2019 site \u2013 in form of wire frame/mockup, or written explanations for simple adjustments \u25cf End user guidance for site owners as requested \u25cf Drupal Site Pages (Finished Product)",
-                "page": 4,
-                "parent_id": null,
-                "label": "Deliverables"
-            },
-            {
-                "id": "10.",
-                "title": "Information Security Non-Disclosure",
-                "body": "The resultant Contract will be in accordance with the information security and non-disclosure terms and conditions as prescribed by FWS IT security policy.",
-                "page": 5,
-                "parent_id": null,
-                "label": "Deliverables"
-            }
-        ],
-        "keywords": {
-            "ORG": [
-                "Microsoft",
-                "FWS"
-            ],
-            "PRODUCT": [
-                "PowerPoint",
-                "Excel",
-                "Word"
-            ]
-        }
+    {
+        "id": "2.",
+        "title": "Background",
+        "body": "A content management system, or CMS, is an application used to manage and publish web content. It allows multiple users to contribute, create, edit, and publish content without needing to have a web development skillset. It can also provide version management and authoring workflow to keep webpages consistent. Historically, management of the Invasive Carp website has suffered from complex content entry procedures and bottlenecks due to lack of resources/expertise in managing html. The rebuild of this site in a modernized content management system aims to achieve a straightforward content entry workflow that can be easily adopted and improve upon prior challenges of managing the site.",
+        "page": 3,
+        "parent_id": null
     },
-    "Company Info": {
-        "sections": [
-            {
-                "id": "6.",
-                "title": "Knowledge and Skills",
-                "body": "The Contractor shall identify the resources necessary to successfully perform the work contained herein. Contractor shall possess and maintain the requisite knowledge and expertise to successfully accomplish the objectives of this Statement of Work. The Contractor will be responsible for ensuring that, at a minimum, the proposed resource(s) possesses the following: \u25cf Proven development performance with the use of Drupal Content Management System and \u25cf Minimum of 5 years of programing/database admin experience. \u25cf General knowledge of DOI HR policies / processes. \u25cf The ability to write, and verbally present complex subjects in a clear and concise manner.",
-                "page": 4,
-                "parent_id": null,
-                "label": "Company Info"
-            },
-            {
-                "id": "9.",
-                "title": "Contacts",
-                "body": "Contracting Officer (CO): Lorenzo Aragon; E-Mail: Lorenzo_aragon@fws.gov; Ph# 505-248-6627",
-                "page": 5,
-                "parent_id": null,
-                "label": "Company Info"
-            }
-        ],
-        "keywords": {
-            "LAW": [
-                "this Statement of Work"
-            ],
-            "PRODUCT": [
-                "Drupal Content Management System"
-            ],
-            "DATE": [
-                "5 years"
-            ],
-            "ORG": [
-                "DOI"
-            ],
-            "PERSON": [
-                "Lorenzo Aragon"
-            ],
-            "CARDINAL": [
-                "505"
-            ]
-        }
+    {
+        "id": "3.",
+        "title": "Statement of Work",
+        "body": "The contractor will be tasked with rebuilding the Invasive Carp Regional Coordinating Committee (ICRCC) website as a content management system in the latest version of Drupal (currently Drupal 9). It is anticipated that the effort will start off with a design review of the legacy site, to determine if and where it may make sense to pursue any notable changes during the rebuild. The current organization and structure of the site is well liked by its heaviest users, but the group remains open to suggestions on how to improve the user experience and how to best build upon the foundation that exists. Once there is an agreed upon strategy for the site rebuild and any design adjustments coming into play, the contractor would move forward into development and further migration efforts. The site currently houses and will continue to house the following types of content/pages (not exclusively limited to): 1. Background Info/About Us 2. Plans and Report library (documents) 3. Newsroom/News archive 4. Outreach and Resource materials 5. Species Profiles (4 carp species) 6. FAQ It is anticipated that FWS and the partnership organization resources will manage an overwhelming majority of the written content development and migration for the site, while the contractor will be expected to facilitate migration of document and media assets where logical.",
+        "page": 3,
+        "parent_id": null
     },
-    "Timeline": {
-        "sections": [
-            {
-                "id": "7.",
-                "title": "Period of Performance",
-                "body": "The period of performance of this contract will be for 12 months beginning on the date of award. *Subject to further interpretation of the estimated requirements",
-                "page": 5,
-                "parent_id": null,
-                "label": "Timeline"
-            }
-        ],
-        "keywords": {
-            "DATE": [
-                "12 months"
-            ]
-        }
+    {
+        "id": "4.",
+        "title": "Deliverables",
+        "body": "All written deliverables shall be created in a professional manner and shall include meeting summaries, background information, and any appropriate research material where requested. All non-branded deliverables shall be submitted in an editable (i.e., unprotected) format such as Microsoft Word, Excel, or PowerPoint when applicable. All Deliverables will be submitted on or before the due date specified or submitted in accordance with a later scheduled date determined by FWS. The following deliverables will be prepared by or updated by the Contractor: \u25cf Project plan and schedule \u25cf Documentation of any design adjustments that will take place to \u2018as-is\u2019 site \u2013 in form of wire frame/mockup, or written explanations for simple adjustments \u25cf End user guidance for site owners as requested \u25cf Drupal Site Pages (Finished Product)",
+        "page": 4,
+        "parent_id": null
     },
-    "Technologies": {
-        "sections": [],
-        "keywords": {}
+    {
+        "id": "5.",
+        "title": "Assumptions",
+        "body": "The Service assumes the following in regard to contractor approach: \u2022 While it is intended that the contractor approaches the site rebuild effort with an eye towards design improvements, it is not expected to be a full-fledged redesign effort - the most important requirements are focused on ease of managing the content on the site (in other words, the Service does not intend to spend an abundance of time on a completely new design) \u2022 There are two main parts to the CMS: (1) A content management interface allowing content creators to work with content directly by inputting content via templates and (2) a front-end display that takes the content entered into templates and renders it as a cohesive working website. Content entry forms should be configured with ease of use/simplicity as a priority",
+        "page": 4,
+        "parent_id": null
+    },
+    {
+        "id": "6.",
+        "title": "Knowledge and Skills",
+        "body": "The Contractor shall identify the resources necessary to successfully perform the work contained herein. Contractor shall possess and maintain the requisite knowledge and expertise to successfully accomplish the objectives of this Statement of Work. The Contractor will be responsible for ensuring that, at a minimum, the proposed resource(s) possesses the following: \u25cf Proven development performance with the use of Drupal Content Management System and \u25cf Minimum of 5 years of programing/database admin experience. \u25cf General knowledge of DOI HR policies / processes. \u25cf The ability to write, and verbally present complex subjects in a clear and concise manner.",
+        "page": 4,
+        "parent_id": null
+    },
+    {
+        "id": "7.",
+        "title": "Period of Performance",
+        "body": "The period of performance of this contract will be for 12 months beginning on the date of award. *Subject to further interpretation of the estimated requirements",
+        "page": 5,
+        "parent_id": null
+    },
+    {
+        "id": "8.",
+        "title": "Place of Performance",
+        "body": "All work shall be performed remotely via Government Approved Remote Access solutions unless otherwise agreed upon.",
+        "page": 5,
+        "parent_id": null
+    },
+    {
+        "id": "9.",
+        "title": "Contacts",
+        "body": "Contracting Officer (CO): Lorenzo Aragon; E-Mail: Lorenzo_aragon@fws.gov; Ph# 505-248-6627",
+        "page": 5,
+        "parent_id": null
+    },
+    {
+        "id": "10.",
+        "title": "Information Security Non-Disclosure",
+        "body": "The resultant Contract will be in accordance with the information security and non-disclosure terms and conditions as prescribed by FWS IT security policy.",
+        "page": 5,
+        "parent_id": null
     }
-}
+]
