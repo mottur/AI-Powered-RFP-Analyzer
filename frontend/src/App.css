@@ -1,42 +1,142 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+body,
+button,
+input,
+select,
+textarea,
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80px;         /* fixed width for icon-only */
+  height: 100vh;
+  background-color: #222; /* dark bg */
+  color: white;
+  overflow: hidden;     /* hide overflow */
+  transition: width 0.3s ease;
+  z-index: 1000;        /* stay on top */
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    width: 220px;       /* wider on md+ */
+  }
+}
+
+.sidebar h4 {
+  font-size: 25px;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.nav-link {
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.nav-link:hover,
+.nav-link:focus {
+  background-color: rgb(194, 91, 0);
+  color: white;
+  text-decoration: none;
+}
+
+.nav-link.active {
+  background-color: rgb(255, 119, 0);
+  color: white;
+  font-weight: 600;
+}
+
+.main-content {
+  width: calc(100vw - 80px);
+  min-height: 100vh;
+  margin-left: 80px;    /* leave space for sidebar on small screens */
+  transition: margin-left 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    width: calc(100vw - 220px);
+    margin-left: 220px; /* larger margin on md+ */
   }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.status {
+  font-weight: bold;
 }
 
-.card {
-  padding: 2em;
+.status.connected, .status.CONNECTED {
+  color: green;
 }
 
-.read-the-docs {
-  color: #888;
+.status.disconnected, .status.DISCONNECTED {
+  color: red;
+}
+
+.select-btn {
+  min-width: 20vw;
+  min-height: 10vh;
+  border-color: black;
+  font-size: large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.select-btn:hover {
+  border-color: black;
+}
+
+.category .accordion-item {
+  border-color: black;
+  border-radius: 6px;
+}
+
+.category .accordion-button {
+  font-size: large !important;
+  font-weight: bold;
+  background-color: #f8f9fa !important;
+}
+
+.category .accordion-button:hover {
+  background-color: rgb(61, 255, 184) !important;
+  box-shadow: none;
+}
+
+.category .accordion-button:not(.collapsed) {
+  background-color: rgb(61, 255, 184) !important;
+  box-shadow: none;
+}
+
+.accordion-button:focus, 
+.accordion-button:focus-visible, 
+.accordion-button:active {
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+.go-btn {
+  min-width: 70px;
+  min-height: 50px;
+  border-color: black !important;
+  font-size: large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.go-btn:disabled {
+  border-color: transparent !important;
+  background-color: transparent !important;
+}
+
+.go-btn:hover {
+  border-color: black;
+  background-color: rgb(61, 255, 184) !important;
 }

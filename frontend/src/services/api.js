@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-// Vite uses import.meta.env for environment variables
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
 
 const api = axios.create({
@@ -11,7 +10,7 @@ const api = axios.create({
   timeout: 10000,
 });
 
-// Request interceptor
+// Optional: Add token-based auth if needed
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token');
@@ -20,17 +19,13 @@ api.interceptors.request.use(
     }
     return config;
   },
-  (error) => {
-    return Promise.reject(error);
-  }
+  (error) => Promise.reject(error)
 );
 
-// Response interceptor
 api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      // Handle unauthorized access
       localStorage.removeItem('token');
       window.location.href = '/login';
     }
@@ -41,41 +36,70 @@ api.interceptors.response.use(
 export const apiService = {
   // Health check
   healthCheck: async () => {
+    const response = await api.get('/');
+    return response.data;
+  },
+
+  // Train classifier
+  trainClassifier: async (files, option = 'useExisting') => {
+    const formData = new FormData();
+    if (Array.isArray(files) && files.length > 0) {
+      files.forEach((file) => {
+        formData.append('files', file);
+      });
+    }
+
+    formData.append('option', option);
+
+    const response = await api.post('/train-classifier/', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+    return response.data;
+  },
+
+  saveLabels: async (labeledChunks) => {
     try {
-      const response = await api.get('/');
+      const response = await api.post('/save-labels/', labeledChunks, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
       return response.data;
     } catch (error) {
+      console.error('Failed to save labels: ', error);
       throw error;
     }
   },
 
-  // Items endpoints
-  getItems: async () => {
-    try {
-      const response = await api.get('/api/items');
-      return response.data;
-    } catch (error) {
-      throw error;
-    }
+  // Extract text from PDF
+  extractText: async (file) => {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    const response = await api.post('/extract-text/', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+    return response.data; // returns { session_id, categories, mlflow_run_id }
   },
 
-  createItem: async (itemData) => {
-    try {
-      const response = await api.post('/api/items', itemData);
-      return response.data;
-    } catch (error) {
-      throw error;
-    }
+  // Validate extracted content
+  validateExtraction: async (sessionId) => {
+    const response = await api.post('/validate-extraction/', null, {
+      params: { session_id: sessionId },
+    });
+    return response.data; // returns updated categories
   },
 
-  // User endpoints
-  getUser: async (userId) => {
-    try {
-      const response = await api.get(`/api/users/${userId}`);
-      return response.data;
-    } catch (error) {
-      throw error;
-    }
+  // Summarize content
+  summarizeText: async (sessionId) => {
+    const response = await api.post('/summarize-text/', null, {
+      params: { session_id: sessionId },
+    });
+    return response.data;
   },
 };
 

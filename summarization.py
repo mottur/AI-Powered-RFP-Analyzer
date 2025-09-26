@@ -54,7 +54,6 @@ def summarize(categories: dict) -> dict:
     Using an LLM model (https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1), this function:
     - Summarizes the categories.
     - Suggests actionable insights or next steps.
-    - Validates extraction logic through prompt engineering.
     """
     labels = "\n".join(f"{key}: {value}" for key, value in LABELS.items())
     text = {key: None for key in LABELS.keys()}
@@ -66,9 +65,9 @@ def summarize(categories: dict) -> dict:
                                       f"Provide a concise summary of the chunks in each category based on the descriptions provided above, " \
                                       f"keeping in mind that the chunks may correspond to more than one category. " \
                                       f"After that, suggest actionable insights or next steps. " \
-                                      f"Return a json string with the defined categories as keys, " \
+                                      f"Return ONLY a json string with the defined categories as keys, " \
                                       f"the generated summaries for each category as values, " \
-                                      f"and an additional key 'Insights', which should include the generated insights as the value."
+                                      f"and an additional key 'Insights', which should include the generated insights and/or actionable steps as the value."
     # print(data["messages"][1]["content"])
     # return [data["messages"][1]["content"]]
     response = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=data)

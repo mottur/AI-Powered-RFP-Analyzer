@@ -90,7 +90,8 @@ def train_classifier(train_texts: list, train_labels: list, eval_texts: list = N
 
         cm = np.array(metrics["confusion_matrix"])
         cm_image = _plot_confusion_matrix(cm, class_names=list(LABELS.keys()))
-        mp_image = _plot_metrics(metrics)
+        metrics_wo_cm = {k:v for k, v in metrics.items() if k != "confusion_matrix"}
+        mp_image = _plot_metrics(metrics_wo_cm)
         mlflow.log_image(cm_image, "confusion_matrix.png")
         mlflow.log_image(mp_image, "metrics.png")
 
@@ -201,7 +202,7 @@ def _plot_confusion_matrix(cm, class_names=None):
     fig.tight_layout()
 
     # Save to file
-    filepath = os.path.join("visualization", "confusion_matrix.png")
+    filepath = os.path.join("frontend", "public", "visualization", "confusion_matrix.png")
     fig.savefig(filepath, format='png', dpi=150, bbox_inches='tight')
     print(f"Confusion matrix saved to: {filepath}")
     
@@ -236,7 +237,7 @@ def _plot_metrics(metrics: dict):
     fig.tight_layout()
 
     # Save to file
-    filepath = os.path.join("visualization", "metrics.png")
+    filepath = os.path.join("frontend", "public", "visualization", "metrics.png")
     fig.savefig(filepath, format='png', dpi=300, bbox_inches='tight')
     print(f"Metrics plot saved to: {filepath}")
     

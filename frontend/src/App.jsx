@@ -1,100 +1,52 @@
-import { useState, useEffect } from 'react'
-import Categories from './components/Categories'
-import { apiService } from './services/api'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import './App.css'
-import { Button, Navbar, Nav, Card, Container } from 'react-bootstrap';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import DashboardLayout from './layouts/DashboardLayout';
+import Home from './pages/Home';
+import Analyzer from './pages/Analyzer';
+import Trainer from './pages/Trainer';
+import Labeler from './pages/Labeler';
 
 function App() {
-  const [backendStatus, setBackendStatus] = useState('checking')
-  const [healthData, setHealthData] = useState(null)
-  const [activeTab, setActiveTab] = useState('categories')
-
-  useEffect(() => {
-    checkBackendHealth()
-  }, [])
-
-  const checkBackendHealth = async () => {
-    try {
-      const data = await apiService.healthCheck()
-      setHealthData(data)
-      setBackendStatus('connected')
-    } catch (error) {
-      setBackendStatus('disconnected')
-      console.error('Backend connection failed:', error)
-    }
-  }
-
-  const renderTabContent = () => {
-    switch (activeTab) {
-      case 'categories':
-        return <Categories />
-      case 'health':
-        return (
-          <div className="health-check">
-            <h3>Backend Health Status</h3>
-            <div className={`status-badge ${backendStatus}`}>
-              {backendStatus.toUpperCase()}
-            </div>
-            {healthData && (
-              <div className="health-data">
-                <pre>{JSON.stringify(healthData, null, 2)}</pre>
-              </div>
-            )}
-            <button 
-              onClick={checkBackendHealth} 
-              className="btn-secondary"
-            >
-              Re-check Health
-            </button>
-          </div>
-        )
-      default:
-        return <ItemList />
-    }
-  }
-
   return (
-    <div className="app">
-      <header className="app-header">
-        <h1>React + FastAPI App</h1>
-        <div className="backend-status">
-          <span className="status-label">Backend: </span>
-          <span className={`status ${backendStatus}`}>
-            {backendStatus.toUpperCase()}
-          </span>
-        </div>
-      </header>
-
-      <nav className="tabs">
-        <button 
-          className={activeTab === 'categories' ? 'tab active' : 'tab'}
-          onClick={() => setActiveTab('categories')}
-        >
-          Categories
-        </button>
-        <button 
-          className={activeTab === 'health' ? 'tab active' : 'tab'}
-          onClick={() => setActiveTab('health')}
-        >
-          Health Check
-        </button>
-      </nav>
-
-      <main className="app-main">
-        {renderTabContent()}
-      </main>
-
-      <footer className="app-footer">
-        <p>Frontend: React + Vite | Backend: FastAPI</p>
-        {backendStatus === 'disconnected' && (
-          <div className="connection-help">
-            <p>⚠️ Make sure your FastAPI server is running on port 8000:</p>
-            <code>uvicorn main:app --reload --port 8000</code>
-          </div>
-        )}
-      </footer>
-    </div>
-  )
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <DashboardLayout>
+              <Home />
+            </DashboardLayout>
+          }
+        />
+        <Route
+          path="/analyze"
+          element={
+            <DashboardLayout>
+              <Analyzer />
+            </DashboardLayout>
+          }
+        />
+        <Route
+          path="/train"
+          element={
+            <DashboardLayout>
+              <Trainer />
+            </DashboardLayout>
+          }
+        />
+        <Route
+          path="/label"
+          element={
+            <DashboardLayout>
+              <Labeler />
+            </DashboardLayout>
+          }
+        />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
