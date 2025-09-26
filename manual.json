@@ -82,14 +82,6 @@
                 "true_label": "Scope"
             },
             {
-                "id": "",
-                "title": "EVALUATION FACTORS FOR AWARD",
-                "body": "The Government will select the responsible GSA schedule offeror whose quote, in conforming to this RFQ, provides the best value to the Government. Best Value Determination: Determining the best value of the quote includes the following four factors: \uf071 Factor 1: Technical  \uf071 Factor 2: Price (each offeror\u2019s proposed price will be analyzed to determine fairness, reasonableness, compliance and completeness) \uf071 Factor 3: Past Performance will be evaluated on the offeror\u2019s proposed on-site and off-site labor rates for each labor category required across the life of the BPA, any applicable discounts, and proposed prices for the Hypotheticals. Factor 3 will be evaluated on an \u201cacceptable\u201d or \u201cunacceptable\u201d basis. Factor 4 will be evaluated independently from the other factors as stated below. Technical and Past Performance, individually and when combined are more important than Price; Technical is paramount and is more important than Past Performance. In the event that the technical and past performance evaluation reveals that two (2) or more offers are approximately equal, then the price will become increasingly more important. Factor 1 - Technical will be rated based on the following: WEIGHT",
-                "page": 13,
-                "parent_id": null,
-                "true_label": "Scope"
-            },
-            {
                 "id": "1.",
                 "title": "Introduction",
                 "body": "The US Fish & Wildlife Service (FWS, the Service) is in need of a Drupal development group to rebuild the Invasive Carp Regional Coordinating Committee site as a small-scale content management system in the latest version of Drupal (currently Drupal 9). Working alongside the Service, the contractor shall provide expertise to work through a design review of the current site and then develop a new version to facilitate a full migration off the old environment.",
@@ -170,22 +162,6 @@
                 "title": "Technical Quote (Non-Price factors)",
                 "body": "To facilitate the technical quote evaluation, the offeror shall submit as part of the RFQ, a separate enclosure entitled, \u201cTechnical Quote.\u201d The data and information shall be keyed to each paragraph of the technical quote requirements as outlined below. Factor 1: Technical",
                 "page": 4,
-                "parent_id": null,
-                "true_label": "Deliverables"
-            },
-            {
-                "id": "2.",
-                "title": "Technical Approach (10 points)",
-                "body": "The Offeror shall provide a detailed realistic description of the proposed technical approach/methodology to be used and how it will address the project requirements, scope, challenges, purpose, and vision for the Electronic Handbooks (EHBs) program. The Offeror shall demonstrate that its processes are compliant with Capability Maturity Model Integration (CMMI) Level 3 or ISO 9000 on Quality Management and provide written proof of CMMI Level 3 Certification or ISO 9000 family/series Certification at the time of quote submission. The Offeror shall demonstrate that all work activities associated with the proposed approach can be accomplished in a comprehensive manner. The Offeror shall demonstrate innovation in the proposed technical approach. Innovation is defined as continual evolution (i.e., modification, enhancement, and/or replacement) of the enterprise EHBs processing system to infuse new technologies and approaches as they become available throughout the life of the contract. The proposed approach should be results-oriented and improve e testing efficiency and the predictability of resourcing and scheduling needs. Furthermore, the approach should include a balanced input and output that is user friendly, simplistic and trackable. The Offeror shall demonstrate their ability to identify and deal with program risk, both in proactive and reactive (emergency) situations. Anticipated risks should be made clear and mitigation strategies presented proactively.",
-                "page": 4,
-                "parent_id": null,
-                "true_label": "Deliverables"
-            },
-            {
-                "id": "6.",
-                "title": "Technical Approach to Resolving the Hypothetical Scenario Projects (50 points)",
-                "body": "Please note that the hypothetical projects are for evaluation purposes only and may not be awarded by the Government when the BPA contract is awarded. The Offeror shall describe practical approaches that could be used to address the following hypothetical scenarios (limit answers to 10 pages per scenario.) For the purposes of proposal evaluation, the Offeror is not expected to develop a fully conceived proposal. Rather, the intent is to show how the Offeror would approach the hypothetical requirement and the related present or past (within the last 3 years) experience they have delivering similar projects. The Offeror should note when their approach results in artifacts or deliverables. The response should include the following sections: 1) Requirements; 2) Assumptions; 3) Proposed technical design, 4) Proposed number and type of staff; 5) Approximate cost to complete each scenario and 6) Proposed timeframe to implement the scenarios. Offeror must support their approach using specific examples where they implemented the specific solution. Please highlight if you have provided services of similar scope and complexity for the Department of Health and Human Services. Offeror shall include a write up on current personnel that have experience delivering similar projects and why their experience is relevant to this hypothetical project delivery. These individuals should be employees or current Consultants of the Prime Offeror. The Offeror shall respond to each of the five hypothetical project area scenarios listed in this BPA solicitation. Each of these projects will be evaluated on a 10-point scale.",
-                "page": 5,
                 "parent_id": null,
                 "true_label": "Deliverables"
             },
@@ -296,6 +272,14 @@
                 "page": 5,
                 "parent_id": null,
                 "true_label": "Company Info"
+            },
+            {
+                "id": "",
+                "title": "EVALUATION FACTORS FOR AWARD",
+                "body": "The Government will select the responsible GSA schedule offeror whose quote, in conforming to this RFQ, provides the best value to the Government. Best Value Determination: Determining the best value of the quote includes the following four factors: \uf071 Factor 1: Technical  \uf071 Factor 2: Price (each offeror\u2019s proposed price will be analyzed to determine fairness, reasonableness, compliance and completeness) \uf071 Factor 3: Past Performance will be evaluated on the offeror\u2019s proposed on-site and off-site labor rates for each labor category required across the life of the BPA, any applicable discounts, and proposed prices for the Hypotheticals. Factor 3 will be evaluated on an \u201cacceptable\u201d or \u201cunacceptable\u201d basis. Factor 4 will be evaluated independently from the other factors as stated below. Technical and Past Performance, individually and when combined are more important than Price; Technical is paramount and is more important than Past Performance. In the event that the technical and past performance evaluation reveals that two (2) or more offers are approximately equal, then the price will become increasingly more important. Factor 1 - Technical will be rated based on the following: WEIGHT",
+                "page": 13,
+                "parent_id": null,
+                "true_label": "Company Info"
             }
         ]
     },
@@ -390,6 +374,22 @@
                 "title": "\u2022  ADB DXP",
                 "body": "\u2022 10 -15 Data products \u2022 5-8 AI Projects \u2022 Required Activities \u2022 The following activities must be part of the contractor\u2019s deliverables: \u2022 Creation and maintenance of ADB's LLM Enterprise architecture \u2022 Software development following best practices (unit testing, creation of common libraries, CI/CD, IaC, modern UI/UX) \u2022 LLM Data Science Experimentation (Prototyping ideas of LLM applications \u2022 Production Grade Application deployment (Infrastructure Monitoring, Backup and Recovery, Cost Optimization, Performance Monitoring) \u2022 Security and Compliance (documentation & architecture compliant with ADB's security policies) \u2022 Data Platform Lifecycle (Creation of reliable and efficient data pipelines for the LLM's consumption, end to end data lineage) \u2022 Develop and Adherence to industry standard responsible ai framework",
                 "page": 7,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "2.",
+                "title": "Technical Approach (10 points)",
+                "body": "The Offeror shall provide a detailed realistic description of the proposed technical approach/methodology to be used and how it will address the project requirements, scope, challenges, purpose, and vision for the Electronic Handbooks (EHBs) program. The Offeror shall demonstrate that its processes are compliant with Capability Maturity Model Integration (CMMI) Level 3 or ISO 9000 on Quality Management and provide written proof of CMMI Level 3 Certification or ISO 9000 family/series Certification at the time of quote submission. The Offeror shall demonstrate that all work activities associated with the proposed approach can be accomplished in a comprehensive manner. The Offeror shall demonstrate innovation in the proposed technical approach. Innovation is defined as continual evolution (i.e., modification, enhancement, and/or replacement) of the enterprise EHBs processing system to infuse new technologies and approaches as they become available throughout the life of the contract. The proposed approach should be results-oriented and improve e testing efficiency and the predictability of resourcing and scheduling needs. Furthermore, the approach should include a balanced input and output that is user friendly, simplistic and trackable. The Offeror shall demonstrate their ability to identify and deal with program risk, both in proactive and reactive (emergency) situations. Anticipated risks should be made clear and mitigation strategies presented proactively.",
+                "page": 4,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "6.",
+                "title": "Technical Approach to Resolving the Hypothetical Scenario Projects (50 points)",
+                "body": "Please note that the hypothetical projects are for evaluation purposes only and may not be awarded by the Government when the BPA contract is awarded. The Offeror shall describe practical approaches that could be used to address the following hypothetical scenarios (limit answers to 10 pages per scenario.) For the purposes of proposal evaluation, the Offeror is not expected to develop a fully conceived proposal. Rather, the intent is to show how the Offeror would approach the hypothetical requirement and the related present or past (within the last 3 years) experience they have delivering similar projects. The Offeror should note when their approach results in artifacts or deliverables. The response should include the following sections: 1) Requirements; 2) Assumptions; 3) Proposed technical design, 4) Proposed number and type of staff; 5) Approximate cost to complete each scenario and 6) Proposed timeframe to implement the scenarios. Offeror must support their approach using specific examples where they implemented the specific solution. Please highlight if you have provided services of similar scope and complexity for the Department of Health and Human Services. Offeror shall include a write up on current personnel that have experience delivering similar projects and why their experience is relevant to this hypothetical project delivery. These individuals should be employees or current Consultants of the Prime Offeror. The Offeror shall respond to each of the five hypothetical project area scenarios listed in this BPA solicitation. Each of these projects will be evaluated on a 10-point scale.",
+                "page": 5,
                 "parent_id": null,
                 "true_label": "Technologies"
             },
