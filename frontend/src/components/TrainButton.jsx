@@ -1,9 +1,24 @@
 import { Button, Spinner } from 'react-bootstrap';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { apiService } from '../services/api';
 
 const TrainButton = ({ files = null, option = "useExisting", onComplete }) => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(() => {
+    return localStorage.getItem("isTraining") === "true";
+  });
+
+  useEffect(() => {
+    const handleStorageUpdate = () => {
+      const isTraining = localStorage.getItem("isTraining") === "true";
+      setLoading(isTraining);
+    };
+
+    window.addEventListener("training-update", handleStorageUpdate);
+
+    return () => {
+      window.removeEventListener("training-update", handleStorageUpdate);
+    };
+  }, []);
 
   const handleClick = async () => {
     if (option != "useExisting" && !files) {
@@ -12,7 +27,7 @@ const TrainButton = ({ files = null, option = "useExisting", onComplete }) => {
     }
 
     localStorage.setItem("isTraining", "true")
-    setLoading(true);
+    window.dispatchEvent(new Event("training-update"));
 
     try {
       const results = await apiService.trainClassifier(files, option);

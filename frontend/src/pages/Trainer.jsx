@@ -1,14 +1,16 @@
 import FileUploadButton from '../components/FileUploadButton'
 import TrainButton from '../components/TrainButton';
 import { useState, useEffect } from 'react'
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button, Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { apiService } from '../services/api';
 
 const Trainer = () => {
     const [selectedFiles, setSelectedFiles] = useState(null);
     const [option, setOption] = useState(null);
     const [metrics, setMetrics] = useState(null);
     const [refreshKey, setRefreshKey] = useState(Date.now());
+    const [showModal, setShowModal] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -27,6 +29,8 @@ const Trainer = () => {
         setSelectedFiles(files);
         setOption(selectedOption);
         localStorage.removeItem('metrics');
+        localStorage.setItem("isTraining", "false");
+        window.dispatchEvent(new Event("training-update"));
     };
 
     const handleUseExistingClick = () => {
@@ -37,14 +41,48 @@ const Trainer = () => {
 
     const handleComplete = (result) => {
         if (result.chunks) {
+            setShowModal(true);
             localStorage.setItem("labelChunks", JSON.stringify(result.chunks));
-            navigate('/label');
         } else if (result.metrics) {
             setMetrics(result.metrics);
             localStorage.setItem("metrics", JSON.stringify(result.metrics));
             setRefreshKey(Date.now());
         }
     };
+
+    const handleModalManualConfirm = () => {
+        setShowModal(false);
+        navigate('/label');
+    }
+
+    const handleModalLLMConfirm = async () => {
+        setShowModal(false);
+        try {
+            // 1. Label using an LLM and save labeled chunks
+            const chunks = localStorage.getItem("labelChunks");
+            const result = await apiService.validateExtraction(JSON.parse(chunks));
+            await apiService.saveLabels(result.chunks);
+
+            // 2. Trigger training using existing labels
+            const metrics = await apiService.trainClassifier();
+
+            // 3. Store metrics
+            setMetrics(metrics);
+            localStorage.setItem("metrics", JSON.stringify(result.metrics));
+            setRefreshKey(Date.now());
+        } catch (error) {
+            if (error.code === 'ECONNABORTED') {
+                // Timeout occurred — but training might still be ongoing
+                console.warn('Training timeout — continuing assuming backend is still working.');
+            } else {
+                console.error('Error during label validation and training:', error);
+                alert('Something went wrong while validating labels using LLM or training.');
+            }
+        } finally {
+            localStorage.setItem("isTraining", "false");
+            window.dispatchEvent(new Event("training-update"));
+        }
+    }
 
     return (
         <Container fluid className="p-0">
@@ -59,21 +97,43 @@ const Trainer = () => {
                             onFileSelect={(files) => handleFileSelect(files, "customPdfs")}
                             forTrain={true}
                             label="Upload pdf files of training documents"
+                            isSelected={option === "customPdfs"}
                         />
                         <FileUploadButton
                             onFileSelect={(files) => handleFileSelect(files, "customJson")}
                             forTrain={true}
                             label="Upload json file with categorized chunks"
+                            isSelected={option === "customJson"}
                         />
                         <Button
                             variant="light"
-                            className="text-dark select-btn"
+                            className={`text-dark select-btn ${option === "useExisting" ? "selected" : ""}`}
                             onClick={handleUseExistingClick}
                         >
                             <i className="bi bi-upload pe-2 fs-5"></i>
                             <span>Use existing training data</span>
                         </Button>
                     </div>
+                    <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+                        <Modal.Header closeButton>
+                            <Modal.Title>Text Extraction Complete</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            The extraction process has finished successfully.
+                            Would you like to start labeling now?
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button variant="secondary" onClick={() => setShowModal(false)}>
+                                Cancel
+                            </Button>
+                            <Button variant="light" onClick={handleModalLLMConfirm}>
+                                Label using an LLM
+                            </Button>
+                            <Button variant="light" onClick={handleModalManualConfirm}>
+                                Label manually
+                            </Button>
+                        </Modal.Footer>
+                    </Modal>
                 </Col>
             </Row>
             <Row className="pt-5 px-3">

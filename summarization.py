@@ -1,4 +1,5 @@
 import requests
+import json
 from shared import LABELS
 from apikey import api_key
 
@@ -20,12 +21,12 @@ data = {
 }
 
 
-def validate_extraction(categories: dict) -> dict:
+def validate_extraction(chunks: list[dict]) -> dict:
     """
     Validates the chunking and classification of sections.
     """
-    msg = "You are a helpful assistant for validating text extraction from Request for Proposal (RFP) documents. " \
-          "Given a section of text from an RFP, determine if it best fits the specified category from the following categories:\n" \
+    msg = "You are a helpful assistant for classifying chunks from Request for Proposal (RFP) documents. " \
+          "Given a section of text from an RFP, determine which category it best fits from the following categories:\n" \
           "\n".join([f"- {key}: {value}" for key, value in LABELS.items()])
     data_ext = {
         "model": "meta-llama/llama-3.3-70b-instruct:free",
@@ -34,19 +35,57 @@ def validate_extraction(categories: dict) -> dict:
             {"role": "user", "content": ""}
         ]
     }
-    for cat in categories.keys():
-        for sec in categories[cat]["sections"]:
-            sec_text = sec["title"] + "\n" + sec["body"]
+    labels = "\n".join(f"{key}: {value}" for key, value in LABELS.items())
+    first_half = chunks[:len(chunks) // 2]
+    second_half = chunks[len(chunks) // 2:]
+    segments = [first_half, second_half]
+    results = []
+    try:
+        # for sec in chunks:
+        #     sec_text = sec["title"] + "\n" + sec["body"]
+        #     data_ext["messages"][1]["content"] = f"""
+        #     This is a section from an RFP.
+        #     --- START OF SECTION ---
+        #     {sec_text[:4000]}
+        #     --- END OF SECTION ---
+        #     Return ONLY one of the labels, which are defined:\n{labels}\nIf none of the labels fit, return N/A. No explanation is required.
+        #     """
+        #     response = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=data_ext)
+        #     result = response.json()["choices"][0]["message"]["content"]
+        #     lower_keys = [key.lower() for key in LABELS.keys()]
+        #     lower_keys.append("N/A")
+        #     sec["true_label"] = find_pattern(result.lower(), lower_keys)
+        for sec in segments:
             data_ext["messages"][1]["content"] = f"""
-            This is a section from an RFP. Does it describe {cat}?
-            --- START OF SECTION ---
-            {sec_text[:4000]}  # Truncate to first 4000 chars to fit token limits
-            --- END OF SECTION ---
-            Answer: Yes or No. If yes, explain why.
+                Here is a json of all the chunks of text to classify.
+                --- START OF JSON ---
+                {json.dumps(sec)}
+                --- END OF JSON ---
+                For each chunk, decide on ONLY one of the labels, which are defined:\n{labels}\nIf none of the labels fit, return N/A. No explanation is required.
+                Return the same json with the key 'true_label' appended to each chunk, with the value being the chosen label.
             """
             response = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=data_ext)
-            sec["validation"] = response.json()["choices"][0]["message"]["content"]
-    return categories
+            result = response.json()["choices"][0]["message"]["content"]
+            print(result)
+            results.extend(json.loads(result))
+    except Exception as e:
+        print("Issue during LLM labeling: ", e, "\n", response.json())
+    return results
+
+def find_pattern(text, patterns):
+    """
+    Finds the first instance of one of the patterns in a string.
+    """
+    first_match = None
+    first_index = len(text) + 1
+
+    for pattern in patterns:
+        idx = text.find(pattern)
+        if idx != -1 and idx < first_index:
+            first_index = idx
+            first_match = pattern
+
+    return first_match.capitalize()
 
 def summarize(categories: dict) -> dict:
     """

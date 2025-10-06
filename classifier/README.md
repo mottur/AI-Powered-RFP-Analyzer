@@ -5,45 +5,43 @@ tags:
 - text-classification
 - generated_from_setfit_trainer
 widget:
-- text: 'Content Management System
+- text: 'Initiative Scope and Boundaries
 
-    The public website must be built upon the WordPress VIP platform. All custom themes
-    and plugins must be developed according to WordPress VIP coding standards and
-    must be submitted for security review via the designated GitHub repository.'
-- text: 'Module has tight data and navigation integration with other EHB modules,
-    2) The module is used
+    The scope of work for this engagement includes a full security audit of all public-facing
+    web applications and the internal network. This involves vulnerability scanning,
+    penetration testing, and social engineering exercises. The project is explicitly
+    bounded to the corporate network within the North American data centers and will
+    not extend to third-party vendor systems or recently acquired international subsidiaries,
+    which are under a separate assessment program.'
+- text: 'Scope of Work and Key Assumptions
 
-    across HRSA by all bureaus with few specific deviations and automation for certain
-    specific programs, 3) The process supports complex data driven business rules,'
-- text: 'Phase 1 Implementation Timeline
+    This initiative aims to develop a centralized data analytics platform to unify
+    reporting across the enterprise. The scope of work includes requirements gathering,
+    data pipeline development, warehouse design, and dashboard creation. The project
+    assumes that source system owners will provide timely access to data and subject
+    matter experts. The boundaries of this project are strictly limited to the five
+    source systems listed in Appendix A; integrating additional data sources is considered
+    out of scope and must be handled through a separate change request.'
+- text: 'Containerization and Orchestration
 
-    Phase 1 of the project must commence no later than 15 business days after contract
-    signing and shall be completed within a 90-day period. The deadline for the Phase
-    1 preliminary design review is 45 days after kick-off. The final deliverable for
-    this phase, a working prototype, is due no later than 5:00 PM EST on the 90th
-    day.'
-- text: 'Employee Qualifications and Expertise
+    All application components must be containerized using Docker and deployed onto
+    a Kubernetes cluster (version 1.24+). Helm charts must be provided for all deployments
+    to manage configuration and releases consistently across development, staging,
+    and production environments.'
+- text: 'Scope of Work Overview
 
-    The offeror shall detail the overall qualifications of their workforce including
-    the percentage of staff with advanced degrees, professional certifications, and
-    security clearances. The proposal must provide statistics on average years of
-    experience in relevant technical domains and federal contracting. The offeror
-    shall describe their approach to maintaining a highly skilled and technically
-    competent workforce.'
-- text: 'Foundation building   practice guides and engineering      4-6 weeks        10%
+    The scope encompasses the complete lifecycle of the mobile application development,
+    from initial concept and market research to deployment on the Apple App Store
+    and Google Play Store. This includes UI/UX design, development for both iOS and
+    Android platforms, and backend API integration. The project is bounded to the
+    feature set described in Appendix A and assumes that third-party API providers
+    (e.g., for payment processing) will maintain service level agreements.'
+- text: 'Documentation Deliverables
 
-    (architecture, tools standards, and responsible AI and infrastructure) Framework,
-    security alignment -Establish business outcomes & success criteria, accepted by
-    ADB -Production ready AI and Big Data Lab (segregation of development and production
-    environment), accepted by ADB 5% after the design and -Design and build each AI
-    build is Design and Build 1 accepted by or more Data Estimated 2 ADB. Product
-    + Design months per AI 5% upon and Build 1 AI product completion of -Application
-    development, Product application Application of responsible AI development, Framework
-    plus 1 Data Product accepted by ADB. 5% after the design and -Design and build
-    each AI build is Design and Build 1 accepted by or more Data Estimated 2 ADB.
-    Product + Design months per AI 5% upon and Build 1 AI product completion of -Application
-    development, Product application Application of responsible AI development, Framework
-    plus 1 Data Product accepted by ADB. 5% after the'
+    The offeror shall provide the following documentation: System Administrator Guide,
+    API Reference Guide, User Acceptance Test (UAT) Plans and Scripts, Security Controls
+    Assessment report, and a Disaster Recovery Runbook. All documentation must adhere
+    to the agency''s template and style guide provided in Section J of this RFP.'
 metrics:
 - accuracy
 - precision
@@ -66,44 +64,44 @@ model-index:
       split: test
     metrics:
     - type: accuracy
-      value: 0.8695652173913043
+      value: 1.0
       name: Accuracy
     - type: precision
-      value: 0.8815951501373497
+      value: 1.0
       name: Precision
     - type: recall
-      value: 0.8695652173913043
+      value: 1.0
       name: Recall
     - type: f1_score
-      value: 0.8693451215190345
+      value: 1.0
       name: F1_Score
     - type: confusion_matrix
       value:
-      - - 10
-        - 1
+      - - 3
+        - 0
+        - 0
+        - 0
+        - 0
+      - - 0
+        - 4
         - 0
         - 0
         - 0
       - - 0
-        - 13
         - 0
+        - 5
         - 0
-        - 0
-      - - 1
-        - 1
-        - 16
-        - 1
         - 0
       - - 0
-        - 1
-        - 1
-        - 12
+        - 0
+        - 0
+        - 4
         - 0
       - - 0
-        - 1
-        - 1
-        - 1
-        - 9
+        - 0
+        - 0
+        - 0
+        - 4
       name: Confusion_Matrix
 ---
 
@@ -135,20 +133,20 @@ The model has been trained using an efficient few-shot learning technique that i
 - **Blogpost:** [SetFit: Efficient Few-Shot Learning Without Prompts](https://huggingface.co/blog/setfit)
 
 ### Model Labels
-| Label                                                                                                                                                              | Examples                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Scope - This section describes the scope of the project, including project goals, boundaries, assumptions, and background context.                                 | <ul><li>'Project Overview and Goals\nThis initiative aims to design and deploy a comprehensive enterprise resource planning (ERP) system to unify financial, HR, and supply chain operations. The scope encompasses end-to-end process mapping, software configuration, data migration from legacy systems, and user acceptance testing. The project is bounded by the existing IT infrastructure and will not include hardware upgrades or the development of custom manufacturing modules.'</li><li>'Scope of Work and Key Assumptions\nThis initiative aims to develop a centralized data analytics platform to unify reporting across the enterprise. The scope of work includes requirements gathering, data pipeline development, warehouse design, and dashboard creation. The project assumes that source system owners will provide timely access to data and subject matter experts. The boundaries of this project are strictly limited to the five source systems listed in Appendix A; integrating additional data sources is considered out of scope and must be handled through a separate change request.'</li><li>"Background and Project Context\nThe current website suffers from outdated technology that is no longer supported, leading to security vulnerabilities and a poor user experience. This project will rebuild the public-facing site on a modern content management system to empower content editors and improve accessibility compliance. The scope encompasses the complete content migration, user training, and a one-year warranty period. It is assumed that the site's information architecture and core content will remain largely unchanged unless improvements are identified during the discovery phase."</li></ul> |
-| Timeline - This section outlines the timeline, including the length of the contract, deadlines, project start and end dates, and other key milestone schedules.    | <ul><li>'Milestone Payment Schedule\nPayment is contingent upon the successful completion and acceptance of the following milestones: 20% upon contract signing and project kick-off, 30% upon completion and acceptance of the development phase, 30% upon successful completion of system integration testing, and the final 20% upon project closure and delivery of all final documentation. Each milestone has a hard deadline as outlined in Attachment C - Schedule of Events.'</li><li>'Development Sprint Timeline\nDevelopment will be organized into two-week sprints. Sprint 1: Jan 10 - Jan 21; Sprint 2: Jan 24 - Feb 4; Sprint 3: Feb 7 - Feb 18; [ ... ] The final sprint, Sprint 18, is scheduled for August 15 - August 26, dedicated to final bug fixes and preparation for deployment.'</li><li>'Project Milestone Dates\nKick-off Meeting: January 15, 2025; Finalized Project Charter: January 29, 2025; Hardware Procurement Completed: March 15, 2025; Data Migration Completed: June 30, 2025; User Training Completed: August 15, 2025; Project Closeout: September 30, 2025.'</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| Deliverables - This section lists the deliverables or tangible outputs the offeror/contractor is required to provide.                                              | <ul><li>'Training and Transition Deliverables\nAs part of the knowledge transfer, the offeror must deliver a series of three (3) training workshops for end-users and administrators, along with recorded video tutorials and a searchable FAQ knowledge base portal.'</li><li>"Required Deliverables List\nBy the conclusion of the contract, the vendor must deliver a production-ready mobile application published on the iOS App Store and Google Play Store, a fully documented API for third-party integration, and source code deposited into the client's designated GitHub repository."</li><li>'Monthly Deliverables\nThe vendor shall provide a written Monthly Status Report by the 5th business day of each month, detailing progress against the project plan, risks, issues, and key performance indicators (KPIs).'</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| Technologies - This section specifies the tech stack - the environment, technologies, platforms, software, or tools that will be used or required for the project. | <ul><li>"•  ADB DXP\n• 10 -15 Data products • 5-8 AI Projects • Required Activities • The following activities must be part of the contractor’s deliverables: • Creation and maintenance of ADB's LLM Enterprise architecture • Software development following best practices (unit testing, creation of common libraries, CI/CD, IaC, modern UI/UX) • LLM Data Science Experimentation (Prototyping ideas of LLM applications • Production Grade Application deployment (Infrastructure Monitoring, Backup and Recovery, Cost Optimization, Performance Monitoring) • Security and Compliance (documentation & architecture compliant with ADB's security policies) • Data Platform Lifecycle (Creation of reliable and efficient data pipelines for the LLM's consumption, end to end data lineage) • Develop and Adherence to industry standard responsible ai framework"</li><li>'Frontend Development Requirements\nThe user interface shall be a single-page application (SPA) built with the Angular 15 framework. The application must use the NgRx library for state management and be styled according to the Google Material Design specification using Angular Material components.'</li><li>'Integration Technologies\nIntegration with the legacy ERP system will be accomplished using MuleSoft Anypoint Platform as the enterprise service bus (ESB). APIs must be designed in accordance with RESTful principles and must utilize OAuth 2.0 for authorization.'</li></ul>                                                                                                                                                                                                                                                                         |
-| Company Info - This section provides information about the offeror/contractor, including qualifications, past experience, and mission.                             | <ul><li>"Executive Leadership Profiles\nThe offeror must submit professional profiles of the executive leadership team, including the CEO, CTO, and other key executives. Each profile shall include educational background, years of industry experience, previous leadership roles, and specific expertise relevant to this procurement. The offeror shall describe the leadership team's vision and their commitment to government contracting excellence."</li><li>'Business Continuity and Disaster Recovery\nThe offeror shall provide an overview of their corporate business continuity and disaster recovery capabilities. The proposal must describe infrastructure redundancy, data backup strategies, and recovery time objectives. The offeror shall include information about any recent business continuity tests or certifications the company has undergone.'</li><li>"Client Testimonials and Success Stories\nThe offeror must provide at least five client testimonials from previous government or commercial clients that demonstrate the company's performance excellence. The proposal shall include specific examples of successful project delivery, problem-solving capabilities, and client satisfaction. Each testimonial must include the client organization, project scope, and measurable outcomes achieved."</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                           |
+| Label                                                                                                                                                              | Examples                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Scope - This section describes the scope of the project, including project goals, boundaries, assumptions, and background context.                                 | <ul><li>"Background and Project Context\nThe current website suffers from outdated technology that is no longer supported, leading to security vulnerabilities and a poor user experience. This project will rebuild the public-facing site on a modern content management system to empower content editors and improve accessibility compliance. The scope encompasses the complete content migration, user training, and a one-year warranty period. It is assumed that the site's information architecture and core content will remain largely unchanged unless improvements are identified during the discovery phase."</li><li>"Goals and Out-of-Scope Items\nThe primary goal is to enhance cybersecurity posture by implementing a multi-factor authentication (MFA) solution for all internal applications. The scope includes the procurement of a vendor product, configuration, integration with existing systems, and user rollout. Specifically out of scope are any hardware upgrades to end-user workstations and the development of custom MFA software. This project operates under the assumption that the chosen vendor solution will be compatible with the agency's existing identity provider."</li><li>"Project Objectives and Boundaries\nThe goal of this project is to modernize the legacy customer relationship management (CRM) system to improve data accuracy and user efficiency. The scope includes the analysis, design, development, and implementation of a new cloud-based SaaS solution. This project is bounded to the integration with the existing Oracle financial system and the agency's Active Directory; it does not include any upgrades to those external systems. A key assumption is that the current data quality in the legacy system is sufficient for migration without extensive cleansing."</li></ul> |
+| Timeline - This section outlines the timeline, including the length of the contract, deadlines, project start and end dates, and other key milestone schedules.    | <ul><li>'Project Schedule and Key Milestones\nThe total period of performance for this contract shall be 12 months from the date of award. Key milestones include: Completion of Requirements Gathering by Month 1, Final Design Approval by Month 3, System Implementation by Month 8, User Acceptance Testing (UAT) by Month 10, and Final Project Sign-off by Month 12. The contractor must provide a detailed Gantt chart outlining all activities and dependencies.'</li><li>'Project Milestone Dates\nKick-off Meeting: January 15, 2025; Finalized Project Charter: January 29, 2025; Hardware Procurement Completed: March 15, 2025; Data Migration Completed: June 30, 2025; User Training Completed: August 15, 2025; Project Closeout: September 30, 2025.'</li><li>"Critical Path Deadlines\nThe project has the following non-negotiable deadlines: Environment provisioning must be complete by 2024-10-31. Data migration must be completed by 2025-01-15. Full operational capability (FOC) must be achieved by 2025-06-30. The contractor's proposed schedule must demonstrate how these key dates will be met."</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Deliverables - This section lists the deliverables or tangible outputs the offeror/contractor is required to provide.                                              | <ul><li>'Design Phase Deliverables\nThe deliverables for the design phase shall include: User Personas, Customer Journey Maps, a Sitemap, an Interactive Prototype, and a UI Style Guide with a complete component library for developers.'</li><li>'Analysis Deliverables\nThe primary deliverable for the discovery phase is a Detailed Requirements Specification document, which must include functional requirements, non-functional requirements, and a traceability matrix linking requirements to proposed solutions.'</li><li>'Documentation Deliverables\nThe contractor is required to furnish detailed documentation, including a System Architecture Diagram, Network Security Plan, Database Schema Documentation, and a full set of Operational Runbooks for the IT support team.'</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Technologies - This section specifies the tech stack - the environment, technologies, platforms, software, or tools that will be used or required for the project. | <ul><li>'Data Analytics and Reporting Tools\nThe business intelligence module must utilize Tableau Server 2022.2 for generating dashboards and reports. Data must be ingested into the analytics platform using Apache NiFi pipelines and processed using PySpark scripts running on a Databricks platform.'</li><li>"Security and Compliance Technologies\nAll application authentication must integrate with the client's existing PingFederate instance for SAML 2.0-based single sign-on (SSO). Static code analysis must be performed using SonarQube, and dynamic scanning must be conducted with the OWASP ZAP tool prior to each release."</li><li>'Required Technology Stack\nThe solution must be developed using the .NET 6 framework for backend services. The frontend must be built using the React 18 library with TypeScript. The database must be Microsoft SQL Server 2019 or later. All code must be managed in a Git repository and deployed via Azure DevOps pipelines.'</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| Company Info - This section provides information about the offeror/contractor, including qualifications, past experience, and mission.                             | <ul><li>'Key Personnel Resumes\nThe offeror must identify the proposed Project Manager, Lead Architect, and Lead Data Scientist assigned to this effort. For each key personnel, provide a resume that outlines their specific experience with cloud migration projects, relevant certifications (e.g., PMP, AWS Solutions Architect), and their role and duration on projects of similar size and complexity. Resumes shall not exceed two pages each.'</li><li>'Employee Qualifications and Expertise\nThe offeror shall detail the overall qualifications of their workforce including the percentage of staff with advanced degrees, professional certifications, and security clearances. The proposal must provide statistics on average years of experience in relevant technical domains and federal contracting. The offeror shall describe their approach to maintaining a highly skilled and technically competent workforce.'</li><li>"Client Testimonials and Success Stories\nThe offeror must provide at least five client testimonials from previous government or commercial clients that demonstrate the company's performance excellence. The proposal shall include specific examples of successful project delivery, problem-solving capabilities, and client satisfaction. Each testimonial must include the client organization, project scope, and measurable outcomes achieved."</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 
 ## Evaluation
 
 ### Metrics
-| Label   | Accuracy | Precision | Recall | F1_Score | Confusion_Matrix                                                                          |
-|:--------|:---------|:----------|:-------|:---------|:------------------------------------------------------------------------------------------|
-| **all** | 0.8696   | 0.8816    | 0.8696 | 0.8693   | [[10, 1, 0, 0, 0], [0, 13, 0, 0, 0], [1, 1, 16, 1, 0], [0, 1, 1, 12, 0], [0, 1, 1, 1, 9]] |
+| Label   | Accuracy | Precision | Recall | F1_Score | Confusion_Matrix                                                                      |
+|:--------|:---------|:----------|:-------|:---------|:--------------------------------------------------------------------------------------|
+| **all** | 1.0      | 1.0       | 1.0    | 1.0      | [[3, 0, 0, 0, 0], [0, 4, 0, 0, 0], [0, 0, 5, 0, 0], [0, 0, 0, 4, 0], [0, 0, 0, 0, 4]] |
 
 ## Uses
 
@@ -168,8 +166,8 @@ from setfit import SetFitModel
 # Download from the 🤗 Hub
 model = SetFitModel.from_pretrained("setfit_model_id")
 # Run inference
-preds = model("Module has tight data and navigation integration with other EHB modules, 2) The module is used
-across HRSA by all bureaus with few specific deviations and automation for certain specific programs, 3) The process supports complex data driven business rules,")
+preds = model("Containerization and Orchestration
+All application components must be containerized using Docker and deployed onto a Kubernetes cluster (version 1.24+). Helm charts must be provided for all deployments to manage configuration and releases consistently across development, staging, and production environments.")
 ```
 
 <!--
@@ -199,9 +197,9 @@ across HRSA by all bureaus with few specific deviations and automation for certa
 ## Training Details
 
 ### Training Set Metrics
-| Training set | Min | Median  | Max |
-|:-------------|:----|:--------|:----|
-| Word count   | 9   | 93.4667 | 752 |
+| Training set | Min | Median | Max |
+|:-------------|:----|:-------|:----|
+| Word count   | 15  | 54.1   | 117 |
 
 | Label                                                                                                                                                              | Training Sample Count |
 |:-------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------|
@@ -232,10 +230,10 @@ across HRSA by all bureaus with few specific deviations and automation for certa
 ### Training Results
 | Epoch  | Step | Training Loss | Validation Loss |
 |:------:|:----:|:-------------:|:---------------:|
-| 0.0056 | 1    | 0.3313        | -               |
-| 0.2778 | 50   | 0.1791        | -               |
-| 0.5556 | 100  | 0.0663        | -               |
-| 0.8333 | 150  | 0.0257        | -               |
+| 0.0056 | 1    | 0.2413        | -               |
+| 0.2778 | 50   | 0.1147        | -               |
+| 0.5556 | 100  | 0.0152        | -               |
+| 0.8333 | 150  | 0.0065        | -               |
 
 ### Framework Versions
 - Python: 3.12.9

@@ -87,11 +87,9 @@ export const apiService = {
   },
 
   // Validate extracted content
-  validateExtraction: async (sessionId) => {
-    const response = await api.post('/validate-extraction/', null, {
-      params: { session_id: sessionId },
-    });
-    return response.data; // returns updated categories
+  validateExtraction: async (chunks) => {
+    const response = await api.post('/validate-extraction/', chunks);
+    return response.data; // returns labeled chunks
   },
 
   // Summarize content
