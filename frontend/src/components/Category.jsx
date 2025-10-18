@@ -1,3 +1,7 @@
+/*
+Component for displaying extracted categories and keywords in the "/analyze" page.
+*/
+
 import { Accordion } from 'react-bootstrap';
 
 const Category = ({ title, keywords, summary }) => {

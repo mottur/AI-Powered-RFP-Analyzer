@@ -1,7 +1,12 @@
+/*
+The "/label" page of the application. On this page, the user can manually label extracted chunks.
+*/
+
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
 import { apiService } from '../services/api';
+import { updateIsTraining, pollTrainingStatus, err } from '../services/utils';
 
 const LABELS = {
     "Scope": "This section describes the scope of the project, including project goals, boundaries, assumptions, and background context.",
@@ -39,63 +44,31 @@ const Labeler = () => {
       true_label: labels[index] !== '__SKIP__' ? labels[index] : null,
     }));
 
-    localStorage.removeItem('metrics');
-    localStorage.setItem('needsChartRefresh', 'false');
-    localStorage.setItem('isTraining', 'true');
-
+    updateIsTraining(true);
+    
     try {
         // 1. Save labeled chunks
         await apiService.saveLabels(labeledChunks);
 
-        // 2. Trigger training using existing labels
-        const metrics = await apiService.trainClassifier();
+        // 2. Trigger training in the background using existing labels
+        await apiService.trainClassifier();
 
-        // 3. Store metrics in localStorage so Trainer page can load them
-        localStorage.setItem('metrics', JSON.stringify(metrics));
-        localStorage.setItem('needsChartRefresh', 'true');
-        localStorage.setItem('isTraining', 'false');
+        // 3. Poll for training status
+        let result = await pollTrainingStatus(apiService); // returns true when complete
+
+        if (!result) {
+            throw new Error("Training did not complete successfully.");
+        }
+        updateIsTraining(false);
 
         // 4. Redirect to Trainer page
         navigate('/train');
     } catch (error) {
-        if (error.code === 'ECONNABORTED') {
-            // Timeout occurred — but training might still be ongoing
-            console.warn('Training timeout — continuing assuming backend is still working.');
-        } else {
-            console.error('Error during label submission and training:', error);
-            alert('Something went wrong while submitting labels or training.');
-            localStorage.setItem('isTraining', 'false');
-            navigate('/train');
-        }
+        err('Error during label submission and training:', error);
+        alert('Something went wrong while submitting labels or training.');
+        updateIsTraining(false);
+        navigate('/train');
     }
-
-    // Poll localStorage for metrics
-    try {
-      const metrics = await pollForMetrics();
-      localStorage.setItem('isTraining', 'false');
-      localStorage.setItem('needsChartRefresh', 'true');
-      navigate('/train');
-    } catch (error) {
-      console.warn('Metrics not found after polling:', error);
-      alert('Training is likely still running. Please check the Trainer page soon.');
-      localStorage.setItem('isTraining', 'true');
-    }
-  };
-
-  const pollForMetrics = async (retries = 24, delayMs = 5000) => {
-    for (let i = 0; i < retries; i++) {
-      const raw = localStorage.getItem('metrics');
-      if (raw) {
-        try {
-          const metrics = JSON.parse(raw);
-          return metrics;
-        } catch (e) {
-          console.warn("Invalid metrics format — retrying...");
-        }
-      }
-      await new Promise((res) => setTimeout(res, delayMs));
-    }
-    throw new Error('Metrics not found after polling localStorage.');
   };
 
   return (

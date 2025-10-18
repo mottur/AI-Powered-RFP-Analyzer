@@ -1,3 +1,7 @@
+/*
+The "/label" page of the application. On this page, the user can classify and summarize text from any provided RFP document.
+*/
+
 import Category from '../components/Category'
 import FileUploadButton from '../components/FileUploadButton'
 import AnalyzeButton from '../components/AnalyzeButton';

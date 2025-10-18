@@ -1,5 +1,10 @@
+/*
+Defines a common layout to be used across all pages.
+*/
+
 import Sidebar from '../components/Sidebar';
 import { apiService } from '../services/api';
+import { err } from '../services/utils';
 import { useState, useEffect } from 'react'
 
 const DashboardLayout = ({ children }) => {
@@ -17,7 +22,7 @@ const DashboardLayout = ({ children }) => {
       setBackendStatus('connected');
     } catch (error) {
       setBackendStatus('disconnected');
-      console.error('Backend connection failed:', error);
+      err('Backend connection failed:', error);
     }
   };
 

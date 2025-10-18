@@ -1,52 +1,50 @@
+/*
+The "/train" page of the application. On this page, the classifier model is trained using user-provided documents.
+*/
+
 import FileUploadButton from '../components/FileUploadButton'
 import TrainButton from '../components/TrainButton';
 import { useState, useEffect } from 'react'
 import { Container, Row, Col, Button, Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { apiService } from '../services/api';
+import { updateIsTraining, pollValidationStatus, pollTrainingStatus, err } from '../services/utils';
 
 const Trainer = () => {
     const [selectedFiles, setSelectedFiles] = useState(null);
     const [option, setOption] = useState(null);
-    const [metrics, setMetrics] = useState(null);
     const [refreshKey, setRefreshKey] = useState(Date.now());
     const [showModal, setShowModal] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
-        const storedMetrics = localStorage.getItem('metrics');
-        const needsChartRefresh = localStorage.getItem('needsChartRefresh') === 'true';
-        if (storedMetrics) {
-            setMetrics(JSON.parse(storedMetrics));
-        }
-        if (needsChartRefresh) {
+        const refreshCharts = () => {
             setRefreshKey(Date.now());
-            localStorage.removeItem('needsChartRefresh');
-        }
+        };
+        refreshCharts();
+        updateIsTraining(false); // Reset training state on page load
+        window.addEventListener("training-update", refreshCharts);
+        return () => {
+            window.removeEventListener("training-update", refreshCharts);
+        };
     }, []);
 
     const handleFileSelect = (files, selectedOption) => {
         setSelectedFiles(files);
         setOption(selectedOption);
-        localStorage.removeItem('metrics');
-        localStorage.setItem("isTraining", "false");
-        window.dispatchEvent(new Event("training-update"));
+        updateIsTraining(false);
     };
 
     const handleUseExistingClick = () => {
         setSelectedFiles(null);
         setOption("useExisting");
-        localStorage.removeItem('metrics');
+        updateIsTraining(false);
     };
 
     const handleComplete = (result) => {
         if (result.chunks) {
             setShowModal(true);
             localStorage.setItem("labelChunks", JSON.stringify(result.chunks));
-        } else if (result.metrics) {
-            setMetrics(result.metrics);
-            localStorage.setItem("metrics", JSON.stringify(result.metrics));
-            setRefreshKey(Date.now());
         }
     };
 
@@ -58,30 +56,37 @@ const Trainer = () => {
     const handleModalLLMConfirm = async () => {
         setShowModal(false);
         try {
-            // 1. Label using an LLM and save labeled chunks
+            // 1. Start validation in backend
             const chunks = localStorage.getItem("labelChunks");
-            const result = await apiService.validateExtraction(JSON.parse(chunks));
-            await apiService.saveLabels(result.chunks);
+            await apiService.validateExtraction(JSON.parse(chunks));
 
-            // 2. Trigger training using existing labels
-            const metrics = await apiService.trainClassifier();
+            // 2. Poll for validation status
+            let result = await pollValidationStatus(apiService); // returns true when complete
 
-            // 3. Store metrics
-            setMetrics(metrics);
-            localStorage.setItem("metrics", JSON.stringify(result.metrics));
-            setRefreshKey(Date.now());
-        } catch (error) {
-            if (error.code === 'ECONNABORTED') {
-                // Timeout occurred — but training might still be ongoing
-                console.warn('Training timeout — continuing assuming backend is still working.');
-            } else {
-                console.error('Error during label validation and training:', error);
-                alert('Something went wrong while validating labels using LLM or training.');
+            if (!result) {
+                throw new Error("Validation did not complete successfully.");
             }
+
+            // 3. Train using the saved, validated data
+            await apiService.trainClassifier();
+
+            // 4. Poll for training status
+            result = await pollTrainingStatus(apiService); // returns true when complete
+
+            if (!result) {
+                throw new Error("Training did not complete successfully.");
+            }
+        } catch (error) {
+            err('Error during LLM labeling or training:', error);
+            alert('Something went wrong during LLM labeling or training.');
         } finally {
-            localStorage.setItem("isTraining", "false");
-            window.dispatchEvent(new Event("training-update"));
+            updateIsTraining(false);
         }
+    };
+
+    const handleModalCancel = () => {
+        setShowModal(false);
+        updateIsTraining(false);
     }
 
     return (
@@ -114,7 +119,7 @@ const Trainer = () => {
                             <span>Use existing training data</span>
                         </Button>
                     </div>
-                    <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+                    <Modal show={showModal} onHide={handleModalCancel} centered>
                         <Modal.Header closeButton>
                             <Modal.Title>Text Extraction Complete</Modal.Title>
                         </Modal.Header>
@@ -123,7 +128,7 @@ const Trainer = () => {
                             Would you like to start labeling now?
                         </Modal.Body>
                         <Modal.Footer>
-                            <Button variant="secondary" onClick={() => setShowModal(false)}>
+                            <Button variant="secondary" onClick={handleModalCancel}>
                                 Cancel
                             </Button>
                             <Button variant="light" onClick={handleModalLLMConfirm}>
@@ -142,7 +147,7 @@ const Trainer = () => {
                 <Col md={6}>
                     <img
                     key={`metrics-${refreshKey}`}
-                    src={`/visualization/metrics.png?key=${refreshKey}`}
+                    src={`/visualization/metrics.png?ts=${refreshKey}`}
                     alt="Training Metrics"
                     style={{ width: '100%', height: 'auto' }}
                     />
@@ -151,7 +156,7 @@ const Trainer = () => {
                 <Col md={6}>
                     <img
                     key={`matrix-${refreshKey}`}
-                    src={`/visualization/confusion_matrix.png?key=${refreshKey}`}
+                    src={`/visualization/confusion_matrix.png?ts=${refreshKey}`}
                     alt="Confusion Matrix"
                     style={{ width: '100%', height: 'auto' }}
                     />

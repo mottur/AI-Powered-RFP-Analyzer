@@ -1,0 +1,8 @@
+.env
+.env.example
+*.pem
+node_modules/
+__pycache__/
+checkpoints/
+checkpoint-180/
+mlruns/

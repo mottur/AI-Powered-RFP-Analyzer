@@ -1,6 +1,11 @@
+/*
+Component for executing the text extraction, classification, and summarization backend pipeline.
+*/
+
 import { Button, Spinner } from 'react-bootstrap';
 import { useState } from 'react';
 import { apiService } from '../services/api';
+import { err } from '../services/utils';
 
 const AnalyzeButton = ({ file = null, onComplete }) => {
   const [loading, setLoading] = useState(false);
@@ -14,20 +19,20 @@ const AnalyzeButton = ({ file = null, onComplete }) => {
     setLoading(true);
 
     try {
-      const extractResult = await apiService.extractText(file);
-      const sessionId = extractResult.session_id;
+      const classifyResult = await apiService.classifyText(file);
+      const sessionId = classifyResult.session_id;
 
       const summaryResult = await apiService.summarizeText(sessionId);
 
       if (onComplete) {
         onComplete({
           sessionId,
-          categories: extractResult.categories,
+          categories: classifyResult.categories,
           summaries: summaryResult.summaries,
         });
       }
     } catch (error) {
-      console.error('Failed to extract and summarize:', error);
+      err('Failed to classify and summarize:', error);
       alert('Error processing the document.');
     } finally {
       setLoading(false);

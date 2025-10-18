@@ -1,3 +1,7 @@
+/*
+Component for uploading pdf and json files.
+*/
+
 import { Button } from 'react-bootstrap';
 import { useRef, useState, useEffect } from 'react';
 
