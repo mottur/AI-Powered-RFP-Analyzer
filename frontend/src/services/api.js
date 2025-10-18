@@ -1,4 +1,11 @@
+/*
+Links the frontend and backend using axios. 
+Defines an 'apiService' that can execute the api functions from the backend.
+*/
+
+import { err } from '../services/utils';
 import axios from 'axios';
+
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
 
@@ -9,29 +16,6 @@ const api = axios.create({
   },
   timeout: 20000,
 });
-
-// Optional: Add token-based auth if needed
-api.interceptors.request.use(
-  (config) => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
-    }
-    return config;
-  },
-  (error) => Promise.reject(error)
-);
-
-api.interceptors.response.use(
-  (response) => response,
-  (error) => {
-    if (error.response?.status === 401) {
-      localStorage.removeItem('token');
-      window.location.href = '/login';
-    }
-    return Promise.reject(error);
-  }
-);
 
 export const apiService = {
   // Health check
@@ -51,7 +35,7 @@ export const apiService = {
 
     formData.append('option', option);
 
-    const response = await api.post('/train-classifier/', formData, {
+    const response = await api.post('/classification/train/', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
@@ -59,26 +43,33 @@ export const apiService = {
     return response.data;
   },
 
+  // Get status of training
+  getTrainingStatus: async () => {
+    const response = await api.get('/classification/status/');
+    return response.data; // returns { status, chunks }
+  },
+
+  // Save labeled chunks to file
   saveLabels: async (labeledChunks) => {
     try {
-      const response = await api.post('/save-labels/', labeledChunks, {
+      const response = await api.post('/validation/labeled-chunks/', labeledChunks, {
         headers: {
           'Content-Type': 'application/json',
         },
       });
       return response.data;
     } catch (error) {
-      console.error('Failed to save labels: ', error);
+      err('Failed to save labels: ', error);
       throw error;
     }
   },
 
-  // Extract text from PDF
-  extractText: async (file) => {
+  // Extract text from PDF, chunk, and classify
+  classifyText: async (file) => {
     const formData = new FormData();
     formData.append('file', file);
 
-    const response = await api.post('/extract-text/', formData, {
+    const response = await api.post('/classification/', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
@@ -87,16 +78,20 @@ export const apiService = {
   },
 
   // Validate extracted content
-  validateExtraction: async (sessionId) => {
-    const response = await api.post('/validate-extraction/', null, {
-      params: { session_id: sessionId },
-    });
-    return response.data; // returns updated categories
+  validateExtraction: async (chunks) => {
+    const response = await api.post('/validation/', chunks);
+    return response.data; // returns labeled chunks
+  },
+
+  // Get status of validation
+  getValidationStatus: async () => {
+    const response = await api.get('/validation/status/');
+    return response.data; // returns status
   },
 
   // Summarize content
   summarizeText: async (sessionId) => {
-    const response = await api.post('/summarize-text/', null, {
+    const response = await api.post('/summarization/', null, {
       params: { session_id: sessionId },
     });
     return response.data;

@@ -1,7 +1,11 @@
+/*
+Component for uploading pdf and json files.
+*/
+
 import { Button } from 'react-bootstrap';
 import { useRef, useState, useEffect } from 'react';
 
-const FileUploadButton = ({ onFileSelect, selectedFileName = null, forTrain = false, label = 'Upload document(s)' }) => {
+const FileUploadButton = ({ onFileSelect, selectedFileName = null, forTrain = false, label = 'Upload document(s)', isSelected = false }) => {
   const fileInputRef = useRef(null);
   const [fileName, setFileName] = useState(selectedFileName || null);
 
@@ -52,7 +56,7 @@ const FileUploadButton = ({ onFileSelect, selectedFileName = null, forTrain = fa
         onChange={handleFileChange}
         style={{ display: 'none' }}
       />
-      <Button variant="light" className="text-dark select-btn" onClick={handleButtonClick}>
+      <Button variant="light" className={`text-dark select-btn ${isSelected ? "selected" : ""}`} onClick={handleButtonClick}>
         <i className="bi bi-upload pe-2 fs-5"></i>
         <span>{getButtonLabel()}</span>
       </Button>

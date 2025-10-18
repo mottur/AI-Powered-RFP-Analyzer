@@ -1,3 +1,7 @@
+/*
+The landing page of the application. On this page, the user can navigate to the "/train" and "/analyze" pages.
+*/
+
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 

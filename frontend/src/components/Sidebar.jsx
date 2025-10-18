@@ -1,3 +1,7 @@
+/*
+Side navbar component of the application, linking to the "/analyze", "/train", and landing pages.
+*/
+
 import Nav from 'react-bootstrap/Nav';
 import { NavLink } from 'react-router-dom';
 

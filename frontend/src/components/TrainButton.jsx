@@ -1,9 +1,29 @@
+/*
+Component for executing the classifier training backend code.
+*/
+
 import { Button, Spinner } from 'react-bootstrap';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { apiService } from '../services/api';
+import { updateIsTraining, pollTrainingStatus, err } from '../services/utils';
 
 const TrainButton = ({ files = null, option = "useExisting", onComplete }) => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(() => {
+    return localStorage.getItem("isTraining") === "true";
+  });
+
+  useEffect(() => {
+    const handleStorageUpdate = () => {
+      const isTraining = localStorage.getItem("isTraining") === "true";
+      setLoading(isTraining);
+    };
+
+    window.addEventListener("training-update", handleStorageUpdate);
+
+    return () => {
+      window.removeEventListener("training-update", handleStorageUpdate);
+    };
+  }, []);
 
   const handleClick = async () => {
     if (option != "useExisting" && !files) {
@@ -11,26 +31,25 @@ const TrainButton = ({ files = null, option = "useExisting", onComplete }) => {
       return;
     }
 
-    localStorage.setItem("isTraining", "true")
-    setLoading(true);
+    updateIsTraining(true);
 
     try {
-      const results = await apiService.trainClassifier(files, option);
+      await apiService.trainClassifier(files, option);
+
+      let result = await pollTrainingStatus(apiService);
 
       if (onComplete) {
-        onComplete(results);
+        onComplete(result);
       }
     } catch (error) {
-      if (error.code === 'ECONNABORTED') {
-          // Timeout occurred — but training might still be ongoing
-          console.warn('Training timeout — continuing assuming backend is still working.');
-      } else {
-          console.error('Failed to train classifier:', error);
-          alert('Error processing the document.');
-      }
+      updateIsTraining(false);
+      setLoading(false);
+      err('Failed to train classifier: ', error);
+      alert('Error processing the document.');
     } finally {
+      // For customPdfs, we only extract text here — actual training happens after labeling
       if (option != "customPdfs") {
-        localStorage.setItem("isTraining", "false")
+        updateIsTraining(false);
         setLoading(false);
       }
     }

@@ -1,3 +1,7 @@
+/*
+Defines all the custom styles in the application.
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
 
 body,
@@ -92,6 +96,10 @@ h1, h2, h3, h4, h5, h6 {
   border-color: black;
 }
 
+.select-btn.selected {
+  background-color: rgb(190, 230, 255);
+}
+
 .category .accordion-item {
   border-color: black;
   border-radius: 6px;
@@ -100,6 +108,7 @@ h1, h2, h3, h4, h5, h6 {
 .category .accordion-button {
   font-size: large !important;
   font-weight: bold;
+  color: black !important;
   background-color: #f8f9fa !important;
 }
 

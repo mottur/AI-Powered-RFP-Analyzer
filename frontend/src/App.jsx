@@ -1,3 +1,7 @@
+/*
+Defines the application object and the routes to different pages.
+*/
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './App.css'

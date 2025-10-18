@@ -1,0 +1,48 @@
+version: "3.8"
+
+services:
+  apra-client:
+    container_name: apra-client
+    image: mottur/apra-client:latest
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_API_BASE_URL: ${VITE_API_BASE_URL}
+        VITE_APP_NAME: ${VITE_APP_NAME}
+    ports:
+      - "8000:80"
+    networks:
+      - apra-network
+    depends_on:
+      - apra-api
+    environment:
+      - VITE_API_BASE_URL=${VITE_API_BASE_URL}
+      - VITE_APP_NAME=${VITE_APP_NAME}
+
+  apra-api:
+    container_name: apra-api
+    image: mottur/apra-api:latest
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5050:5000"
+    networks:
+      - apra-network
+    depends_on:
+      - redis
+    environment:
+      - REDIS_HOST=${REDIS_HOST}
+      - API_KEY=${API_KEY}
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    networks:
+      - apra-network
+
+networks:
+  apra-network:
+    driver: bridge

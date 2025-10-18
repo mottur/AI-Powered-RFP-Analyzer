@@ -1,0 +1,390 @@
+{
+    "Scope": {
+        "sections": [
+            {
+                "id": "A.",
+                "title": "Scope",
+                "body": "\u2022 As set out in this SOW, the PSP is expected to meet each requirement in the delivery of efficient operational support on AI and Big Data Platforms and initiatives.",
+                "page": 6,
+                "parent_id": null,
+                "true_label": "Scope"
+            },
+            {
+                "id": "A.",
+                "title": "Solution Overview",
+                "body": "The professional services provider must work with ADB AI Lab and Big Data team to build a production ready AI and big data solutions, required activities below provide further details.",
+                "page": 6,
+                "parent_id": null,
+                "true_label": "Scope"
+            },
+            {
+                "id": "D.",
+                "title": "Service Delivery Approach",
+                "body": "\u2022 The delivery of the service is expected to be divided into three (3) phases. Provided below are the defined set of activities, deliverables, for each phase.",
+                "page": 7,
+                "parent_id": null,
+                "true_label": "Scope"
+            },
+            {
+                "id": "1.",
+                "title": "Understanding of the Need (10 points total)",
+                "body": "The Offeror shall reflect their knowledge and understanding of the Statement of Work (SOW) requirements contained in the RFQ. The Offeror shall explain, in their own words, a detailed understanding of the purpose of this RFQ and how well they can achieve the scope/objectives of the hypothetical scenario projects and tasks as defined in the SOW. The Offeror shall demonstrate their understanding of HRSA internal and external operating environment/partners (e.g., HRSA Bureaus and Offices, Hospitals, Universities, Health Centers, etc.)",
+                "page": 4,
+                "parent_id": null,
+                "true_label": "Scope"
+            },
+            {
+                "id": "1.",
+                "title": "Introduction",
+                "body": "The US Fish & Wildlife Service (FWS, the Service) is in need of a Drupal development group to rebuild the Invasive Carp Regional Coordinating Committee site as a small-scale content management system in the latest version of Drupal (currently Drupal 9). Working alongside the Service, the contractor shall provide expertise to work through a design review of the current site and then develop a new version to facilitate a full migration off the old environment.",
+                "page": 3,
+                "parent_id": null,
+                "true_label": "Scope"
+            },
+            {
+                "id": "2.",
+                "title": "Background",
+                "body": "A content management system, or CMS, is an application used to manage and publish web content. It allows multiple users to contribute, create, edit, and publish content without needing to have a web development skillset. It can also provide version management and authoring workflow to keep webpages consistent. Historically, management of the Invasive Carp website has suffered from complex content entry procedures and bottlenecks due to lack of resources/expertise in managing html. The rebuild of this site in a modernized content management system aims to achieve a straightforward content entry workflow that can be easily adopted and improve upon prior challenges of managing the site.",
+                "page": 3,
+                "parent_id": null,
+                "true_label": "Scope"
+            },
+            {
+                "id": "5.",
+                "title": "Assumptions",
+                "body": "The Service assumes the following in regard to contractor approach: \u2022 While it is intended that the contractor approaches the site rebuild effort with an eye towards design improvements, it is not expected to be a full-fledged redesign effort - the most important requirements are focused on ease of managing the content on the site (in other words, the Service does not intend to spend an abundance of time on a completely new design) \u2022 There are two main parts to the CMS: (1) A content management interface allowing content creators to work with content directly by inputting content via templates and (2) a front-end display that takes the content entered into templates and renders it as a cohesive working website. Content entry forms should be configured with ease of use/simplicity as a priority",
+                "page": 4,
+                "parent_id": null,
+                "true_label": "Scope"
+            },
+            {
+                "id": "8.",
+                "title": "Place of Performance",
+                "body": "All work shall be performed remotely via Government Approved Remote Access solutions unless otherwise agreed upon.",
+                "page": 5,
+                "parent_id": null,
+                "true_label": "Scope"
+            }
+        ]
+    },
+    "Deliverables": {
+        "sections": [
+            {
+                "id": "",
+                "title": "\u2022  ADB DXP",
+                "body": "\u2022 10 -15 Data products \u2022 5-8 AI Projects \u2022 Required Activities \u2022 The following activities must be part of the contractor\u2019s deliverables: \u2022 Creation and maintenance of ADB's LLM Enterprise architecture \u2022 Software development following best practices (unit testing, creation of common libraries, CI/CD, IaC, modern UI/UX) \u2022 LLM Data Science Experimentation (Prototyping ideas of LLM applications \u2022 Production Grade Application deployment (Infrastructure Monitoring, Backup and Recovery, Cost Optimization, Performance Monitoring) \u2022 Security and Compliance (documentation & architecture compliant with ADB's security policies) \u2022 Data Platform Lifecycle (Creation of reliable and efficient data pipelines for the LLM's consumption, end to end data lineage) \u2022 Develop and Adherence to industry standard responsible ai framework",
+                "page": 7,
+                "parent_id": null,
+                "true_label": "Deliverables"
+            },
+            {
+                "id": "3",
+                "title": "Quality Review       review on AI models and addresses                 10%",
+                "body": "any action points Final Project Sign- Submission of satisfactory Final4 10% off Project Report, accepted by ADB",
+                "page": 10,
+                "parent_id": null,
+                "true_label": "Deliverables"
+            },
+            {
+                "id": "3.",
+                "title": "Statement of Work",
+                "body": "The contractor will be tasked with rebuilding the Invasive Carp Regional Coordinating Committee (ICRCC) website as a content management system in the latest version of Drupal (currently Drupal 9). It is anticipated that the effort will start off with a design review of the legacy site, to determine if and where it may make sense to pursue any notable changes during the rebuild. The current organization and structure of the site is well liked by its heaviest users, but the group remains open to suggestions on how to improve the user experience and how to best build upon the foundation that exists. Once there is an agreed upon strategy for the site rebuild and any design adjustments coming into play, the contractor would move forward into development and further migration efforts. The site currently houses and will continue to house the following types of content/pages (not exclusively limited to): 1. Background Info/About Us 2. Plans and Report library (documents) 3. Newsroom/News archive 4. Outreach and Resource materials 5. Species Profiles (4 carp species) 6. FAQ It is anticipated that FWS and the partnership organization resources will manage an overwhelming majority of the written content development and migration for the site, while the contractor will be expected to facilitate migration of document and media assets where logical.",
+                "page": 3,
+                "parent_id": null,
+                "true_label": "Deliverables"
+            },
+            {
+                "id": "4.",
+                "title": "Deliverables",
+                "body": "All written deliverables shall be created in a professional manner and shall include meeting summaries, background information, and any appropriate research material where requested. All non-branded deliverables shall be submitted in an editable (i.e., unprotected) format such as Microsoft Word, Excel, or PowerPoint when applicable. All Deliverables will be submitted on or before the due date specified or submitted in accordance with a later scheduled date determined by FWS. The following deliverables will be prepared by or updated by the Contractor: \u25cf Project plan and schedule \u25cf Documentation of any design adjustments that will take place to \u2018as-is\u2019 site \u2013 in form of wire frame/mockup, or written explanations for simple adjustments \u25cf End user guidance for site owners as requested \u25cf Drupal Site Pages (Finished Product)",
+                "page": 4,
+                "parent_id": null,
+                "true_label": "Deliverables"
+            }
+        ]
+    },
+    "Company Info": {
+        "sections": [
+            {
+                "id": "B.",
+                "title": "Contractor Qualifications",
+                "body": "\u2022 The contractor is expected to: \u2022 Have no less than five (5) years of experience in offering professional services \u2022 Make reasonable efforts in applying its industry expertise and assist ADB in setting up standards for AI model development and deployment. \u2022 Appoint a Team Lead to serve as an escalation point for technical and security-related queries.",
+                "page": 6,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "3.",
+                "title": "Personnel (10 points)",
+                "body": "The Offeror must include the name(s) of Key Personnel (Attachment Q1 - EHBs V&V Labor Categories) with demonstrated current experience (defined as, within the last 3 years) managing similar BPA type vehicles. These individuals must possess and demonstrate experience involving Verification & Validation of Enterprise IT Systems. These individuals will be responsible for all activity under this BPA and the resulting completion of each BPA Call. These individuals should have experience in similar engagements and should be current employees of the Offeror. The skill level and qualifications of the BPA management Key Personnel shall be maintained throughout the completion of the BPA.",
+                "page": 4,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "4.",
+                "title": "Management and Staffing Plan (10 points)",
+                "body": "The Offeror shall describe the overall plan for adequately staffing, organizing and managing the tasks required by this contract. The plan shall indicate how organizational roles and responsibilities will be addressed, decisions made, work monitored, and quality and timeliness of products/services will be ensured. The Offeror shall explain how this management and staffing plan will enable the Offeror to start projects quickly, move efficiently by conducting multiple tasks concurrently, complete complex tasks within narrow timeframes, and assure the quality of products/services provided. If the Offeror proposes to use any Consultants or Subcontractor employees to carry out elements within the SOW under this BPA, the management staffing plan shall specify how the Offeror, Consultants and/or Subcontractors will work together, how the tasks will be coordinated, and how quality assurance will be accomplished. The Offeror shall describe their method of how employees are recruited and maintained for long-term assignments, whether they will be full-time permanent employees, part-time employees, temporary employees, term-of-contract personnel, independent Consultants, and/or Subcontractors are used. Also, describe proposed staffing methodologies when specialized or new skills are required. The Offeror shall describe its available internal and external resources to acquire and maintain an effective and efficient work force that will support HRSA\u2019s mission and produce timely and quality IT solutions. The Offeror shall identify all of the facilities and equipment that are available for the completion of all contract requirements. The Offeror\u2019s should describe corporate office locations in the event staff are required to work offsite at Offeror\u2019s site due to lack of space at HRSA facilities.",
+                "page": 5,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "5.",
+                "title": "Organizational Experience (10 points)",
+                "body": "The Offeror shall describe and demonstrate the organization\u2019s experience in successfully managing federal government contracts involving verification and validation of large Enterprise IT applications, best practices and similar projects. The Offeror shall provide a list and description of at least three (3) Enterprise IT verification and validation projects within the past three (3) years, or that they are currently performing, that demonstrates the Offeror\u2019s experience with similar scope, size, and/or complexity as this requirement. The Offeror shall demonstrate how their corporate experience specifically correlates to this project using a side-by-side \u201ccrosswalk\u201d comparison. Experience information must include a contract number, contract type, dollar value, date of award, performance period, and a brief narrative describing the nature and complexity of the work. Include name, current phone numbers, mailing address, and email address of the person who will verify this experience, the number of projects, complexity, workload, and dollar amount/contract value.",
+                "page": 5,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "3.",
+                "title": "Labor Categories: State the labor categories proposed, indicating discounted rates, if applicable, that are",
+                "body": "to be used over the life of the BPA. Include both on-site and off-site rates.",
+                "page": 11,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "1.",
+                "title": "Proposed on-site and off-site labor rates for each labor category required across the life of the BPA, and",
+                "body": "any applicable discounts, and",
+                "page": 14,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "6.",
+                "title": "Knowledge and Skills",
+                "body": "The Contractor shall identify the resources necessary to successfully perform the work contained herein. Contractor shall possess and maintain the requisite knowledge and expertise to successfully accomplish the objectives of this Statement of Work. The Contractor will be responsible for ensuring that, at a minimum, the proposed resource(s) possesses the following: \u25cf Proven development performance with the use of Drupal Content Management System and \u25cf Minimum of 5 years of programing/database admin experience. \u25cf General knowledge of DOI HR policies / processes. \u25cf The ability to write, and verbally present complex subjects in a clear and concise manner.",
+                "page": 4,
+                "parent_id": null,
+                "true_label": "Company Info"
+            },
+            {
+                "id": "9.",
+                "title": "Contacts",
+                "body": "Contracting Officer (CO): Lorenzo Aragon; E-Mail: Lorenzo_aragon@fws.gov; Ph# 505-248-6627",
+                "page": 5,
+                "parent_id": null,
+                "true_label": "Company Info"
+            }
+        ]
+    },
+    "Timeline": {
+        "sections": [
+            {
+                "id": "B.",
+                "title": "Duration",
+                "body": "\u2022 The engagement duration for the professional services will be for a period of fourteen (14) months. Renewal will depend on the satisfactory performance of the PSP based on the results of performance evaluation. \u2022 This SOW may be revised during the life of the contract based on ADB\u2019s changing business requirements with the necessary adjustments on the pricing based on the required revisions through mutual agreement between ADB and the PSP.",
+                "page": 6,
+                "parent_id": null,
+                "true_label": "Timeline"
+            },
+            {
+                "id": "A.",
+                "title": "Project Timeline",
+                "body": "The engagement will be for a period of fourteen (14) months. Renewal will depend on the satisfactory performance evaluation.",
+                "page": 8,
+                "parent_id": null,
+                "true_label": "Timeline"
+            },
+            {
+                "id": "0",
+                "title": "Contract signing      contract and other required                      10%",
+                "body": "contractual documents Kick-off meeting Kick-off meeting completed 1-2 weeks 0 Submission of Submission of a satisfactory 10% (estimate) Detailed-level AI solution design document, accepted Lab Framework by ADB and Architecture (AI and Big Data) Implementation of -Submission of satisfactory the Lab Framework documented tools, framework, best",
+                "page": 8,
+                "parent_id": null,
+                "true_label": "Timeline"
+            },
+            {
+                "id": "1",
+                "title": "Foundation building   practice guides and engineering      4-6 weeks        10%",
+                "body": "(architecture, tools standards, and responsible AI and infrastructure) Framework, security alignment -Establish business outcomes & success criteria, accepted by ADB -Production ready AI and Big Data Lab (segregation of development and production environment), accepted by ADB 5% after the design and -Design and build each AI build is Design and Build 1 accepted by or more Data Estimated 2 ADB. Product + Design months per AI 5% upon and Build 1 AI product completion of -Application development, Product application Application of responsible AI development, Framework plus 1 Data Product accepted by ADB. 5% after the design and -Design and build each AI build is Design and Build 1 accepted by or more Data Estimated 2 ADB. Product + Design months per AI 5% upon and Build 1 AI product completion of -Application development, Product application Application of responsible AI development, Framework plus 1 Data Product accepted by ADB. 5% after the",
+                "page": 8,
+                "parent_id": null,
+                "true_label": "Timeline"
+            },
+            {
+                "id": "2",
+                "title": "design and",
+                "body": "-Design and build each AI build is Design and Build 1 accepted by or more Data Estimated 2 ADB. Product + Design months per AI 5% upon and Build 1 AI product completion of -Application development, Product application Application of responsible AI development, Framework plus 1 Data Product accepted by ADB. 5% after the design and -Design and build each AI build is Design and Build 1 accepted by or more Data Estimated 2 ADB. Product + Design months per AI 5% upon and Build 1 AI product completion of -Application development, Product application Application of responsible AI development, Framework plus 1 Data Product accepted by ADB. Design and Build 1 Estimated 2 5% after the or more Data -Design and build each AI months per AI design and Product + Design product build is and Build 1 AI accepted by Product ADB. 5% upon completion of -Application development, application Application of responsible AI development, Framework plus 1 Data Product accepted by ADB. Successfully passes external quality",
+                "page": 9,
+                "parent_id": null,
+                "true_label": "Timeline"
+            },
+            {
+                "id": "7.",
+                "title": "Period of Performance",
+                "body": "The period of performance of this contract will be for 12 months beginning on the date of award. *Subject to further interpretation of the estimated requirements",
+                "page": 5,
+                "parent_id": null,
+                "true_label": "Timeline"
+            }
+        ]
+    },
+    "Technologies": {
+        "sections": [
+            {
+                "id": "C.",
+                "title": "Environment Details",
+                "body": "\u2022 The contractor will provide manage service on the below items required for development",
+                "page": 7,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "2.",
+                "title": "Technical Approach (10 points)",
+                "body": "The Offeror shall provide a detailed realistic description of the proposed technical approach/methodology to be used and how it will address the project requirements, scope, challenges, purpose, and vision for the Electronic Handbooks (EHBs) program. The Offeror shall demonstrate that its processes are compliant with Capability Maturity Model Integration (CMMI) Level 3 or ISO 9000 on Quality Management and provide written proof of CMMI Level 3 Certification or ISO 9000 family/series Certification at the time of quote submission. The Offeror shall demonstrate that all work activities associated with the proposed approach can be accomplished in a comprehensive manner. The Offeror shall demonstrate innovation in the proposed technical approach. Innovation is defined as continual evolution (i.e., modification, enhancement, and/or replacement) of the enterprise EHBs processing system to infuse new technologies and approaches as they become available throughout the life of the contract. The proposed approach should be results-oriented and improve e testing efficiency and the predictability of resourcing and scheduling needs. Furthermore, the approach should include a balanced input and output that is user friendly, simplistic and trackable. The Offeror shall demonstrate their ability to identify and deal with program risk, both in proactive and reactive (emergency) situations. Anticipated risks should be made clear and mitigation strategies presented proactively.",
+                "page": 4,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "6.",
+                "title": "Technical Approach to Resolving the Hypothetical Scenario Projects (50 points)",
+                "body": "Please note that the hypothetical projects are for evaluation purposes only and may not be awarded by the Government when the BPA contract is awarded. The Offeror shall describe practical approaches that could be used to address the following hypothetical scenarios (limit answers to 10 pages per scenario.) For the purposes of proposal evaluation, the Offeror is not expected to develop a fully conceived proposal. Rather, the intent is to show how the Offeror would approach the hypothetical requirement and the related present or past (within the last 3 years) experience they have delivering similar projects. The Offeror should note when their approach results in artifacts or deliverables. The response should include the following sections: 1) Requirements; 2) Assumptions; 3) Proposed technical design, 4) Proposed number and type of staff; 5) Approximate cost to complete each scenario and 6) Proposed timeframe to implement the scenarios. Offeror must support their approach using specific examples where they implemented the specific solution. Please highlight if you have provided services of similar scope and complexity for the Department of Health and Human Services. Offeror shall include a write up on current personnel that have experience delivering similar projects and why their experience is relevant to this hypothetical project delivery. These individuals should be employees or current Consultants of the Prime Offeror. The Offeror shall respond to each of the five hypothetical project area scenarios listed in this BPA solicitation. Each of these projects will be evaluated on a 10-point scale.",
+                "page": 5,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "a.",
+                "title": "Technical Approach for Hypothetical #1, Cloud Readiness and Enhancements - 10 points",
+                "body": "HRSA Test Harness is an Enterprise Test Automation Platform that standardizes automated testing processes and promotes collaboration across multiple vendors to support the HRSAs IT mission. The framework supports industry standard testing methodologies such as Data Driven Testing (DDT) and Behavior Driven Development (BDD). It provides an interface to users to define workflows to automate functional testing for an application. These workflows can then be executed against various environments as the software propagates from lower environments to higher ensuring the integrity and quality of the software product. The solution provides the capability for users to create test suites within the application UI with little or no coding. The configured test suites can then be executed either on demand or on a schedule in any given environment. All tests provide detailed reports that allows the user to identify potential defects with the product(s) being tested. The Test Automation Framework natively integrates with enterprise products like Jira for incident management, Jenkins for CI/CD, JMeter for performance testing, and RedGate for test data generation.  Current Challenges Current Test automation Test automation framework is designed to support and implement the automation tests for EHBs. Solution shall consider refactoring / Re-engineering the existing Test automation framework for cloud adoption and readiness. Proposed solution shall also consider  disaster recovery, loosely coupled architecture for APIs, Test Framework execution by bureaus in a containers, incremental modernization, maintaining backward compatibility until the system is fully modernized and migrated, system performance, scalability and cost savings in cloud space using the combination of Infrastructure as Service (IaaS), Platform as Service (PaaS) and Software as Service (SaaS). HRSA is also looking for a riskless migration path to modernize the system in specified duration without impacting business and performance of the current system. Please describe your strategy and approach for Cloud readiness and modernization. Specifically, the Offeror shall address the following requirements: \uf0b7 Review and provide the strategy for cloud adoption and readiness. \uf0b7 Propose the Cloud readiness architecture for all the core components of test harness. The modernization strategy should align with continuous delivery principles. \uf0b7 Enhance Test Harness platform to natively support cloud API testing and provision for third party tools integration \uf0b7 Create service containers for portability, management and test execution. \uf0b7 Ensure Data integrity and protection during transit and at rest. \uf0b7 Cloud adoption strategy should include o Configure auto scaling for performance and maximum throughput o Monitor, measure and Enhance security posture for cloud adoption \uf0b7 Interfaces and systems need to be covered while planning the cloud migration o Detect coordination problems in cloud environment \u2013 this is to ensure the applications are well configured with cloud environment",
+                "page": 6,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "b.",
+                "title": "Technical Approach for Hypothetical #2, EHBs Test Automation Framework and platform",
+                "body": "Enhancements - 10 points HRSA Test Automation framework is currently hosted in HRSA network and leveraged for EHBs Test Automation activities in a multi-vendor environment. This Self-service framework is used for implementing new test suites with minimal/no code modifications by the testing engineering team. Framework was built in selenium actions to support wide range HTML controls within EHBs. Import/Export utility to migrate the test automation scripts between various test environments. Test Harness API interface is used for bulk executing smoke test scripts during EHBs module releases and system maintenance. Framework supports parallel execution by setting up workflows and form properties from within the application UI. Integration with third party libraries, COTS products and multi-factor authentication to support any type of endpoint in a secured way. Current Challenges In a constantly evolving technology and usability environment, enhancements are ongoing and require frequent user engagement, usability testing, and a feedback loop. This poses several challenges in capturing different user perspectives, different changes to maintain and modernize the system to meet changing requirements with advanced technology. Here is the summary of the key challenges:",
+                "page": 7,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "1)",
+                "title": "Legislative and business policy changes trigger frequent releases across several EHBs",
+                "body": "modules (Refer EHBs modules list for more information) causing challenges in developing automated tests on time. Capable to keep up with quickly changing automation testing  technologies and changes in the system under test.",
+                "page": 7,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "2)",
+                "title": "Shared common solutions across all functionalities - opening up possibilities of automated",
+                "body": "tests across different versions",
+                "page": 8,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "3)",
+                "title": "Code based user interface (UI) validations and business rules - making it challenging for",
+                "body": "rapid release response times",
+                "page": 8,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "4)",
+                "title": "Parallel development release streams - leading to complex impact analysis and all-inclusive",
+                "body": "regression testing strategy",
+                "page": 8,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "5)",
+                "title": "Support for multiple browsers, ensuring the interfaces perform consistently across various",
+                "body": "browsers and meet all 508 accessibility requirements and cross browser controls",
+                "page": 8,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "6)",
+                "title": "Security compliance - ensuring that all enhancements meet the HRSA\u2019s security",
+                "body": "requirements. The Offeror should describe their strategy and approach to apply unique methodologies, automation frameworks, tools, and techniques to perform usability, accessibility and security compliance testing for ongoing enhancements and upgrades. Specifically, the Offeror shall address the following requirements: \uf0b7 Propose a cost-effective and innovative approach to perform usability testing. \uf0b7 Provide a build-test optimized model to promote agility and automation of Test scripts and test harness platform \uf0b7 Solution must be compatible and address challenges specific to portability, reliability and scalability. \uf0b7 Propose an approach, tools and techniques to perform usability, accessibility, security compliance and cross browser compatibility, performance, and integration and role bases testing. \uf0b7 Provide an automated regression test strategy and outline a test architecture to simplify the regression testing challenges. The proposed strategy should be feasible, realistic, and actionable. \uf0b7 Propose effective solution to maintain the versioning and tracing the changes in functionality to lowest level. \uf0b7 Open to integrate with third-party components or utilities and connect with open source technologies. \uf0b7 Promote effective strategies for Usability, Data generation and Training requirements. \uf0b7 Enhance the DEVSecOps Pipeline Integration process for continuous test suite integration. \uf0b7 Integration to Team Foundation Server to convert user stories to automated test cases.",
+                "page": 8,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "c.",
+                "title": "Technical Approach for Hypothetical #3, Predictive defect analytics and visual testing using",
+                "body": "Artificial Intelligence and Machine Learning (AI/ML) - 10 points HRSA Test Automation framework is currently hosted in HRSA network and leveraged for EHB Test Automation activities. It is a Self-service framework to implement new test suites with minimal/no code modification. The framework supports industry standard testing methodologies such as Data Driven Testing (DDT) and Behavior Driven Development (BDD). It provides an interface to users to define workflows to automate functional testing for an application. Built in selenium actions to support wide range HTML controls within EHBs. The Test Automation Framework natively integrates with enterprise products like Jira for incident management, Jenkins for CICD, JMeter for performance testing, and RedGate for test data generation.  Current Challenges How to increase predictive defect analysis to identify dependencies and patterns to ultimately produce recommendations or provide a business with insights, thus contributing to data-driven decision- making. User Interface visual testing is a coverage gap in the current regression test suites. Exposure for visualization related defects getting promoted to production and resulting the inconsistency across the modules, which is impacting end-user experience and overall customer satisfaction. Predicting release risk based on release constraints such as Number of Features, Release Duration, Resource Proficiency and module complexity. Currently HRSA uses JIRA and TFS tools to record and track the defects and incidents Please describe your strategy and approach for proactively predicting the defects that could occur and identifying the inconsistencies across the modules. Offeror also shall describe the method for conducting automated visualization testing to identify the UI inconsistencies. Specifically, the Offeror shall address the following requirements: \uf0b7 Provide AI data assurance strategy to validate the business functionality, address key functional testing activities and focus on nonfunctional aspects. \uf0b7 Stream the processing principles to help prepare data in motion. \uf0b7 Provide AI/ML driven testing solution for: o Predictive defect analysis and recommendations during the testing phase o System, data and meta data validation in Test harness o Co-relating the logs and identify the root cause to improve the incident tracking and troubleshooting process \uf0b7 Introduce an AI/ML driven process to automatically select appropriate test workflow(s) for regression test based on the code checked in by developers. Refer EHBs test harness documentation for more details \uf0b7 Enhance Test Harness framework to integrate AI/ML technology to enable visual testing in the automation workflow o Visual testing to include following test scenarios: \uf0a7 Identify distortions in the UI due to code changes, form factor or browser compatibility \uf0a7 Role based UI views across modules.",
+                "page": 8,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "d.",
+                "title": "Technical Approach for Hypothetical #4, 508 compliance Verification - 10 points",
+                "body": "HRSA Test Automation framework is currently hosted in HRSA network and leveraged for EHB Test Automation activities. Electronic handbooks contains more than 60 modules supporting the different bureau policy changes. Legislative and business policy changes trigger frequent releases, causing challenges in verification and validation activities. Current Challenges In an agile business environment, enhancements are ongoing and require frequent user engagement, usability testing, and a feedback loop. Performing manual 508 verification for all new developments and frequent system changes is a recurring and required activity to comply with EPLC process. It is important that the web pages be developed using accessibility best practices, which is often performed hastily, and sometimes is overlooked altogether. The Offeror should describe their strategy and approach to apply unique methodologies, tools, and  techniques to perform 508 compliance verification for ongoing enhancements and upgrades. Offeror shall also propose a solution to automatically execute these test scripts from DEVSecOps pipeline. Specifically, the Offeror shall address the following requirements: conformance testing tool to automatically test and scan electronic content of EHB\u2019s. \uf0b7 Proposed tool must foster adoption in multi-vendor agile environment \uf0b7 Proposed tool should customize scanning and test ruleset parameters. \uf0b7 Control and synchronize error and remediation messages presented to users for customized rules. \uf0b7 Flag false positives and ensure the errors are not repeated in subsequent test results. \uf0b7 Categorize issues by type, frequency, and severity. \uf0b7 Integrate test tools and conformance monitoring into test automation environments (Dev/Ops). \uf0b7 Produce accessible system and report outputs for EPLC reviews",
+                "page": 9,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "e.",
+                "title": "Technical Approach for Hypothetical #5, Robotic Process Automation (RPA) and Data",
+                "body": "Generation Testing - 10 points HRSA Test Harness is an Enterprise Test Automation Platform that standardizes automated testing processes and promotes collaboration across multiple vendors to support the HRSAs IT mission. Test Automation framework is currently hosted in HRSA network and leveraged for EHB Test Automation activities. Electronic handbooks contains more than 60 modules supporting the different bureau policy changes. Legislative and business policy changes trigger frequent releases, causing challenges in verification and validation activities. Current Challenges In an agile business environment, system changes are required to release every week to support the legislative mandate. During the release process, testing team has to invest several hours in creating test data for functional, regression, and integration testing. In addition, EHBs trainers follow manual process to create training data every two weeks for conducting the user trainings and demos. Those challenges are resulting inefficiency and overheard, operation cost is going high. Here is the summary of the challenges:",
+                "page": 10,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "1)",
+                "title": "Module has tight data and navigation integration with other EHB modules, 2) The module is used",
+                "body": "across HRSA by all bureaus with few specific deviations and automation for certain specific programs, 3) The process supports complex data driven business rules,",
+                "page": 10,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "2)",
+                "title": "The data creation for testing is laborious and complex requiring good understanding of the prior",
+                "body": "processes. The Offeror should describe their strategy and approach to apply unique methodologies, automation frameworks, tools, and techniques to automatically generate the data for testing and training. In addition, offeror shall also propose a method to integrate the process using robust data validation engine using RPA. Specifically, the Offeror shall address the following requirements:  \uf0b7 Propose an automation regression test strategy for the specific EHB modules with data complexity including data centric use cases. \uf0b7 The automation test strategy should align with continuous delivery principles by integrating the services with EHBs test harness platform \uf0b7 The strategy should ensure data-centric use cases and ensure that the business rules are validated. \uf0b7 The solution should ensure the data integrity and quality checks are performed using an automated approach \uf0b7 Propose an automation regression test approach and roll out for the data generation process that is feasible and realistic.",
+                "page": 10,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "6.",
+                "title": "Technical Approach to Resolving the Hypothetical Scenario Projects",
+                "body": "",
+                "page": 14,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "a.",
+                "title": "Technical Approach for Hypothetical #1, Cloud Readiness and",
+                "body": "Enhancements - 10 points",
+                "page": 14,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "b.",
+                "title": "Technical Approach for Hypothetical #2, EHBs Test Automation",
+                "body": "Framework and platform Enhancements \u2013 (10 points) visual testing using Artificial Intelligence and Machine Learning (AI/ML)\u2013 (10 points)",
+                "page": 14,
+                "parent_id": null,
+                "true_label": "Technologies"
+            },
+            {
+                "id": "d.",
+                "title": "Technical Approach for Hypothetical #4, 508 compliance Verification \u2013",
+                "body": "(10 points)",
+                "page": 14,
+                "parent_id": null,
+                "true_label": "Technologies"
+            }
+        ]
+    }
+}
