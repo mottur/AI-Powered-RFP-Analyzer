@@ -164,7 +164,7 @@ def _background_train_model(option: str, file_data: Optional[list[dict]]) -> JSO
             elabels = [sec['true_label'] for sec in eval_texts]
             metrics = train_classifier(ttexts, tlabels, etexts, elabels)
             if verbose:
-                logger.info("Metrics: ", metrics)
+                logger.info("Metrics: %s", metrics)
             _training_state.finish()
         except Exception as e:
             _training_state.finish("Error training classifier: " + str(e))

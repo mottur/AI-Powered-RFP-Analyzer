@@ -15,8 +15,12 @@ REDIS_HOST = os.getenv("REDIS_HOST", "localhost")
 REDIS_PORT = int(os.getenv("REDIS_PORT", 6379))
 
 # Create a Redis client once
-redis_client = redis.Redis(
-    host=os.getenv("REDIS_HOST", "localhost"),  # use "redis" when in Docker
-    port=6379,
-    decode_responses=True  # get strings instead of bytes
-)
+try:
+    redis_client = redis.Redis(
+        host=os.getenv("REDIS_HOST", "localhost"),  # use "redis" when in Docker
+        port=REDIS_PORT,
+        decode_responses=True  # get strings instead of bytes
+    )
+except redis.RedisError as e:
+    print(f"Error creating Redis client: {e}")
+    redis_client = None

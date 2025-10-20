@@ -4,6 +4,7 @@ FastAPI application code for the AI-Powered RFP Analyzer.
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from contextlib import asynccontextmanager
 from api import classification, validation, summarization
 from utils.cleanup_mlflow import cleanup_old_runs
@@ -30,6 +31,7 @@ async def lifespan(app: FastAPI):
     yield
 
 app = FastAPI(lifespan=lifespan)
+app.mount("/plots", StaticFiles(directory="plots"), name="plots")
 
 # Configure CORS
 app.add_middleware(
