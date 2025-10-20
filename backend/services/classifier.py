@@ -219,7 +219,7 @@ def _plot_confusion_matrix(cm, class_names=None):
     fig.tight_layout()
 
     # Save to file
-    filepath = os.path.join("../frontend", "public", "visualization", "confusion_matrix.png")
+    filepath = "plots/confusion_matrix.png"
     fig.savefig(filepath, format='png', dpi=150, bbox_inches='tight')
     if verbose:
         logger.info(f"Confusion matrix saved to: {filepath}")
@@ -257,7 +257,7 @@ def _plot_metrics(metrics: dict):
     fig.tight_layout()
 
     # Save to file
-    filepath = os.path.join("../frontend", "public", "visualization", "metrics.png")
+    filepath = "plots/metrics.png"
     fig.savefig(filepath, format='png', dpi=300, bbox_inches='tight')
     if verbose:
         logger.info(f"Metrics plot saved to: {filepath}")

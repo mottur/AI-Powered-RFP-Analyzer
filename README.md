@@ -14,7 +14,7 @@ Retrieve an OpenRouter API key of your own: https://openrouter.ai/.
 
 Install Docker if you haven't already: https://docs.docker.com/get-started/get-docker/.
 
-Then execute the following commands in your terminal:
+Then, after launching Docker Desktop, execute the following commands in your terminal:
 
 1. Download the public Docker images:
 ```bash

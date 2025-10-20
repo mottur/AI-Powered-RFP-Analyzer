@@ -147,7 +147,7 @@ const Trainer = () => {
                 <Col md={6}>
                     <img
                     key={`metrics-${refreshKey}`}
-                    src={`/visualization/metrics.png?ts=${refreshKey}`}
+                    src={`http://localhost:5050/plots/metrics.png?ts=${refreshKey}`}
                     alt="Training Metrics"
                     style={{ width: '100%', height: 'auto' }}
                     />
@@ -156,7 +156,7 @@ const Trainer = () => {
                 <Col md={6}>
                     <img
                     key={`matrix-${refreshKey}`}
-                    src={`/visualization/confusion_matrix.png?ts=${refreshKey}`}
+                    src={`http://localhost:5050/plots/confusion_matrix.png?ts=${refreshKey}`}
                     alt="Confusion Matrix"
                     style={{ width: '100%', height: 'auto' }}
                     />
