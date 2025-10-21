@@ -14,7 +14,9 @@ Retrieve an OpenRouter API key of your own: https://openrouter.ai/.
 
 Install Docker if you haven't already: https://docs.docker.com/get-started/get-docker/.
 
-Then, after launching Docker Desktop, execute the following commands in your terminal:
+Download the `docker-compose.yml` file in this repo.
+
+Then, after launching Docker Desktop, navigate to the same folder as the `docker-compose.yml` file in your terminal window. Execute the following commands in your terminal:
 
 1. Download the public Docker images:
 ```bash
