@@ -10,7 +10,7 @@ export function updateIsTraining(value) {
 // Polls for the validation status from the backend
 export const pollValidationStatus = async (apiService) => {
     const POLLING_INTERVAL = 10_000;
-    const MAX_RETRIES = 90;
+    const MAX_RETRIES = 120;
 
     let retries = 0;
 
