@@ -29,3 +29,9 @@ docker pull mottur/apra-api:latest
 4. Finally, run: ```docker-compose up```
 
 Navigate to https://localhost/8000 to try out the app!
+
+### Credits
+This repository includes and makes use of the following models:
+- SetFit fine-tuned model — see `classifier/README.md` for full license and credit details.
+- spaCy NER model — built using spaCy, © Explosion AI, licensed under the MIT License and hosted on Hugging Face: https://huggingface.co/spacy/en_core_web_trf.
+- Llama 3 70B Instruct — model by Meta, used via OpenRouter (free tier). Licensed under the Meta Llama 3 Community License Agreement. Found at: https://openrouter.ai/meta-llama/llama-3.3-70b-instruct:free.
