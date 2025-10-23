@@ -1,3 +1,20 @@
+CREDITS & LICENSES
+
+This model was built using the following open-source components:
+
+SetFit - https://github.com/huggingface/setfit?utm_source=chatgpt.com
+Copyright (c) Hugging Face.
+Licensed under the Apache License 2.0.
+
+sentence-transformers / all-MiniLM-L6-v2 - https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2
+Copyright (c) 2021 Sentence-Transformers authors.
+Licensed under the Apache License 2.0.
+Original paper: Reimers & Gurevych, “Making Monolingual Sentence Embeddings Multilingual using Knowledge Distillation” (2020).
+
+scikit-learn - https://scikit-learn.org/
+Copyright (c) The scikit-learn developers.
+Licensed under the BSD 3-Clause License.
+
 ---
 tags:
 - setfit
