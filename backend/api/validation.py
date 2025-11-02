@@ -80,7 +80,7 @@ def _background_validate(chunks: list[dict]):
     except Exception as e:
         _validation_state.finish("Failed to validate extraction using LLM: " + str(e))
         if verbose:
-            logger.exception("Failed to validate extraction using LLM: ", e)
+            logger.exception("Failed to validate extraction using LLM: " + str(e))
 
     
 @router.get("/status/")

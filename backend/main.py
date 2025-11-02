@@ -37,8 +37,8 @@ app.mount("/plots", StaticFiles(directory="plots"), name="plots")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:3000",  # Vite dev server
         "http://localhost:5173",  # Vite default port
+        "http://localhost:8000",  # Built frontend served via Docker/Nginx
     ],
     allow_credentials=True,
     allow_methods=["*"],

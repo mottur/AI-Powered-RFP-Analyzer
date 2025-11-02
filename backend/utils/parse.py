@@ -11,29 +11,49 @@ import json
 def safe_json_loads(text: str):
     """
     Attempts to safely parse a string that looks like JSON.
-    Fixes common LLM issues like smart quotes and trailing commas.
+    Fixes common LLM issues like smart quotes, trailing commas, and missing closing brackets/braces.
     """
+    if not text or not isinstance(text, str):
+        raise ValueError("Input is empty or not a string.")
+
+    text = text.strip()
+
+    # Remove everything before first ``` and after last ```
+    match = re.search(r"```(?:json)?\s*(.*?)\s*```", text, flags=re.IGNORECASE | re.DOTALL)
+    if match:
+        text = match.group(1)
+    else:
+        # No fences found; just try the raw text
+        text = text
+
+    # Normalize quotes
+    text = text.replace("“", '"').replace("”", '"').replace("’", "'")
+
+    # Fix unclosed braces/brackets if needed
+    text = _fix_unclosed_brackets(text)
+
+    text = text.strip()
+
+    # Remove trailing commas before closing braces/brackets
+    text = re.sub(r",\s*([\]}])", r"\1", text)
+
+    # Load text as json dict
     try:
-        # Remove surrounding markdown code fences, e.g. ```json ... ```
-        text = text.strip()
-        if text.startswith("```"):
-            text = re.sub(r"^```(?:json)?", "", text)
-            text = re.sub(r"```$", "", text)
-        text = text.strip()
-
-        # Common fixes: replace smart quotes with normal ones
-        text = text.replace("“", "\"").replace("”", "\"").replace("’", "'")
-
-        # Remove any trailing commas before closing brackets/braces
-        text = re.sub(r",\s*([\]}])", r"\1", text)
-
-        # Attempt to parse
         return json.loads(text)
     except json.JSONDecodeError as e:
-        if verbose:
-            logger.exception("Failed to parse JSON:", e)
-            logger.exception("Problematic content:\n", text)
-        raise ValueError("LLM output could not be parsed into valid JSON.")
+        raise ValueError(f"Invalid JSON: {e}") from e
+    
+def _fix_unclosed_brackets(text: str) -> str:
+    """
+    Adds missing closing brackets/braces if counts don't match.
+    """
+    open_braces = text.count("{")
+    close_braces = text.count("}")
+    open_brackets = text.count("[")
+    close_brackets = text.count("]")
+    text += "}" * max(open_braces - close_braces, 0)
+    text += "]" * max(open_brackets - close_brackets, 0)
+    return text
     
 def truncate_categories(
     categories: dict,
@@ -51,7 +71,7 @@ def truncate_categories(
     for category_name, category_data in categories.items():
         sections = category_data.get("sections", [])
         for section in sections:
-            total_estimated_tokens += _estimate_tokens(section)
+            total_estimated_tokens += estimate_tokens(section)
 
     if total_estimated_tokens <= max_tokens:
         return categories
@@ -69,7 +89,7 @@ def truncate_categories(
         used_tokens = 0
 
         for section in sections:
-            section_tokens = _estimate_tokens(section)
+            section_tokens = estimate_tokens(section)
             if used_tokens + section_tokens > base_budget:
                 break
             added_sections.append(section)
@@ -92,7 +112,7 @@ def truncate_categories(
 
         for cat in expandable:
             next_section = cat["remaining_sections"][0]
-            section_tokens = _estimate_tokens(next_section)
+            section_tokens = estimate_tokens(next_section)
 
             if section_tokens <= remaining_tokens:
                 cat["sections"].append(next_section)
@@ -122,7 +142,7 @@ def split_chunks(chunks: list[dict], max_tokens: int = TOKEN_LIMIT) -> list[list
     current_token_count = 0
 
     for chunk in chunks:
-        chunk_tokens = _estimate_tokens(chunk)
+        chunk_tokens = estimate_tokens(chunk)
 
         # If this chunk would exceed the max, start a new segment
         if current_token_count + chunk_tokens > max_tokens:
@@ -141,9 +161,13 @@ def split_chunks(chunks: list[dict], max_tokens: int = TOKEN_LIMIT) -> list[list
     return segments
 
 
-def _estimate_tokens(item: dict) -> int:
+def estimate_tokens(item: dict | str) -> int:
     """
-    Roughly estimates the number of tokens in a dictionary by counting characters.
+    Roughly estimates the number of tokens in a dictionary, including keys and JSON formatting.
     """
-    # Rough estimate: 1 token ≈ 4 characters in English text
-    return sum(len(str(v)) for v in item.values()) // 4
+    if isinstance(item, dict):
+        json_str = json.dumps(item, ensure_ascii=False)
+    else:
+        json_str = item
+    # 1 token ≈ 4 characters heuristic
+    return len(json_str) // 4
