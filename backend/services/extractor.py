@@ -345,43 +345,6 @@ def _looks_like_contact_info(line: str) -> bool:
     
     return any(re.search(pattern, line_lower) for pattern in contact_patterns)
 
-def split_large_chunk(chunk, max_chars=2000):
-    """
-    Splits chunk body into subchunks if it's too long.
-    Attempts to preserve semantic coherence by splitting on paragraph boundaries.
-    Empty subchunks are discarded.
-    """
-    body = chunk["body"]
-    if len(body.strip()) <= max_chars:
-        return [chunk]
-
-    paragraphs = [p.strip() for p in body.split("\n\n") if p.strip()]
-    subchunks = []
-    buffer = ""
-
-    for para in paragraphs:
-        if len(buffer) + len(para) + 2 <= max_chars:
-            buffer += para + "\n\n"
-        else:
-            if buffer.strip():  # only add non-empty buffer
-                subchunks.append(buffer.strip())
-            buffer = para + "\n\n"
-
-    if buffer.strip():
-        subchunks.append(buffer.strip())
-
-    result = []
-    for i, sub in enumerate(subchunks):
-        if not sub.strip():
-            continue  # skip empty subchunks
-        new_chunk = dict(chunk)
-        new_chunk["body"] = sub
-        if len(subchunks) > 1:
-            new_chunk["title"] = f"{chunk['title']} (Part {i+1})"
-        result.append(new_chunk)
-
-    return result
-
 def _is_valid_chunk(chunk):
     """
     Checks if chunk title or body is long enough to have relevant information.

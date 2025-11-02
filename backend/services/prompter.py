@@ -8,6 +8,7 @@ import requests
 import json
 import os
 from core.shared import LABELS, verbose, logger
+from utils.parse import estimate_tokens
 from dotenv import load_dotenv
 from pathlib import Path
 
@@ -23,7 +24,7 @@ if not API_KEY:
 # Format for prompting the LLM
 headers = {
     "Authorization": f"Bearer {API_KEY}",
-    "HTTP-Referer": "AI-Powered-RFP-Analyzer",  # Can be your email or app URL
+    "HTTP-Referer": "AI-Powered-RFP-Analyzer",
     "Content-Type": "application/json",
 }
 
@@ -56,35 +57,26 @@ def validate_extraction(chunks: list[dict]) -> str:
         ]
     }
     labels = "\n".join(f"{key}: {value}" for key, value in LABELS.items())
-    data_ext["messages"][1]["content"] = f"""
-        The following json provides chunks of text from an RFP document.
+    data_ext["messages"][1]["content"] = f"""The following json provides chunks of text from an RFP document.
         Consider the following json:\n{json.dumps(chunks)}\n
         For each chunk, decide on one of the labels, which are defined:\n{labels}\n
         If none of the labels fit, return N/A. No explanation is required.
         Return ONLY the same json with the key 'true_label' appended to each chunk, with the value being the chosen label.
     """
+    input_tokens = estimate_tokens(data_ext)
+    logger.info("Input tokens: " + str(input_tokens))
     response = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=data_ext)
-    if "choices" not in response.json() and verbose:
-        logger.error("Issue during LLM labeling: ", "\n", response.json())
+    try:
+        if "choices" not in response.json() and verbose:
+            raise RuntimeError("Issue during LLM labeling:\n" + response.json())
+    except Exception as e:
+        print(response.text[:500])
+        raise RuntimeError("Issue during LLM labeling:\n" + str(e) + ". This may be an OpenRouter issue.")
     result = response.json()["choices"][0]["message"]["content"]
     if verbose: # for debugging
         logger.info("Validation result:\n" + result)
     return result
 
-def find_pattern(text, patterns):
-    """
-    Finds the first instance of one of the patterns in a string.
-    """
-    first_match = None
-    first_index = len(text) + 1
-
-    for pattern in patterns:
-        idx = text.find(pattern)
-        if idx != -1 and idx < first_index:
-            first_index = idx
-            first_match = pattern
-
-    return first_match.capitalize()
 
 def summarize(categories: dict) -> str:
     """
@@ -105,6 +97,8 @@ def summarize(categories: dict) -> str:
                                     f"Return ONLY a json string with the defined categories as keys, " \
                                     f"the generated summaries for each category as values, " \
                                     f"and an additional key 'Insights', which should include the generated insights and/or actionable steps as the value."
+    input_tokens = estimate_tokens(data)
+    logger.info("Input tokens: " + str(input_tokens))
     response = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=data)
     result = response.json()["choices"][0]["message"]["content"]
     if verbose: # for debugging

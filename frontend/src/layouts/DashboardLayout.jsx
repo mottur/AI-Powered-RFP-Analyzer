@@ -50,8 +50,8 @@ const DashboardLayout = ({ children }) => {
              <p className="mb-1 fs-6">Frontend: React | Backend: FastAPI</p>
              {backendStatus === 'disconnected' && (
               <div className="connection-help">
-                <p>⚠️ Make sure your FastAPI server is running on port 8000:</p>
-                <code>uvicorn main:app --reload --port 8000</code>
+                <p>⚠️ Make sure your FastAPI server is running on port 5050:</p>
+                <code>uvicorn main:app --reload --port 5050</code>
               </div>
             )}
           </footer>
