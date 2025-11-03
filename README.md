@@ -14,19 +14,17 @@ Retrieve an OpenRouter API key of your own: https://openrouter.ai/.
 
 Install Docker if you haven't already: https://docs.docker.com/get-started/get-docker/.
 
-Download the `docker-compose.yml` file in this repo.
+Download the `docker-compose.yml` and `.env.example` files in this repo. Replace the API_KEY in `.env.example` with your own OpenRouter API key.
 
-Then, after launching Docker Desktop, navigate to the same folder as the `docker-compose.yml` file in your terminal window. Execute the following commands in your terminal:
+Then, after launching Docker Desktop, navigate to the same folder as the `docker-compose.yml` and `.env.example` files in your terminal window. Execute the following commands in your terminal:
 
-1. Download the public Docker images:
+1. Run: ```cp .env.example .env```
+2. Download the public Docker images:
 ```bash
 docker pull mottur/apra-client:latest
 docker pull mottur/apra-api:latest
 ```
-1. Download the `.env.example` file in the root folder and the frontend folder.
-2. Replace the API_KEY in the `.env.example` file with your own API_KEY.
-3. Run: ```cp .env.example .env```
-4. Finally, run: ```docker-compose up```
+3. Finally, run: ```docker-compose up```
 
 Navigate to https://localhost/8000 to try out the app!
 
