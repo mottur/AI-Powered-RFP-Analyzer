@@ -10,6 +10,7 @@ from core.process_state import ProcessState
 from core.shared import LABELS, LABELED_JSON_PATH, verbose, logger
 from utils.parse import safe_json_loads, split_chunks
 import json
+import time
 
 
 router = APIRouter()
@@ -53,6 +54,7 @@ def _background_validate(chunks: list[dict]):
         all_labeled_chunks = []
 
         for i, segment in enumerate(segmented_chunks):
+            time.sleep(2)
             if verbose:
                 logger.info(f"Validating segment {i+1}/{len(segmented_chunks)}...")
 
