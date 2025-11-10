@@ -7,7 +7,7 @@ Model: https://openrouter.ai/meta-llama/llama-3.3-70b-instruct:free
 import requests
 import json
 import os
-from core.shared import LABELS, verbose, logger
+from core.shared import LABELS, TOKEN_LIMIT, verbose, logger
 from utils.parse import estimate_tokens
 from dotenv import load_dotenv
 from pathlib import Path
@@ -22,11 +22,10 @@ API_KEY = os.getenv('API_KEY')
 if not API_KEY:
     raise ValueError("No API_KEY found in environment variables")
 
-# Format for prompting the LLM
 headers = {
     "Authorization": f"Bearer {API_KEY}",
     "HTTP-Referer": "AI-Powered-RFP-Analyzer",
-    "Content-Type": "application/json",
+    "Content-Type": "application/json"
 }
 
 data = {
@@ -47,12 +46,12 @@ def validate_extraction(chunks: list[dict]) -> str:
           "documents. Given a chunk of text from an RFP, determine which category it best fits from the " \
           "following categories: " + ", ".join(LABELS.keys())
     data["messages"][0]["content"] = msg
-    data["messages"][1]["content"] = f"""The following json provides chunks of text from an RFP document.
-        Consider the following json:\n{json.dumps(chunks)}\n
-        For each chunk, decide on one of the labels, which are defined:\n{labels}\n
-        If none of the labels fit, return N/A. No explanation is required.
-        Return ONLY the same json with the key 'true_label' appended to each chunk, with the value being the chosen label.
-    """
+    data["messages"][1]["content"] = f"The following json provides chunks of text from an RFP document. " \
+        f"Consider the following json:\n{json.dumps(chunks)}\n" \
+        f"For each chunk, decide on one of the following labels:\n{labels}\n" \
+        f"If none of the labels fit, return 'N/A'. No explanation is required. " \
+        f"Return ONLY a json string of chunks with the key 'id' of the chunk as provided in the " \
+        f"original json and the key 'true_label' with the chosen label as the value."
     result = _call_llm_endpoint(data)
     if verbose:
         logger.info("Validation result:\n" + result)
@@ -73,7 +72,7 @@ def summarize(categories: dict) -> str:
     for key in text.keys():
         text[key] = [sec["title"] + "\n" + sec["body"] for sec in categories[key]["sections"]]
     data["messages"][0]["content"] = msg
-    data["messages"][1]["content"] = f"The following json provides chunks of text from an RFP document." \
+    data["messages"][1]["content"] = f"The following json provides chunks of text from an RFP document. " \
                                     f"The keys are the categories, which are defined:\n{labels}\n" \
                                     f"Consider the following json:\n{str(text)}\n" \
                                     f"Provide a detailed summary of the chunks in each category based on the descriptions provided above, " \
@@ -93,26 +92,31 @@ def _call_llm_endpoint(data: dict) -> str:
     """
     Calls the OpenRouter API LLM endpoint with the data
     """
+    endpoint = "https://openrouter.ai/api/v1/chat/completions"
     input_tokens = estimate_tokens(data)
-    logger.info("Input tokens: " + str(input_tokens))
-    response = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=data)
+    if verbose:
+        logger.info("Input tokens: " + str(input_tokens))
+    response = requests.post(endpoint, headers=headers, json=data)
     retries = 0
     while retries < 2 and (not response.ok or response.text[:500].strip() == ""):
         if not response.ok:
-            try:
-                logger.exception("Issue during LLM labeling: " + response.json().get("error", {}).get("message", response.text) + " Retrying...")
-            except ValueError:
-                logger.exception("Issue during LLM labeling: " + response.text + " Retrying...")
+            logger.exception("Issue during LLM labeling: " + response.text + " Retrying...")
         else:
+            if verbose:
+                logger.info(f"Provider: {response.json().get('provider', 'Unknown')}")
             logger.exception("Issue during LLM labeling: LLM endpoint returning truncated output. Retrying...")
-        response = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=data)
+        response = requests.post(endpoint, headers=headers, json=data)
         retries += 1
     if not response.ok:
-        try:
-            raise RuntimeError(response.json().get("error", {}).get("message", response.text))
-        except ValueError:
-            raise RuntimeError(response.text)
+        raise RuntimeError(response.text)
     elif response.text[:500].strip() == "":
+        if verbose:
+            logger.info(f"Provider: {response.json().get('provider', 'Unknown')}")
         raise RuntimeError("LLM endpoint returning truncated output.")
+    if verbose:
+        logger.info(f"Provider: {response.json().get('provider', 'Unknown')}")
     result = response.json()["choices"][0]["message"]["content"]
+    output_tokens = estimate_tokens(result)
+    if verbose:
+        logger.info("Output tokens: " + str(output_tokens))
     return result

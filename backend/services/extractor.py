@@ -108,7 +108,7 @@ def chunk_text(pdf_bytes: bytes) -> list:
             
         else:
             if current_chunk is not None:
-                current_chunk["body"] += " " + line_text[:4000]
+                current_chunk["body"] += " " + line_text
 
     # Handle any remaining pending heading
     if pending_heading_id and current_chunk:

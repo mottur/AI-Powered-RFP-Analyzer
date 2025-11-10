@@ -60,16 +60,18 @@ def _background_validate(chunks: list[dict]):
 
             result = validate_extraction(segment)
 
-            # Handle string result from LLM and safely parse
             if isinstance(result, str):
                 parsed = safe_json_loads(result)
             else:
-                parsed = result  # already parsed
+                parsed = result
 
-            if not isinstance(parsed, list):
-                raise ValueError("Parsed validation result is not a list.")
-
-            all_labeled_chunks.extend(parsed)
+            for seg, par in zip(segment, parsed):
+                if seg["id"] == par["id"]:
+                    seg["true_label"] = par["true_label"]
+                else:
+                    seg["true_label"] = "N/A"
+            
+            all_labeled_chunks.extend(segment)
 
         # Save all labeled chunks
         import asyncio

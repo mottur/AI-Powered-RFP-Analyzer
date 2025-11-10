@@ -1,6 +1,6 @@
 # Welcome to APRA, an AI-Powered RFP Analyzer tool!
 
-[![Watch the video](frontend/public/APRA_Thumbnail.jpg)](https://youtu.be/tdB5w8C_42o)
+[![Watch the video](frontend/public/APRA_Thumbnail.jpg)](https://youtu.be/VUaLZoc7fNA)
 
 ## Main features:
 ### Analyze a Request for Proposal (RFP) document with just one click of a button.

@@ -9,7 +9,7 @@ LABELS = {
     "Deliverables": "This section lists the deliverables or tangible outputs the offeror/contractor is required to provide, including documentation.",
     "Company Info": "This section provides information about the offeror/contractor, including qualifications, past experience, and mission.",
     "Timeline": "This section outlines the timeline, including the length of the contract, deadlines, project start and end dates, and other key milestone schedules.",
-    "Technologies": "This section specifies the tech stack - the environment, technologies, platforms, software, or tools that will be used or required for the project.",
+    "Technologies": "This section outlines the tech stack - the specific environment, technologies, platforms, software, or tools that will be used or required for the project.",
 }
 
 EXTRACTED_JSON_PATH = "json_files/extracted.json"
