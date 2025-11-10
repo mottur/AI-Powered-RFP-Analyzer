@@ -235,41 +235,106 @@ def _plot_confusion_matrix(cm, class_names=None):
 
 def _plot_metrics(metrics: dict):
     """
-    Plots the accuracy, precision, recall, and F1-score.
+    Plots the accuracy, precision, recall, and F1-score as percentages (%).
+    Returns plot as a PIL image.
     """
+    import matplotlib.pyplot as plt
+    import numpy as np
+    import io
+    from PIL import Image
+
     labels = list(metrics.keys())
-    values = list(metrics.values())
+    values = [v * 100 for v in metrics.values()]  # Convert to percentages
 
     # Create figure and axes
     fig, ax = plt.subplots(figsize=(8, 5))
-    ax.bar(labels, values, color='skyblue')
+
+    # Generate distinct colors using a colormap
+    colors = plt.cm.tab10(np.linspace(0, 1, len(labels)))
+
+    # Create bars
+    bars = ax.bar(labels, values, color=colors)
 
     # Add value labels on top of bars
-    for i, v in enumerate(values):
-        ax.text(i, v + 0.01, f"{v:.2f}", ha='center', fontweight='bold')
+    for bar, v in zip(bars, values):
+        ax.text(
+            bar.get_x() + bar.get_width() / 2,
+            v + 1,
+            f"{v:.1f}%",
+            ha="center",
+            va="bottom",
+            fontweight="bold"
+        )
 
     # Set labels and title
-    ax.set_title("Model Evaluation Metrics")
-    ax.set_ylabel("Score")
-    ax.set_ylim(0, 1.05)
-    ax.grid(axis='y', linestyle='--', alpha=0.7)
+    ax.set_title("Model Evaluation Metrics", fontsize=14, fontweight="bold")
+    ax.set_xlabel("Metric", fontsize=12)
+    ax.set_ylabel("Score (%)", fontsize=12)
+    ax.set_ylim(0, 105)
+    ax.grid(axis="y", linestyle="--", alpha=0.7)
 
-    fig.tight_layout()
+    # Add legend outside of the plot (to the right)
+    ax.legend(
+        bars,
+        labels,
+        title="Metrics",
+        bbox_to_anchor=(1.05, 1),  # Position legend outside
+        loc="upper left",
+        borderaxespad=0.
+    )
+
+    fig.tight_layout(rect=[0, 0, 0.85, 1])  # Leave space for legend
 
     # Save to file
     filepath = "plots/metrics.png"
-    fig.savefig(filepath, format='png', dpi=300, bbox_inches='tight')
-    if verbose:
-        logger.info(f"Metrics plot saved to: {filepath}")
+    fig.savefig(filepath, format="png", dpi=300, bbox_inches="tight")
     
     # Save to buffer and convert to PIL Image
     buf = io.BytesIO()
-    fig.savefig(buf, format='png', dpi=300, bbox_inches='tight')
+    fig.savefig(buf, format="png", dpi=300, bbox_inches="tight")
     buf.seek(0)
     pil_image = Image.open(buf)
     plt.close(fig)
     
     return pil_image
+
+# def _plot_metrics(metrics: dict):
+#     """
+#     Plots the accuracy, precision, recall, and F1-score.
+#     """
+#     labels = list(metrics.keys())
+#     values = list(metrics.values())
+
+#     # Create figure and axes
+#     fig, ax = plt.subplots(figsize=(8, 5))
+#     ax.bar(labels, values, color='skyblue')
+
+#     # Add value labels on top of bars
+#     for i, v in enumerate(values):
+#         ax.text(i, v + 0.01, f"{v:.2f}", ha='center', fontweight='bold')
+
+#     # Set labels and title
+#     ax.set_title("Model Evaluation Metrics")
+#     ax.set_ylabel("Score")
+#     ax.set_ylim(0, 1.05)
+#     ax.grid(axis='y', linestyle='--', alpha=0.7)
+
+#     fig.tight_layout()
+
+#     # Save to file
+#     filepath = "plots/metrics.png"
+#     fig.savefig(filepath, format='png', dpi=300, bbox_inches='tight')
+#     if verbose:
+#         logger.info(f"Metrics plot saved to: {filepath}")
+    
+#     # Save to buffer and convert to PIL Image
+#     buf = io.BytesIO()
+#     fig.savefig(buf, format='png', dpi=300, bbox_inches='tight')
+#     buf.seek(0)
+#     pil_image = Image.open(buf)
+#     plt.close(fig)
+    
+#     return pil_image
 
 
 # CLASSIFICATION AND TAGGING PIPELINE FUNCTIONS
